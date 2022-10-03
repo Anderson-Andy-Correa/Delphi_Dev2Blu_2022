@@ -1,0 +1,46 @@
+unit UfrmPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    lblTitulo: TLabel;
+    edtNumero: TEdit;
+    lblResposta: TLabel;
+    btnTestar: TButton;
+    procedure btnTestarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnTestarClick(Sender: TObject);
+  var
+    xNumero : Double;
+  begin
+    xNumero := StrToFloat(edtNumero.text);
+    if xNumero > 10 then
+      begin
+        lblResposta.Caption := 'Sim';
+        lblResposta.Visible := True;
+      end
+    else
+      begin
+        lblResposta.Caption := 'Não';
+      end;
+
+  end;
+
+end.

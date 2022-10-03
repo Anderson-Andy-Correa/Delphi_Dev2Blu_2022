@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/12 19:05:35.000.498,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/12 19:06:46.000.700,C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\Unit1.pas=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/12 19:06:46.000.700,C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\Unit1.dfm=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/09/12 19:07:03.000.651,C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\010\Project10.dproj=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/09/12 19:07:57.000.393,C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\Debugger.dfm=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\Unit1.dfm</Transaction>
+    <Transaction>2022/09/12 19:07:57.000.393,C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\Debugger.pas=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\Unit1.pas</Transaction>
+    <Transaction>2022/09/12 19:17:16.000.510,=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\010\Unit2.pas</Transaction>
+    <Transaction>2022/09/12 19:17:50.000.183,C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\010\UCalculadora.pas=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\010\Unit2.pas</Transaction>
+    <Transaction>2022/09/12 19:18:35.000.045,C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\ufrmDebugger.dfm=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\Debugger.dfm</Transaction>
+    <Transaction>2022/09/12 19:18:35.000.045,C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\ufrmDebugger.pas=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\Debugger.pas</Transaction>
+    <Transaction>2022/09/12 19:27:41.000.033,=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\010\Unit2.pas</Transaction>
+    <Transaction>2022/09/12 19:28:10.000.993,C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\010\ufrmDebugger.pas=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\ufrmDebugger.pas</Transaction>
+    <Transaction>2022/09/12 19:28:10.000.993,C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\010\ufrmDebugger.dfm=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger\ufrmDebugger.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

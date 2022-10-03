@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/23 18:17:08.000.340,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/23 18:45:58.000.236,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicios 08 a 12 - Converssao, Rendimento, Prestacao, Acrecimo e Somador\UfrmPrincipal.dfm</Transaction>
+    <Transaction>2022/09/23 18:45:58.000.236,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicios 08 a 12 - Converssao, Rendimento, Prestacao, Acrecimo e Somador\UfrmPrincipal.pas</Transaction>
+    <Transaction>2022/09/23 18:46:21.000.237,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicios 08 a 12 - Converssao, Rendimento, Prestacao, Acrecimo e Somador\Exercicios_08_a_12.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

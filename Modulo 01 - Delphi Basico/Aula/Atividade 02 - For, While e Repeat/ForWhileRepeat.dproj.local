@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/14 21:37:14.000.046,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/14 21:37:51.000.440,C:\Users\andersoncorrea\Desktop\Meus Projetos\Exercicio 02 - For, While e Repeat\UfrmPrincipal.pas=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/14 21:37:51.000.440,C:\Users\andersoncorrea\Desktop\Meus Projetos\Exercicio 02 - For, While e Repeat\UfrmPrincipal.dfm=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/09/14 21:38:07.000.800,C:\Users\andersoncorrea\Desktop\Meus Projetos\Exercicio 02 - For, While e Repeat\ForWhileRepeat.dproj=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

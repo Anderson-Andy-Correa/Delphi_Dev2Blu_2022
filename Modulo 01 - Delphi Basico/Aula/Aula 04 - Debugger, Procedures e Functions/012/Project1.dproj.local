@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2022/09/12 21:07:40.652,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/12 21:08:52.629,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/09/12 21:09:27.724,C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger, Procedures e Functions\012\Unit1.pas=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/12 21:09:27.724,C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger, Procedures e Functions\012\Unit1.dfm=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/09/12 21:09:31.749,C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 04 - Debugger, Procedures e Functions\012\Project1.dproj=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

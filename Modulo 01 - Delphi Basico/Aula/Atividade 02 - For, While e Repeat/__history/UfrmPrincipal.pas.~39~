@@ -1,0 +1,132 @@
+unit UfrmPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Vcl.Imaging.GIFImg;
+
+type
+  TFuncao = (tpFor, tpWhile, tpRepeat);
+  TfrmPrincipal = class(TForm)
+    lblTitulo: TLabel;
+    edtNumerador: TEdit;
+    edtDenominador: TEdit;
+    btnExecutar: TButton;
+    rdgComandos: TRadioGroup;
+    Image1: TImage;
+    procedure btnExecutarClick(Sender: TObject);
+  private
+    { Private declarations }
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+  Maior : Int64;
+  Menor : int64;
+implementation
+
+{$R *.dfm}
+
+procedure Compare(var Numerador, Denominador : Int64);
+  begin
+  {StrToInt(edtNumerador.text) > StrToInt(edtDenominador.text) }
+    if Numerador > Denominador then
+      begin
+        Maior := Numerador;
+        Menor := Denominador;
+      end
+    else
+      begin
+        Menor := Denominador;
+        Maior := Numerador;
+    end;
+  end;
+procedure BFor;
+  var
+    Soma: Int64;
+    I: Int64;
+  begin
+    Soma := 0;
+    for I := Menor to Maior do
+      begin
+        if I mod 2 = 0 then
+          Soma := Soma + I;
+      end;
+    ShowMessage('A soma de todos os valores pares entre ' + Menor.ToString +
+                ' e ' + Maior.ToString + ' é igual a ' + Soma.ToString)
+  end;
+
+procedure BWhile;
+  var
+    Soma: Int64;
+    I: Int64;
+  begin
+    Soma := 0;
+    I := 0;
+    while Maior > 0 do
+      begin
+        Maior := Maior - Menor;
+        I := I + 1;
+      end;
+    ShowMessage('Retirando ' + Menor.ToString +
+                ' real por dia, ao final de ' + I.ToString +
+                ' dias, o caixa ficará zerado.');
+  end;
+
+procedure BRepeat;
+  var
+    Soma: Int64;
+    I: Int64;
+  begin
+    Soma := 0;
+    I := 0;
+    repeat
+      Soma := Soma + Menor;
+      I := I + 1;
+    until Soma >= Maior;
+
+    ShowMessage('Economizando ' + Menor.ToString +
+                ' reais por dia, ao final de ' + I.ToString +
+                ' dias, conseguirás o montante de ' + Maior.ToString +
+                ' reais.');
+  end;
+
+procedure TfrmPrincipal.btnExecutarClick(Sender: TObject);
+  var
+    Numerador: Int64;
+    Denominador: Int64;
+  begin
+    Numerador := StrToInt64(edtNumerador.Text);
+    Denominador := StrToInt64(edtNumerador.Text);
+    try
+      Compare(Numerador, Denominador);
+      case TFuncao (rdgComandos.ItemIndex) of
+        tpFor:
+          begin
+            BFor;
+          end;
+
+        tpWhile:
+          begin
+            BWhile;
+          end;
+
+        tpRepeat:
+          begin
+            BRepeat;
+          end;
+
+        else
+          ShowMessage('Erro! Por favor selecione uma das opções de iteração.');
+      end;
+    except
+      ShowMessage('Erro!');
+    end;
+  end;
+
+end.

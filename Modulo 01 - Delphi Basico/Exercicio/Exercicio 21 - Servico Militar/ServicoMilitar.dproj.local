@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/26 20:15:28.000.580,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/26 20:36:35.000.465,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/27 19:52:37.000.803,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/27 20:46:16.000.658,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Lista de Exercicio 21 - Servico Militar\UfrmPrincipal.dfm=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/09/27 20:46:16.000.658,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Lista de Exercicio 21 - Servico Militar\UfrmPrincipal.pas=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/27 20:46:24.000.032,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Lista de Exercicio 21 - Servico Militar\ServicoMilitar.dproj=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

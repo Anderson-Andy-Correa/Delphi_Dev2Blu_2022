@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/19 20:06:28.000.460,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/19 20:09:21.000.110,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\UfrmPrincipal.dfm</Transaction>
+    <Transaction>2022/09/19 20:09:21.000.110,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\UfrmPrincipal.pas</Transaction>
+    <Transaction>2022/09/19 20:10:14.000.310,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\andersoncorrea\Desktop\Meus Projetos\Exercicio 03 - RTL, Format\RTLFormat.dproj</Transaction>
+    <Transaction>2022/09/19 20:10:48.000.700,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\UfrmPrincipal.pas=C:\Users\andersoncorrea\Desktop\Meus Projetos\Exercicio 03 - RTL, Format\UfrmPrincipal.pas</Transaction>
+    <Transaction>2022/09/19 20:10:48.000.700,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\UfrmPrincipal.dfm=C:\Users\andersoncorrea\Desktop\Meus Projetos\Exercicio 03 - RTL, Format\UfrmPrincipal.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,48 @@
+unit UfrmPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    btnCadastrar: TButton;
+    mmEntre10e150: TMemo;
+    mmNaoEntre10e150: TMemo;
+    lblEntre10e150: TLabel;
+    lblNaoEntre10e150: TLabel;
+    mmHistorico: TMemo;
+    lblHistorico: TLabel;
+    procedure btnCadastrarClick(Sender: TObject);
+  private
+{    Function NovoCadastro: String;}
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnCadastrarClick(Sender: TObject);
+  var
+    I: Integer;
+    xVezes: Integer;
+  begin
+    if not TryStrToInt(inputbox('Informar', 'Informar quantidade de cadastros', '0'), xVezes) then
+      begin
+        if xVezes > 0 then
+
+      for I := 1 to 8 do
+
+      end
+    else
+      raise Exception.Create('Informe apenas valores inteiros!');
+  end;
+
+end.

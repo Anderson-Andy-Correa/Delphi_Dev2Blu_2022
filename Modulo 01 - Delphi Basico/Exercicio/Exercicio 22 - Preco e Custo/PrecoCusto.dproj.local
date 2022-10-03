@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/26 19:36:20.000.889,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/26 19:37:36.000.131,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 17 - Numeros entre 10 e 150\UfrmPrincipal.pas=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/26 19:37:36.000.131,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 17 - Numeros entre 10 e 150\UfrmPrincipal.dfm=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/09/26 19:37:52.000.999,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 17 - Numeros entre 10 e 150\NumerosEntre10e150.dproj=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/09/26 20:40:31.000.062,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 18 - Maior Idade\MaiorIdade.dproj=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 18 - Maior Idade\NumerosEntre10e150.dproj</Transaction>
+    <Transaction>2022/09/26 21:20:54.000.782,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 19 - Nome e Sexo\HomensMulheres.dproj=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 19 - Nome e Sexo\MaiorIdade.dproj</Transaction>
+    <Transaction>2022/09/27 21:16:37.000.854,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Lista de Exercicio 22 - Preco e Custo\HomensMulheres.dproj=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Lista de Exercicio 22 - Preco e Custo\PrecoCusto.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/26 18:36:43.000.545,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/26 18:38:03.000.415,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 16 - Estado de Notas\UfrmPrincipal.dfm</Transaction>
+    <Transaction>2022/09/26 18:38:03.000.415,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 16 - Estado de Notas\UfrmPrincipal.pas</Transaction>
+    <Transaction>2022/09/26 18:38:12.000.945,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 16 - Estado de Notas\EstadoNotas.dproj</Transaction>
+    <Transaction>2022/09/26 18:48:31.000.830,=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 16 - Estado de Notas\Unit1.pas</Transaction>
+    <Transaction>2022/09/26 18:49:40.000.903,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 16 - Estado de Notas\Unit1.pas=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 16 - Estado de Notas\UCalculos.pas</Transaction>
+    <Transaction>2022/09/26 18:49:40.000.903,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 16 - Estado de Notas\Unit1.dfm=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 16 - Estado de Notas\UCalculos.dfm</Transaction>
+    <Transaction>2022/09/26 18:49:44.000.502,=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 16 - Estado de Notas\Unit1.pas</Transaction>
+    <Transaction>2022/09/26 18:49:54.000.828,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 16 - Estado de Notas\UCalculos.pas=</Transaction>
+    <Transaction>2022/09/26 18:50:37.000.474,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 16 - Estado de Notas\Unit1.pas=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Lista de Exercicio 16 - Estado de Notas\UCalculos.pas</Transaction>
+  </Transactions>
+</BorlandProject>

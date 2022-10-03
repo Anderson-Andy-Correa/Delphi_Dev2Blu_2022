@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/13 21:20:26.000.370,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/13 21:21:41.000.803,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 05 - Array e Records\013\ArraysRecords.dfm</Transaction>
+    <Transaction>2022/09/13 21:21:41.000.803,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 05 - Array e Records\013\ArraysRecords.pas</Transaction>
+    <Transaction>2022/09/13 21:38:24.000.103,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 05 - Array e Records\013\Project13.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

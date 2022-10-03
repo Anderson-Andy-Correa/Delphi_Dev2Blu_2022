@@ -1,0 +1,53 @@
+unit UfrmPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    edtPrimeiraNota: TEdit;
+    edtSegundaNota: TEdit;
+    edtTerceiraNota: TEdit;
+    edtMateria: TEdit;
+    btnMedia: TButton;
+    mmHistorico: TMemo;
+    procedure btnMediaClick(Sender: TObject);
+  private
+    function CalcularMedia: String;
+    procedure LimparHistorico;
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnMediaClick(Sender: TObject);
+  begin
+    try
+      mmHistorico.Lines.Add(CalcularMedia);
+    except
+      mmHistorico.Lines.Add('Erro ao inserir as Notas!');
+    end;
+  end;
+
+function TfrmPrincipal.CalcularMedia: String;
+  begin
+    Result := ((StrToFloat(edtprimeiraNota.text) +
+               StrToFloat(edtSegundaNota.text) +
+               StrToFloat(edtTerceiraNota.text))/3).ToString;
+  end;
+
+procedure TfrmPrincipal.LimparHistorico;
+  begin
+
+  end;
+
+end.

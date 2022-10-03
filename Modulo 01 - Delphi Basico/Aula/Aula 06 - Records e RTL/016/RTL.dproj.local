@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/14 19:26:19.000.587,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/14 19:26:32.000.793,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 06 - Records e RTL\016\RTL.dfm</Transaction>
+    <Transaction>2022/09/14 19:26:32.000.793,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 06 - Records e RTL\016\RTL.pas</Transaction>
+    <Transaction>2022/09/14 19:27:34.000.730,C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 06 - Records e RTL\016\RTL.dfm=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 06 - Records e RTL\016\UfrmRTL.dfm</Transaction>
+    <Transaction>2022/09/14 19:27:34.000.730,C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 06 - Records e RTL\016\RTL.pas=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 06 - Records e RTL\016\UfrmRTL.pas</Transaction>
+    <Transaction>2022/09/14 19:27:44.000.432,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\andersoncorrea\Desktop\Meus Projetos\Aula 06 - Records e RTL\016\RTL.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,28 @@
+unit ufrmDebugger;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TfrmDebugger = class(TForm)
+    mmCmdEsquerda: TMemo;
+    mmCmdDireita: TMemo;
+    lblTitulo: TLabel;
+    btnProcessar: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmDebugger: TfrmDebugger;
+
+implementation
+
+{$R *.dfm}
+
+end.

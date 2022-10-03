@@ -1,0 +1,40 @@
+program Project1;
+
+{$APPTYPE CONSOLE}
+
+{$R *.res}
+
+uses
+  System.SysUtils;
+
+var
+
+xEntrada: String;
+xMeuNome: String;
+xMinhaIdade: Byte;
+xCasado: Boolean;
+xCotacaoDolar: Currency;
+
+begin
+
+  try
+
+    xMeuNome      := 'Anderson';
+    xMinhaIdade   := 24;
+    xCasado       := False;
+    xCotacaoDolar := 5.25;
+
+    Writeln ('Meu nome é: ' + xMeuNome);
+    Writeln ('Minha idade é ' + InttoStr(xMinhaIdade));
+    Writeln ('Sou Casado: ' + BoolToStr(xCasado));
+    Writeln ('Cotação do Dólar: ' + FloatToStr(xCotacaoDolar));
+
+    Readln(xEntrada)
+
+  except
+
+    on E: Exception do
+      Writeln(E.ClassName, ': ', E.Message);
+  end;
+
+end.

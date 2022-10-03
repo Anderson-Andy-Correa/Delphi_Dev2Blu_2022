@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/21 21:15:40.000.144,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/21 21:22:42.000.590,C:\Users\andersoncorrea\Desktop\Meus Projetos\Lista de Exercicio 07 - Conversão Temperatura\UfrmPrincipal.dfm=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/09/21 21:22:42.000.590,C:\Users\andersoncorrea\Desktop\Meus Projetos\Lista de Exercicio 07 - Conversão Temperatura\UfrmPrincipal.pas=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/21 21:22:56.000.787,C:\Users\andersoncorrea\Desktop\Meus Projetos\Lista de Exercicio 07 - Conversão Temperatura\ConversaoTemperatura.dproj=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

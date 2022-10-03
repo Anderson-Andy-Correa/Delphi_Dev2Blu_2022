@@ -1,0 +1,16 @@
+﻿[]
+Coordinates=384,1,54,58
+Visible=True
+
+[edtDigito]
+Coordinates=84,78,66,58
+
+[lblTitulo]
+Coordinates=138,78,60,58
+
+[btnTestar]
+Coordinates=10,10,69,58
+
+[lblResposta]
+Coordinates=201,78,73,58
+

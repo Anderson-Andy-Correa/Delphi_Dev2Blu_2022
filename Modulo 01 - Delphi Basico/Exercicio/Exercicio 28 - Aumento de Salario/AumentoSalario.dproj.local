@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/26 20:15:28.000.580,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/26 20:36:35.000.465,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/27 21:14:00.000.925,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/28 19:42:24.000.243,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/30 20:22:36.000.618,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/30 20:28:12.000.587,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Exercicio 28 - Aumento de Salario\UfrmPrincipal.dfm</Transaction>
+    <Transaction>2022/09/30 20:28:12.000.587,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Exercicio 28 - Aumento de Salario\UfrmPrincipal.pas</Transaction>
+    <Transaction>2022/09/30 20:28:22.000.981,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Exercicio 28 - Aumento de Salario\AumentoSalario.dproj</Transaction>
+    <Transaction>2022/09/30 20:29:27.000.940,=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Exercicio 28 - Aumento de Salario\Unit1.pas</Transaction>
+    <Transaction>2022/09/30 20:30:02.000.604,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Exercicio 28 - Aumento de Salario\Unit1.dfm=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Exercicio 28 - Aumento de Salario\UFuncionarios.dfm</Transaction>
+    <Transaction>2022/09/30 20:30:02.000.604,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Exercicio 28 - Aumento de Salario\Unit1.pas=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Exercicio 28 - Aumento de Salario\UFuncionarios.pas</Transaction>
+    <Transaction>2022/09/30 21:22:56.000.144,=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Exercicio 28 - Aumento de Salario\Unit1.pas</Transaction>
+    <Transaction>2022/09/30 21:23:06.000.738,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Exercicio 28 - Aumento de Salario\Unit1.pas=C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 01 - Delphi Basico\Exercicio\Exercicio 28 - Aumento de Salario\UMetodos.pas</Transaction>
+  </Transactions>
+</BorlandProject>
