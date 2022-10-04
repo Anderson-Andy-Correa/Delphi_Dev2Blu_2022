@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
-  TTipoCliente = (tpResidencia, tpComercio, tpIndustria);
+  TTipoCliente = (tpResidencia, tpComercio, tpIndustria, tpFazenda);
   TfrmPrincipal = class(TForm)
     lblTitulo: TLabel;
     btnProcessar: TButton;
@@ -20,6 +20,7 @@ type
     Function VerificarNumero: Boolean;
     Function ConverterNumero (const aValor: String): Currency;
     Function CasoTipo(const aTipo: word): Double;
+    function Desconto : Currency;
 
   public
     { Public declarations }
@@ -36,12 +37,22 @@ procedure TfrmPrincipal.btnProcessarClick(Sender: TObject);
   var
     xMultiplo: Double;
     xValorFinal: Currency;
+    xDesconto: Double;
   begin
     if VerificarNumero and VerificarTipo then
       begin
         xMultiplo:= CasoTipo(rdgTipo.ItemIndex);
-        xValorFinal := ConverterNumero(edtValor.Text) * xMultiplo;
-        ShowMessage(Format('A conta de luz desse cliente vai custar R$%n', [xValorFinal]));
+        xDesconto := Desconto;
+        if (ConverterNumero(edtValor.Text) * xMultiplo) > xDesconto then
+          begin
+            xValorFinal := ConverterNumero(edtValor.Text) * xMultiplo - xDesconto;
+            ShowMessage(Format('A conta de luz desse cliente vai custar R$%n ', [xValorFinal]));
+          end
+        else
+          begin
+            xValorFinal := ConverterNumero(edtValor.Text) * xMultiplo;
+            ShowMessage(Format('A conta de luz desse cliente vai custaria R$%n. Mas, valor do desconto de %n é maior que a fatura. Então, na próxima fatura, a fatura terá um desconto de %n.', [xValorFinal, xDesconto, (xDesconto - xValorFinal)]));
+          end;
       end;
   end;
 
@@ -77,6 +88,8 @@ function TfrmPrincipal.CasoTipo(const aTipo: word): Double;
             Result:= 0.48;
           tpIndustria:
             Result:= 1.29;
+          tpFazenda:
+            Result := 2.18;
         end;
   end;
 
@@ -88,6 +101,28 @@ function TfrmPrincipal.ConverterNumero(const aValor: String): Currency;
       end;
 
   end;
+
+function TfrmPrincipal.Desconto: Currency;
+var
+  xdesconto : Currency;
+
+begin
+  xDesconto := 0;
+  Repeat
+    if (TryStrToCurr(inputbox('Desconto a aplicar',
+    'Informe o valor do desconto a aplicar, se houver', '0'), xDesconto))
+    and (xDesconto >= 0) then
+      begin
+        result := xDesconto;
+        break;
+      end
+     else
+      begin
+        ShowMessage('Informe um valor válido!');
+      end;
+  Until xDesconto > 0;
+
+end;
 
 function TfrmPrincipal.VerificarTipo: Boolean;
   begin
