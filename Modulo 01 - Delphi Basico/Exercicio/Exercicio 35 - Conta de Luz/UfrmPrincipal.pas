@@ -49,9 +49,14 @@ function TfrmPrincipal.VerificarNumero: Boolean;
   var
     xValor: Currency;
   begin
-    if TryStrToCurr(edtValor.Text, xValor) then
+    Result := False;
+    if (TryStrToCurr(edtValor.Text, xValor)) and (xValor > 0)then
       begin
         Result := True
+      end
+    else if xValor <= 0 then
+      begin
+        ShowMessage('O valor não pode ser inferior ou igual a 0!');
       end
     else if edtValor.Text = '' then
       begin
@@ -59,7 +64,6 @@ function TfrmPrincipal.VerificarNumero: Boolean;
       end
     else
       begin
-        Result:= False;
         ShowMessage('Por favor, informe apenas número reais!');
       end;
   end;

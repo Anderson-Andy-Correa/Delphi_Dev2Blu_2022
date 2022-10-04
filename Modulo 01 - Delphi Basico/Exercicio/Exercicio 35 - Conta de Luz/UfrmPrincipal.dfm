@@ -31,8 +31,7 @@ object frmPrincipal: TfrmPrincipal
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
-    ExplicitLeft = 0
-    ExplicitWidth = 401
+    ExplicitWidth = 300
   end
   object btnProcessar: TButton
     Left = 250
@@ -62,7 +61,7 @@ object frmPrincipal: TfrmPrincipal
     Left = 250
     Top = 80
     Width = 120
-    Height = 20
+    Height = 21
     Hint = 'Digite o valor do Quilowatt/hora'
     Alignment = taCenter
     TabOrder = 2
