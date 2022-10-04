@@ -50,9 +50,10 @@ object frmPrincipal: TfrmPrincipal
     Caption = 'Tipo de Cliente'
     Color = 13682874
     Items.Strings = (
-      'Recid'#234'ncia'
+      'Resid'#234'ncia'
       'Com'#233'rcio'
-      'Ind'#250'stria')
+      'Ind'#250'stria'
+      'Fazenda')
     ParentBackground = False
     ParentColor = False
     TabOrder = 1
