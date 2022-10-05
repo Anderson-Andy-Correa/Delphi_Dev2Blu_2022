@@ -83,13 +83,13 @@ function TfrmPrincipal.CasoTipo(const aTipo: word): Double;
   begin
     case TTipoCliente(aTipo) of
           tpResidencia:
-            Result:= 0.60;
+            Result:= 0.80;
           tpComercio:
-            Result:= 0.48;
+            Result:= 0.68;
           tpIndustria:
-            Result:= 1.29;
+            Result:= 1.49;
           tpFazenda:
-            Result := 2.18;
+            Result := 3.18;
         end;
   end;
 
