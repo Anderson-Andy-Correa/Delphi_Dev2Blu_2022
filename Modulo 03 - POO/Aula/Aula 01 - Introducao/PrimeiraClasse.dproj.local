@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/26 20:15:28.000.580,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/26 20:36:35.000.465,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/27 21:14:00.000.925,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/28 19:42:24.000.243,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/05 19:44:09.670,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/05 19:44:44.447,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Unit1.pas=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/05 19:44:44.447,C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Unit1.dfm=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/10/05 19:45:19.849,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 03 - POO\Aula\Aula 01 - Introducao\UfrmPrincipal.dfm=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Unit1.dfm</Transaction>
+    <Transaction>2022/10/05 19:45:19.849,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 03 - POO\Aula\Aula 01 - Introducao\UfrmPrincipal.pas=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Unit1.pas</Transaction>
+    <Transaction>2022/10/05 19:45:44.898,C:\Users\andersoncorrea\Desktop\Meus Projetos\Modulo 03 - POO\Aula\Aula 01 - Introducao\PrimeiraClasse.dproj=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
