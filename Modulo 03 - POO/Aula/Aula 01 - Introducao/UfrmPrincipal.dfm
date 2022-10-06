@@ -29,8 +29,7 @@ object frmPrincipal: TfrmPrincipal
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
-    ExplicitLeft = -2
-    ExplicitTop = 200
+    ExplicitWidth = 82
   end
   object lblTituloY: TLabel
     Left = 160
@@ -99,8 +98,7 @@ object frmPrincipal: TfrmPrincipal
     Alignment = taCenter
     TabOrder = 0
     TextHint = 'Valor '#39'a'#39
-    ExplicitLeft = 50
-    ExplicitTop = 77
+    ExplicitHeight = 21
   end
   object edtValorBX: TEdit
     AlignWithMargins = True
@@ -115,8 +113,7 @@ object frmPrincipal: TfrmPrincipal
     Alignment = taCenter
     TabOrder = 1
     TextHint = 'Valor '#39'b'#39
-    ExplicitLeft = 163
-    ExplicitTop = 77
+    ExplicitHeight = 21
   end
   object edtValorCX: TEdit
     AlignWithMargins = True
@@ -131,15 +128,13 @@ object frmPrincipal: TfrmPrincipal
     Alignment = taCenter
     TabOrder = 2
     TextHint = 'Valor '#39'c'#39
-    ExplicitLeft = 163
-    ExplicitTop = 87
     ExplicitHeight = 21
   end
   object edtValorAY: TEdit
     Left = 35
     Top = 115
     Width = 100
-    Height = 22
+    Height = 21
     Margins.Left = 35
     Margins.Top = 10
     Margins.Bottom = 235
@@ -152,7 +147,7 @@ object frmPrincipal: TfrmPrincipal
     Left = 148
     Top = 115
     Width = 100
-    Height = 22
+    Height = 21
     Margins.Left = 10
     Margins.Top = 10
     Margins.Bottom = 235
@@ -165,7 +160,7 @@ object frmPrincipal: TfrmPrincipal
     Left = 261
     Top = 115
     Width = 100
-    Height = 22
+    Height = 21
     Margins.Left = 10
     Margins.Top = 10
     Margins.Bottom = 235
@@ -190,5 +185,6 @@ object frmPrincipal: TfrmPrincipal
     Height = 25
     Caption = 'Calcular OOP'
     TabOrder = 7
+    OnClick = btnCalcularOOPClick
   end
 end

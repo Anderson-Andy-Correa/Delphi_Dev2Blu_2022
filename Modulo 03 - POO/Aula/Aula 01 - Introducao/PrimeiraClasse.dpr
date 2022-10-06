@@ -2,7 +2,8 @@ program PrimeiraClasse;
 
 uses
   Vcl.Forms,
-  UfrmPrincipal in 'UfrmPrincipal.pas' {frmPrincipal};
+  UfrmPrincipal in 'UfrmPrincipal.pas' {frmPrincipal},
+  UTriangulo in 'UTriangulo.pas';
 
 {$R *.res}
 
