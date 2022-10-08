@@ -25,7 +25,7 @@ type
     procedure btnCalcularOOPClick(Sender: TObject);
   private
     { Private declarations }
-    Function CalcularArea(const aValorA, aValorB, aValorC: Double): Double; overload;
+    {Function CalcularArea(const aValorA, aValorB, aValorC: Double): Double; overload;}
     Function CalcularArea(const aValorA, aValorB, aValorC: String): String; overload;
     Procedure CalcularAreasOOP;
   public
@@ -52,7 +52,7 @@ function TfrmPrincipal.CalcularArea(const aValorA, aValorB,
     xB := StrToFloat(aValorB);
     xC := StrToFloat(aValorC);
     xP := (xA + xB + xC) / 2;
-    Result := Sqrt((xP * (xP - xA) * (xP - xB) * (xP - xC))).ToString;
+    Result := Sqrt(xP * (xP - xA) * (xP - xB) * (xP - xC)).ToString;
   end;
 
 procedure TfrmPrincipal.CalcularAreasOOP;
@@ -65,26 +65,39 @@ procedure TfrmPrincipal.CalcularAreasOOP;
 
     try
       //Primeiro Triagnulo
-      xTrianguloX.a := StrToFloatDef(edtValorAX.Text, 0);
-      xTrianguloX.b := StrToFloatDef(edtValorBX.Text, 0);
-      xTrianguloX.c := StrToFloatDef(edtValorCX.Text, 0);
+      xTrianguloX.A := StrToFloatDef(edtValorAX.Text, 0);
+      xTrianguloX.B := StrToFloatDef(edtValorBX.Text, 0);
+      xTrianguloX.C := StrToFloatDef(edtValorCX.Text, 0);
+
+      //xTrianguloX.D := 10; Não é possível
+
+      {ShowMessage(xTrianguloX.D.ToString); // Property Somente leitura
+      ShowMessage(xTrianguloX.A.ToString);}
 
       xAreaX := xTrianguloX.Area;
 
       //Segundo Triagnulo
-      xTrianguloY.a := StrToFloatDef(edtValorAY.Text, 0);
-      xTrianguloY.b := StrToFloatDef(edtValorBY.Text, 0);
-      xTrianguloY.c := StrToFloatDef(edtValorCY.Text, 0);
+      xTrianguloY.A := StrToFloatDef(edtValorAY.Text, 0);
+      xTrianguloY.B := StrToFloatDef(edtValorBY.Text, 0);
+      xTrianguloY.C := StrToFloatDef(edtValorCY.Text, 0);
 
-      xAreaX := xTrianguloY.Area;
+      xAreaY := xTrianguloY.Area;
 
-      lblAreaX.Caption := 'Triangulo X Área: ' + FormatFloat('0.00', xAreaX);
-      lblAreaY.Caption := 'Triangulo Y Área: ' + FormatFloat('0.00', xAreaX);
+      lblAreaX.Caption := 'Triângulo X Área: ' + FormatFloat('0.00', xAreaX);
+      lblAreaY.Caption := 'Triângulo Y Área: ' + FormatFloat('0.00', xAreaY);
 
       if xAreaX > xAreaY then
-        lblAreaMaior.Caption := 'A área do Triangulo X é maior.'
+        begin
+          lblAreaMaior.Caption := 'A área do Triângulo X é maior.'
+        end
+      else if xAreaY > xAreaX then
+        begin
+          lblAreaMaior.Caption := 'A área do Triângulo Y é maior.';
+        end
       else
-        lblAreaMaior.Caption := 'A área do Triangulo Y é maior.';
+        begin
+          lblAreaMaior.Caption := 'As áreas dos Triângulos são iguais.';
+        end;
 
     finally
       FreeAndNil(xTrianguloX);
@@ -100,17 +113,20 @@ procedure TfrmPrincipal.btnCalcularClick(Sender: TObject);
     lblAreaX.Caption := Format('Triângulo X Área: %n', [xAreaX]);
 
     xAreaY := StrToFloat(CalcularArea(edtValorAY.Text, edtValorBY.Text, edtValorCY.Text));
-    lblAreaY.Caption := Format('Triângulo X Área: %n', [xAreaY]);
+    lblAreaY.Caption := Format('Triângulo Y Área: %n', [xAreaY]);
 
     if xAreaX > xAreaY then
       begin
-        lblAreaMaior.Caption := 'A área do Triangulo X é maior.';
+        lblAreaMaior.Caption := 'A área do Triângulo X é maior.';
+      end
+    else if xAreaY > xAreaX then
+      begin
+        lblAreaMaior.Caption := 'A área do Triângulo Y é maior.';
       end
     else
       begin
-        lblAreaMaior.Caption := 'A área do Triangulo Y é maior.';
+        lblAreaMaior.Caption := 'As áreas dos Triângulos são iguais.';
       end;
-
   end;
 
 procedure TfrmPrincipal.btnCalcularOOPClick(Sender: TObject);
@@ -118,13 +134,13 @@ procedure TfrmPrincipal.btnCalcularOOPClick(Sender: TObject);
     CalcularAreasOOP;
   end;
 
-function TfrmPrincipal.CalcularArea(const aValorA, aValorB,
+{function TfrmPrincipal.CalcularArea(const aValorA, aValorB,
   aValorC: Double): Double;
   var
     xP: Double;
   begin
     xP := (aValorA + aValorB + aValorC) / 2;
-    Result := Sqrt((xP * (xP - aValorA) * (xP - aValorB) * (xP - aValorC)));
-  end;
+    Result := Sqrt(xP * (xP - aValorA) * (xP - aValorB) * (xP - aValorC));
+  end;}
 
 end.
