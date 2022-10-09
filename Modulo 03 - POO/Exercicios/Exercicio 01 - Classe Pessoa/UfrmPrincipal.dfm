@@ -1,9 +1,10 @@
 object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
+  BorderStyle = bsSingle
   Caption = 'Classe Pessoa'
-  ClientHeight = 281
-  ClientWidth = 418
+  ClientHeight = 260
+  ClientWidth = 200
   Color = 13873581
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,4 +14,94 @@ object frmPrincipal: TfrmPrincipal
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
+  object mmHistorico: TMemo
+    AlignWithMargins = True
+    Left = 20
+    Top = 158
+    Width = 160
+    Height = 89
+    Margins.Left = 20
+    Margins.Top = 10
+    Margins.Right = 20
+    Margins.Bottom = 50
+    Align = alTop
+    Alignment = taCenter
+    ReadOnly = True
+    TabOrder = 4
+    ExplicitLeft = 180
+    ExplicitTop = 160
+    ExplicitWidth = 185
+  end
+  object edtNome: TEdit
+    AlignWithMargins = True
+    Left = 20
+    Top = 15
+    Width = 160
+    Height = 21
+    Margins.Left = 20
+    Margins.Top = 15
+    Margins.Right = 20
+    Margins.Bottom = 5
+    Align = alTop
+    Alignment = taCenter
+    TabOrder = 0
+    TextHint = 'Nome...'
+    ExplicitLeft = 0
+    ExplicitTop = 0
+    ExplicitWidth = 367
+  end
+  object btnProcessar: TButton
+    AlignWithMargins = True
+    Left = 20
+    Top = 113
+    Width = 160
+    Height = 25
+    Margins.Left = 20
+    Margins.Top = 10
+    Margins.Right = 20
+    Margins.Bottom = 10
+    Align = alTop
+    Caption = 'Processar'
+    TabOrder = 3
+    OnClick = btnProcessarClick
+    ExplicitLeft = 240
+    ExplicitTop = 110
+    ExplicitWidth = 75
+  end
+  object edtAltura: TEdit
+    AlignWithMargins = True
+    Left = 20
+    Top = 77
+    Width = 160
+    Height = 21
+    Margins.Left = 20
+    Margins.Top = 5
+    Margins.Right = 20
+    Margins.Bottom = 5
+    Align = alTop
+    Alignment = taCenter
+    TabOrder = 2
+    TextHint = 'Altura...'
+    ExplicitLeft = 30
+    ExplicitTop = 30
+    ExplicitWidth = 170
+  end
+  object edtData: TEdit
+    AlignWithMargins = True
+    Left = 20
+    Top = 46
+    Width = 160
+    Height = 21
+    Margins.Left = 20
+    Margins.Top = 5
+    Margins.Right = 20
+    Margins.Bottom = 5
+    Align = alTop
+    Alignment = taCenter
+    TabOrder = 1
+    TextHint = 'Data de Nascimento...'
+    ExplicitLeft = 30
+    ExplicitTop = 30
+    ExplicitWidth = 170
+  end
 end
