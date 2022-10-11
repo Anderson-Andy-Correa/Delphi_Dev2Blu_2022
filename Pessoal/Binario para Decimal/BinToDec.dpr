@@ -11,22 +11,30 @@ var
   xAux, xFinal: String;
 begin
   try
-    xAux   := '';
-    xFinal := '';
-    Write('Digite um número em decimal para covnerter em binário: ');
-    xNum :=(xNum);
-    xInicial := xNum;
+    while True do
+      begin
+        xAux   := '';
+        xFinal := '';
+        Write('Digite um número em decimal para covnerter em binário (Use 0 para sair): ');
+        readln(xNum);
 
-    while xNum > 1 do
-      begin
-        xAux := xAux + (IntToStr(xNum mod 2));
-        xNum := xNum - (xNum div 2 * xNum);
+        xInicial := xNum;
+        if xInicial = 0 then
+          begin
+            break
+          end;
+
+        while xNum > 0 do
+          begin
+            xAux := xAux + (IntToStr(xNum mod 2));
+            xNum := xNum - (xNum div 2) - (xNum mod 2);
+          end;
+        for I := 0 to Length(xAux) - 1 do
+          begin
+            xFinal := xFinal + xAux[length(xAux) - I];
+          end;
+        WriteLn(Format('O valor inicial de %d em decimal é convertido para %s em binário.', [xInicial, xFinal]));
       end;
-    for I := 1 to Length(xAux) do
-      begin
-        xFinal := xFinal + xAux[length(xAux) - 1];
-      end;
-    WriteLn(Format('O valor inicial de %d em decimal é convertido para %d em binário.', [xInicial, xFinal]));
 
   except
     on E: Exception do
