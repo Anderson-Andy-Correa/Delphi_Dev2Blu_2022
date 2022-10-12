@@ -22,13 +22,17 @@ type
     lblNumConta: TLabel;
     lblTipoConta: TLabel;
     mmHistorico: TMemo;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnCriarContaClick(Sender: TObject);
     procedure btnSacarClick(Sender: TObject);
     procedure btnDepositarClick(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
     xConta: TConta;
+    procedure Atualizar;
+
+
+    procedure AlterarNome;
   public
     { Public declarations }
   end;
@@ -40,14 +44,24 @@ implementation
 
 {$R *.dfm}
 
+procedure TfrmPrincipal.AlterarNome;
+begin
+  Atualizar;
+end;
+
+procedure TfrmPrincipal.Atualizar;
+begin
+  lblNome.Caption       := 'Nome: ' + xConta.Nome;
+  lblSaldo.Caption      := 'Saldo: ' + CurrToStr(xConta.Saldo);
+  lblNumConta.Caption   := 'Número Conta: ' + xConta.NumeroConta;
+  lblTipoConta.Caption  := 'Tipo da Conta: ' + xConta.Tipo;
+end;
+
 procedure TfrmPrincipal.btnCriarContaClick(Sender: TObject);
   begin
     xConta := TConta.Create('999999', 'Anderson', 'CC', 1000);
 
-    lblNome.Caption       := 'Nome: ' + xConta.Nome;
-    lblSaldo.Caption      := 'Saldo: ' + CurrToStr(xConta.Saldo);
-    lblNumConta.Caption   := 'Número Conta: ' + xConta.NumeroConta;
-    lblTipoConta.Caption  := 'Tipo da Conta: ' + xConta.Tipo;
+    Atualizar;
 
     btnCriarConta.Enabled := False;
     btnSacar.Enabled := True;
@@ -59,11 +73,13 @@ procedure TfrmPrincipal.btnCriarContaClick(Sender: TObject);
 procedure TfrmPrincipal.btnDepositarClick(Sender: TObject);
   begin
     xConta.Depositar;
+    Atualizar;
   end;
 
 procedure TfrmPrincipal.btnSacarClick(Sender: TObject);
   begin
     mmhistorico.Lines := xConta.Sacar;
+    Atualizar;
 
   end;
 

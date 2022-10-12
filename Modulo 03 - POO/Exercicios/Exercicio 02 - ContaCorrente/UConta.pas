@@ -68,7 +68,8 @@ Function TConta.QtdNotas(aValor: Integer): TStrings;
     xAux : Integer;
     xTexto: TStrings;
   begin
-    xTexto.Append(Format('No valor de %d, pegue as seguintes notas: ', [aValor]));
+    xTexto := TStringList.Create;
+    xTexto.Add(Format('No valor de %d, pegue as seguintes notas: ', [aValor]));
     while aValor > 0 do
       begin
         case aValor of
@@ -76,50 +77,50 @@ Function TConta.QtdNotas(aValor: Integer): TStrings;
             begin
               xAux := aValor div 1;
               xTexto.Add(Format('%d nota de 1 Real', [xAux]));
-              aValor := aValor - xAux;
+              aValor := aValor - xAux * 1;
             end;
           2..4:
             begin
               xAux := aValor div 2;
               xTexto.Add(Format('%d nota(s) de 2 Reais', [xAux]));
-              aValor := aValor - xAux;
+              aValor := aValor - xAux * 2;
             end;
           5..9:
             begin
               xAux := aValor div 5;
               xTexto.Add(Format('%d nota(s) de 5 Reais', [xAux]));
-              aValor := aValor - xAux;
+              aValor := aValor - xAux * 5;
             end;
           10..19:
             begin
               xAux := aValor div 10;
               xTexto.Add(Format('%d nota(s) de 10 Reais', [xAux]));
-              aValor := aValor - xAux;
+              aValor := aValor - xAux * 10;
             end;
           20..49:
             begin
               xAux := aValor div 20;
               xTexto.Add(Format('%d nota(s) de 20 Reais', [xAux]));
-              aValor := aValor - xAux;
+              aValor := aValor - xAux * 20;
             end;
           50..99:
             begin
               xAux := aValor div 50;
               xTexto.Add(Format('%d nota(s) de 50 Reais', [xAux]));
-              aValor := aValor - xAux;
+              aValor := aValor - xAux * 50;
             end;
           100..199:
             begin
               xAux := aValor div 100;
               xTexto.Add(Format('%d nota(s) de 100 Reais', [xAux]));
-              aValor := aValor - xAux;
+              aValor := aValor - xAux * 100;
             end;
           else
             begin
               xAux := aValor div 200;
               xTexto.Add(Format('%d nota(s) de 200 Reais', [xAux]));
-              aValor := aValor - xAux;
-            end;                   
+              aValor := aValor - xAux  * 200;
+            end;
         end;
       end;
     Result := xTexto;

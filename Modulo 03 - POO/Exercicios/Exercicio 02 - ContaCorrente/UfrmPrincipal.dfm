@@ -16,40 +16,40 @@ object frmPrincipal: TfrmPrincipal
   PixelsPerInch = 96
   TextHeight = 13
   object lblNome: TLabel
-    Left = 50
-    Top = 150
-    Width = 3
+    Left = 59
+    Top = 85
+    Width = 41
     Height = 13
     Color = 16245495
     ParentColor = False
   end
   object lblSaldo: TLabel
-    Left = 50
-    Top = 180
-    Width = 3
+    Left = 320
+    Top = 85
+    Width = 37
     Height = 13
     Color = 16179447
     ParentColor = False
   end
   object lblNumConta: TLabel
-    Left = 50
-    Top = 211
-    Width = 3
+    Left = 173
+    Top = 85
+    Width = 31
     Height = 13
     Color = 16179447
     ParentColor = False
   end
   object lblTipoConta: TLabel
     Left = 50
-    Top = 230
-    Width = 3
+    Top = 104
+    Width = 75
     Height = 13
     Color = 16179447
     ParentColor = False
   end
   object btnCriarConta: TButton
-    Left = 120
-    Top = 80
+    Left = 50
+    Top = 40
     Width = 75
     Height = 25
     Caption = 'Criar Conta'
@@ -57,8 +57,8 @@ object frmPrincipal: TfrmPrincipal
     OnClick = btnCriarContaClick
   end
   object btnSacar: TButton
-    Left = 201
-    Top = 80
+    Left = 161
+    Top = 40
     Width = 75
     Height = 25
     Caption = 'Sacar'
@@ -69,7 +69,7 @@ object frmPrincipal: TfrmPrincipal
   end
   object btnDepositar: TButton
     Left = 282
-    Top = 80
+    Top = 40
     Width = 75
     Height = 25
     Caption = 'Depositar'
@@ -79,10 +79,13 @@ object frmPrincipal: TfrmPrincipal
     OnClick = btnDepositarClick
   end
   object mmHistorico: TMemo
-    Left = 150
-    Top = 147
-    Width = 185
-    Height = 89
+    Left = 50
+    Top = 134
+    Width = 307
+    Height = 139
+    Alignment = taCenter
+    ReadOnly = True
+    ScrollBars = ssVertical
     TabOrder = 3
   end
   object MainMenu1: TMainMenu
