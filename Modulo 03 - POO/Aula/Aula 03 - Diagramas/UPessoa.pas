@@ -19,6 +19,8 @@ Type
       property  Nome:     String read GetNome      write SetNome;
       property  Endereco: String read GetFEndereco write SetFEndereco;
       Procedure Gravar(aPessoa: TPessoa);
+      Function ValidarDocumento(Documetno: String): Boolean; virtual; abstract;
+      function imprimeDocumento(Documento: string): string; virtual; abstract;
   End;
 
   TPessoaFisica = Class(TPessoa)
@@ -34,21 +36,23 @@ Type
     public
       property CPF:        String read GetCPF   write SetCPF;
       property Idade:      Byte   read GetIdade write SetIdade;
-      Function ValidarCPF(CPF: String): Boolean;
+      Function ValidarDocumento(Documento: String): Boolean; override;
+      function imprimeDocumento(Documento: string): string; override;
   End;
 
   TPessoaJuridica = Class(TPessoa)
     private
       FCNPJ: String;
       FIE:   String;
-    procedure SetCNPJ(const Value: String);
-    procedure SetIE(const Value: String);
-    function GetCNPJ: String;
-    function GetIE: String;
+      procedure SetCNPJ(const Value: String);
+      procedure SetIE(const Value: String);
+      function GetCNPJ: String;
+      function GetIE: String;
     public
       property CNPJ:        String read GetCNPJ write SetCNPJ;
       property IE:          String read GetIE   write SetIE;
-      Function ValidarCNPJ(CNPJ: String): Boolean;
+      Function ValidarDocumento(Documento: String): Boolean; override;
+      function imprimeDocumento(Documento: string): string; override;
   End;
 
 implementation
@@ -75,7 +79,7 @@ procedure TPessoa.SetNome(const Value: String);
     FNome := Value;
   end;
 
-  procedure TPessoa.Gravar(aPessoa: TPessoa);
+procedure TPessoa.Gravar(aPessoa: TPessoa);
   begin
 
   end;
@@ -92,6 +96,12 @@ function TPessoaFisica.GetIdade: Byte;
     Result := FIdade;
   end;
 
+function TPessoaFisica.imprimeDocumento(Documento: string): string;
+  begin
+    imprimeDocumento := copy(Documento, 1, 3) + '.' + copy(Documento, 4, 3) + '.' +
+    copy(Documento, 7, 3) + '-' + copy(Documento, 10, 2);
+end;
+
 procedure TPessoaFisica.SetCPF(const Value: String);
   begin
     FCPF := Value;
@@ -102,17 +112,17 @@ procedure TPessoaFisica.SetIdade(const Value: Byte);
     FIdade := Value;
   end;
 
-function TPessoaFisica.ValidarCPF(CPF: String): Boolean;
+function TPessoaFisica.ValidarDocumento(Documento: String): Boolean;
   var  dig10, dig11: string;
     s, i, r, peso: integer;
   begin
   // length - retorna o tamanho da string (CPF é um número formado por 11 dígitos)
-    if ((CPF = '00000000000') or (CPF = '11111111111') or
-        (CPF = '22222222222') or (CPF = '33333333333') or
-        (CPF = '44444444444') or (CPF = '55555555555') or
-        (CPF = '66666666666') or (CPF = '77777777777') or
-        (CPF = '88888888888') or (CPF = '99999999999') or
-        (length(CPF) <> 11))
+    if ((Documento = '00000000000') or (Documento = '11111111111') or
+        (Documento = '22222222222') or (Documento = '33333333333') or
+        (Documento = '44444444444') or (Documento = '55555555555') or
+        (Documento = '66666666666') or (Documento = '77777777777') or
+        (Documento = '88888888888') or (Documento = '99999999999') or
+        (length(Documento) <> 11))
        then begin
                 Result := false;
                 exit;
@@ -126,7 +136,7 @@ function TPessoaFisica.ValidarCPF(CPF: String): Boolean;
       for i := 1 to 9 do
       begin
   // StrToInt converte o i-ésimo caractere do CPF em um número
-        s := s + (StrToInt(CPF[i]) * peso);
+        s := s + (StrToInt(Documento[i]) * peso);
         peso := peso - 1;
       end;
       r := 11 - (s mod 11);
@@ -139,7 +149,7 @@ function TPessoaFisica.ValidarCPF(CPF: String): Boolean;
       peso := 11;
       for i := 1 to 10 do
       begin
-        s := s + (StrToInt(CPF[i]) * peso);
+        s := s + (StrToInt(Documento[i]) * peso);
         peso := peso - 1;
       end;
       r := 11 - (s mod 11);
@@ -148,7 +158,7 @@ function TPessoaFisica.ValidarCPF(CPF: String): Boolean;
       else str(r:1, dig11);
 
   { Verifica se os digitos calculados conferem com os digitos informados. }
-      if ((dig10 = CPF[10]) and (dig11 = CPF[11]))
+      if ((dig10 = Documento[10]) and (dig11 = Documento[11]))
          then Result := true
       else Result := false;
     except
@@ -168,6 +178,13 @@ function TPessoaJuridica.GetIE: String;
     Result := FIE;
   end;
 
+function TPessoaJuridica.ImprimeDocumento(Documento: string): string;
+  begin
+    { máscara do CNPJ: 99.999.999.9999-99 }
+    imprimeDocumento := copy(Documento, 1, 2) + '.' + copy(Documento, 3, 3) + '.' +
+    copy(Documento, 6, 3) + '.' + copy(Documento, 9, 4) + '-' + copy(Documento, 13, 2);
+  end;
+
 procedure TPessoaJuridica.SetCNPJ(const Value: String);
   begin
     FCNPJ := Value;
@@ -178,17 +195,17 @@ procedure TPessoaJuridica.SetIE(const Value: String);
     FIE := Value;
   end;
 
-function TPessoaJuridica.ValidarCNPJ(CNPJ: String): Boolean;
+function TPessoaJuridica.ValidarDocumento(Documento: String): Boolean;
   var   dig13, dig14: string;
     sm, i, r, peso: integer;
   begin
   // length - retorna o tamanho da string do CNPJ (CNPJ é um número formado por 14 dígitos)
-    if ((CNPJ = '00000000000000') or (CNPJ = '11111111111111') or
-        (CNPJ = '22222222222222') or (CNPJ = '33333333333333') or
-        (CNPJ = '44444444444444') or (CNPJ = '55555555555555') or
-        (CNPJ = '66666666666666') or (CNPJ = '77777777777777') or
-        (CNPJ = '88888888888888') or (CNPJ = '99999999999999') or
-        (length(CNPJ) <> 14))
+    if ((Documento = '00000000000000') or (Documento = '11111111111111') or
+        (Documento = '22222222222222') or (Documento = '33333333333333') or
+        (Documento = '44444444444444') or (Documento = '55555555555555') or
+        (Documento = '66666666666666') or (Documento = '77777777777777') or
+        (Documento = '88888888888888') or (Documento = '99999999999999') or
+        (length(Documento) <> 14))
        then begin
               Result := false;
               exit;
@@ -202,7 +219,7 @@ function TPessoaJuridica.ValidarCNPJ(CNPJ: String): Boolean;
       for i := 12 downto 1 do
       begin
   // StrToInt converte o i-ésimo caractere do CNPJ em um número
-        sm := sm + (StrToInt(CNPJ[i]) * peso);
+        sm := sm + (StrToInt(Documento[i]) * peso);
         peso := peso + 1;
         if (peso = 10)
            then peso := 2;
@@ -217,7 +234,7 @@ function TPessoaJuridica.ValidarCNPJ(CNPJ: String): Boolean;
       peso := 2;
       for i := 13 downto 1 do
       begin
-        sm := sm + (StrToInt(CNPJ[i]) * peso);
+        sm := sm + (StrToInt(Documento[i]) * peso);
         peso := peso + 1;
         if (peso = 10)
            then peso := 2;
@@ -228,11 +245,11 @@ function TPessoaJuridica.ValidarCNPJ(CNPJ: String): Boolean;
       else str((11-r):1, dig14);
 
   { Verifica se os digitos calculados conferem com os digitos informados. }
-      if ((dig13 = CNPJ[13]) and (dig14 = CNPJ[14]))
+      if ((dig13 = Documento[13]) and (dig14 = Documento[14]))
          then Result := true
       else Result := false;
     except
       Result := false
     end;
-end;
+  end;
 end.
