@@ -3,7 +3,7 @@ unit UBomba;
 interface
 
 Type
-  TTipo = (tpGasolina, tpDiesel, tpAlcool);
+  TTipo = (tpGasolinaComum, tpGasolinaAdtivada, tpDiesel, tpAlcool);
   TBomba = class
     private
       FTipoCombustivel : String;
@@ -41,14 +41,15 @@ function TBomba.AbastecerPorLitro(aLitro: String): String;
   begin
     if (QtdCombustivel > 0) then
       begin
-        if (TryStrToFloat(aLitro, xLitro)) and (xLitro > 0) then
+        if (TryStrToFloat(aLitro, xLitro)) and (xLitro > 0) and (xLitro <= QtdCombustivel) then
           begin
             xCusto := ValorPorLitro * xLitro;
-            ShowMessage(Format('Abastecendo %n litro(s), deve-se pagar R$%n', [xLitro, xCusto]));
+            Result := (Format('Abastecendo %n litro(s), deve-se pagar R$%n.', [xLitro, xCusto]));
+            QtdCombustivel := QtdCombustivel - xLitro;
           end
         else
           begin
-            Result := 'Quantidade inválida.';
+            Result := 'Quantidade inválida ou maior que a quantidade atual da bomba.';
           end;
       end
     else
@@ -64,14 +65,15 @@ function TBomba.AbastecerPorValor(aValor: String): String;
   begin
     if (QtdCombustivel > 0) then
       begin
-        if (TryStrToCurr(aValor, xCusto)) and (xCusto > 0) then
+        if (TryStrToCurr(aValor, xCusto)) and (xCusto > 0) and ((ValorPorLitro * xCusto) <= QtdCombustivel) then
           begin
-            xLitro := ValorPorLitro * xCusto;
-            ShowMessage(Format('Abastecendo R$%n, irá ser preenchido %n litro(s).', [xCusto, xLitro]));
+            xLitro := xCusto / ValorPorLitro;
+            Result := (Format('Abastecendo R$%n, irá ser preenchido %n litro(s).', [xCusto, xLitro]));
+            QtdCombustivel := QtdCombustivel - xLitro;
           end
         else
           begin
-            Result := 'Quantidade inválida.';
+            Result := 'Quantidade inválida ou maior que a quantidade atual da bomba.';
           end;
       end
     else
@@ -83,10 +85,16 @@ function TBomba.AbastecerPorValor(aValor: String): String;
 function TBomba.AlterarCombustivel(aTipo: Byte): String;
   begin
     case TTipo(aTipo) of
-      tpGasolina:
+      tpGasolinaComum:
         begin
-          Result := 'Tipo = Gasolina';
+          Result := 'Tipo = Gasolina Comum';
           ValorPorLitro := 5.641;
+        end;
+
+      tpGasolinaAdtivada:
+        begin
+          Result := 'Tipo = Gasolina Adtivada';
+          ValorPorLitro := 6.90;
         end;
 
       tpDiesel:
