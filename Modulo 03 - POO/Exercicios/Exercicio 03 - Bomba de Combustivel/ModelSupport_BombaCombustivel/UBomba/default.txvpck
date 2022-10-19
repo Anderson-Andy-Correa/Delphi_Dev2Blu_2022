@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="4dqxhz2l7qh_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:BombaCombustivel:UBomba.TBomba">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,187,328" />
+      <reference referencedUin="delphi:e_field:src:BombaCombustivel:UBomba.TBomba.FTipoCombustivel" />
+      <reference referencedUin="delphi:e_field:src:BombaCombustivel:UBomba.TBomba.FValorPorLitro" />
+      <reference referencedUin="delphi:e_field:src:BombaCombustivel:UBomba.TBomba.FQtdCombustivel" />
+      <reference referencedUin="delphi:e_method:src:BombaCombustivel:UBomba.TBomba.SetQtdCombustivel(System.Double)" />
+      <reference referencedUin="delphi:e_method:src:BombaCombustivel:UBomba.TBomba.SetTipoCombustivel(System.string)" />
+      <reference referencedUin="delphi:e_method:src:BombaCombustivel:UBomba.TBomba.SetValorPorLitro(System.Currency)" />
+      <reference referencedUin="delphi:e_method:src:BombaCombustivel:UBomba.TBomba.GetQtdCombustivel()" />
+      <reference referencedUin="delphi:e_method:src:BombaCombustivel:UBomba.TBomba.GetTipoCombustivel()" />
+      <reference referencedUin="delphi:e_method:src:BombaCombustivel:UBomba.TBomba.GetValorPorLitro()" />
+      <reference referencedUin="delphi:e_property:src:BombaCombustivel:UBomba.TBomba.TipoCombustivel" />
+      <reference referencedUin="delphi:e_property:src:BombaCombustivel:UBomba.TBomba.ValorPorLitro" />
+      <reference referencedUin="delphi:e_property:src:BombaCombustivel:UBomba.TBomba.QtdCombustivel" />
+      <reference referencedUin="delphi:e_method:src:BombaCombustivel:UBomba.TBomba.AbastecerPorValor(System.string)" />
+      <reference referencedUin="delphi:e_method:src:BombaCombustivel:UBomba.TBomba.AbastecerPorLitro(System.string)" />
+      <reference referencedUin="delphi:e_method:src:BombaCombustivel:UBomba.TBomba.AlterarValor(System.string)" />
+      <reference referencedUin="delphi:e_method:src:BombaCombustivel:UBomba.TBomba.AlterarCombustivel(System.Byte)" />
+      <reference referencedUin="delphi:e_method:src:BombaCombustivel:UBomba.TBomba.AlterarQtdCombustivel(System.string)" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:BombaCombustivel:UBomba.TTipo">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="216,1,120,113" />
+      <reference referencedUin="delphi:e_field:src:BombaCombustivel:UBomba.TTipo.tpGasolinaComum" />
+      <reference referencedUin="delphi:e_field:src:BombaCombustivel:UBomba.TTipo.tpGasolinaAdtivada" />
+      <reference referencedUin="delphi:e_field:src:BombaCombustivel:UBomba.TTipo.tpDiesel" />
+      <reference referencedUin="delphi:e_field:src:BombaCombustivel:UBomba.TTipo.tpAlcool" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:BombaCombustivel:UBomba.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>
