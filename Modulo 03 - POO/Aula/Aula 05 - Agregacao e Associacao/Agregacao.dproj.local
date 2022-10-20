@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/26 20:15:28.000.580,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/26 20:36:35.000.465,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/27 21:14:00.000.925,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/28 19:42:24.000.243,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/18 21:50:07.000.672,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/19 19:37:53.079,=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/19 19:38:16.253,C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\UfrmPrincipal.pas=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/19 19:38:16.253,C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\UfrmPrincipal.dfm=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/10/19 19:38:24.113,C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\Agregacao.dproj=C:\Users\andersoncorrea\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/10/19 19:38:24.793,=C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\ModelSupport_Agregacao\default.txaPackage</Transaction>
+    <Transaction>2022/10/19 19:38:28.513,=C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\ModelSupport_Agregacao\default.txvpck</Transaction>
+    <Transaction>2022/10/19 19:38:30.373,=C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\ModelSupport_Agregacao\Agregacao\default.txvpck</Transaction>
+    <Transaction>2022/10/19 19:38:30.494,=C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\ModelSupport_Agregacao\Agregacao\default.txaPackage</Transaction>
+    <Transaction>2022/10/19 19:46:48.308,=C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\Unit1.pas</Transaction>
+    <Transaction>2022/10/19 19:47:02.052,C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\UTime.pas=C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\Unit1.pas</Transaction>
+    <Transaction>2022/10/19 19:47:06.913,=C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\Unit1.pas</Transaction>
+    <Transaction>2022/10/19 19:47:13.059,C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\UJogador.pas=C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\Unit1.pas</Transaction>
+    <Transaction>2022/10/19 19:51:01.374,=C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\ModelSupport_Agregacao\UTime\default.txaPackage</Transaction>
+    <Transaction>2022/10/19 19:51:01.426,=C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\ModelSupport_Agregacao\UJogador\default.txaPackage</Transaction>
+    <Transaction>2022/10/19 19:58:04.837,=C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\ModelSupport_Agregacao\UTime\default.txvpck</Transaction>
+    <Transaction>2022/10/19 20:02:08.364,=C:\Users\andersoncorrea\Documents\Delphi_Dev2Blu_2022\Modulo 03 - POO\Aula\Aula 05 - Agregacao e Associacao\ModelSupport_Agregacao\UJogador\default.txvpck</Transaction>
+  </Transactions>
+</BorlandProject>

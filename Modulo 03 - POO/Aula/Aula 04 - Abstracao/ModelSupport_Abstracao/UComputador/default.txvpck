@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="uv6to5svadnuv9m0j_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:Abstracao:UComputador.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Abstracao:UComputador.TPC">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,164,673" />
+      <reference referencedUin="delphi:e_field:src:Abstracao:UComputador.TPC.FLigado" />
+      <reference referencedUin="delphi:e_field:src:Abstracao:UComputador.TPC.FFuncionado" />
+      <reference referencedUin="delphi:e_field:src:Abstracao:UComputador.TPC.FPlacaMae" />
+      <reference referencedUin="delphi:e_field:src:Abstracao:UComputador.TPC.FMemoria" />
+      <reference referencedUin="delphi:e_field:src:Abstracao:UComputador.TPC.FEspaco" />
+      <reference referencedUin="delphi:e_field:src:Abstracao:UComputador.TPC.FProcessador" />
+      <reference referencedUin="delphi:e_field:src:Abstracao:UComputador.TPC.FSitemaOperacional" />
+      <reference referencedUin="delphi:e_field:src:Abstracao:UComputador.TPC.FTela" />
+      <reference referencedUin="delphi:e_field:src:Abstracao:UComputador.TPC.FTeclado" />
+      <reference referencedUin="delphi:e_field:src:Abstracao:UComputador.TPC.FMouse" />
+      <reference referencedUin="delphi:e_field:src:Abstracao:UComputador.TPC.FRGB" />
+      <reference referencedUin="delphi:e_field:src:Abstracao:UComputador.TPC.FCor" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.SetCor(System.string)" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.SetEspaco(System.string)" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.SetFuncionado(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.SetLigado(System.Boolean)" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.SetMouse(System.string)" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.SetPlacaMae(System.string)" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.SetProcessador(System.string)" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.SetRGB(System.string)" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.SetSitemaOperacional(System.string)" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.SetTeclado(System.string)" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.SetTela(System.string)" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.SetMemoria(System.string)" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.Status()" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.Ligar()" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.Desligar()" />
+      <reference referencedUin="delphi:e_method:src:Abstracao:UComputador.TPC.Explodir()" />
+      <reference referencedUin="delphi:e_property:src:Abstracao:UComputador.TPC.Ligado" />
+      <reference referencedUin="delphi:e_property:src:Abstracao:UComputador.TPC.Funcionado" />
+      <reference referencedUin="delphi:e_property:src:Abstracao:UComputador.TPC.PlacaMae" />
+      <reference referencedUin="delphi:e_property:src:Abstracao:UComputador.TPC.Memoria" />
+      <reference referencedUin="delphi:e_property:src:Abstracao:UComputador.TPC.Espaco" />
+      <reference referencedUin="delphi:e_property:src:Abstracao:UComputador.TPC.Processador" />
+      <reference referencedUin="delphi:e_property:src:Abstracao:UComputador.TPC.SitemaOperacional" />
+      <reference referencedUin="delphi:e_property:src:Abstracao:UComputador.TPC.Tela" />
+      <reference referencedUin="delphi:e_property:src:Abstracao:UComputador.TPC.Teclado" />
+      <reference referencedUin="delphi:e_property:src:Abstracao:UComputador.TPC.Mouse" />
+      <reference referencedUin="delphi:e_property:src:Abstracao:UComputador.TPC.RGB" />
+      <reference referencedUin="delphi:e_property:src:Abstracao:UComputador.TPC.Cor" />
+    </reference>
+  </view>
+</nodeSet>

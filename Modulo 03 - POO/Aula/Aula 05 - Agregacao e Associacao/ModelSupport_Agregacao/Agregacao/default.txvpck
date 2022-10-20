@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="9m2id0cm40i_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:Agregacao:Agregacao.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Agregacao:Agregacao.Time">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="240,200,141,144" />
+      <reference referencedUin="delphi:e_field:src:Agregacao:Agregacao.Time.FNomeTime" />
+      <reference referencedUin="delphi:e_field:src:Agregacao:Agregacao.Time.FTecnico" />
+      <reference referencedUin="delphi:e_field:src:Agregacao:Agregacao.Time.AnoFuncacao" />
+      <reference referencedUin="delphi:e_field:src:Agregacao:Agregacao.Time.IDTime" />
+      <reference referencedUin="delphi:e_field:src:Agregacao:Agregacao.Time.FJogador" />
+      <reference referencedUin="delphi:l_ast:src:Agregacao:Agregacao.Time.FJogador">
+        <property name="sourceAnchor" value="381,264" />
+        <property name="targetAnchor" value="460,264" />
+        <property name="bendpoints" value="" />
+      </reference>
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Agregacao:Agregacao.Jogador">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="460,200,117,129" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_field:src:Agregacao:Agregacao.Jogador.FNome" />
+      <reference referencedUin="delphi:e_field:src:Agregacao:Agregacao.Jogador.FIdade" />
+      <reference referencedUin="delphi:e_field:src:Agregacao:Agregacao.Jogador.FPosicao" />
+      <reference referencedUin="delphi:e_field:src:Agregacao:Agregacao.Jogador.FIdJogador" />
+    </reference>
+  </view>
+</nodeSet>

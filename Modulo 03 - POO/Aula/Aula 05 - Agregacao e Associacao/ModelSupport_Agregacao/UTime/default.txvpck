@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="trhmvem9vjd1l2bjr_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:Agregacao:UTime.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Agregacao:UTime.TTime">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,178,298" />
+      <reference referencedUin="delphi:e_field:src:Agregacao:UTime.TTime.FNomeTime" />
+      <reference referencedUin="delphi:e_field:src:Agregacao:UTime.TTime.FTecnico" />
+      <reference referencedUin="delphi:e_field:src:Agregacao:UTime.TTime.FIDTime" />
+      <reference referencedUin="delphi:e_field:src:Agregacao:UTime.TTime.FAnoFuncacao" />
+      <reference referencedUin="delphi:e_field:src:Agregacao:UTime.TTime.FJogadores" />
+      <reference referencedUin="delphi:e_method:src:Agregacao:UTime.TTime.SetAnoFuncacao(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:Agregacao:UTime.TTime.SetIDTime(System.Integer)" />
+      <reference referencedUin="delphi:e_method:src:Agregacao:UTime.TTime.SetNomeTime(System.string)" />
+      <reference referencedUin="delphi:e_method:src:Agregacao:UTime.TTime.SetTecnico(System.string)" />
+      <reference referencedUin="delphi:e_method:src:Agregacao:UTime.TTime.SetJogadores(System.Generics.Collections.TList&lt;UJogador.TJogador&gt;)" />
+      <reference referencedUin="delphi:e_property:src:Agregacao:UTime.TTime.AnoFuncacao" />
+      <reference referencedUin="delphi:e_property:src:Agregacao:UTime.TTime.NomeTime" />
+      <reference referencedUin="delphi:e_property:src:Agregacao:UTime.TTime.Tecnico" />
+      <reference referencedUin="delphi:e_property:src:Agregacao:UTime.TTime.IDTime" />
+      <reference referencedUin="delphi:e_property:src:Agregacao:UTime.TTime.Jogadores" />
+    </reference>
+  </view>
+</nodeSet>

@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<TgConfig Version="3" SubLevelDisabled="False">
+  <Option Name="namespaceFolder.Agregacao" Type="System.String" Value="Agregacao" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.UJogador" Type="System.String" Value="" Category="General" IsBrowsable="False" />
+  <Option Name="namespaceFolder.UTime" Type="System.String" Value="" Category="General" IsBrowsable="False" />
+</TgConfig>

@@ -3,12 +3,11 @@ unit UComputador;
 interface
 
 type
-
   TPC = class
     private
       FLigado: Boolean;
       FFuncionado: Boolean;
-      FPlacaMae: String
+      FPlacaMae: String;
       FMemoria: String;
       FEspaco: String;
       FProcessador: String;
@@ -18,7 +17,6 @@ type
       FMouse: String;
       FRGB: String;
       FCor: String;
-      FPlacaMae: String;
       procedure SetCor(const Value: String);
       procedure SetEspaco(const Value: String);
       procedure SetFuncionado(const Value: Boolean);
@@ -30,6 +28,8 @@ type
       procedure SetSitemaOperacional(const Value: String);
       procedure SetTeclado(const Value: String);
       procedure SetTela(const Value: String);
+    procedure SetMemoria(const Value: String);
+
     public
       Function Status: String;
       procedure Ligar;
@@ -37,8 +37,8 @@ type
       procedure Explodir;
       property Ligado: Boolean read FLigado write SetLigado;
       property Funcionado: Boolean read FFuncionado write SetFuncionado;
-      property PlacaMae: String
-      property Memoria: String read FPlacaMae write SetPlacaMae;
+      property PlacaMae: String read FPlacaMae write SetPlacaMae;
+      property Memoria: String read FMemoria write SetMemoria;
       property Espaco: String read FEspaco write SetEspaco;
       property Processador: String read FProcessador write SetProcessador;
       property SitemaOperacional: String read FSitemaOperacional write SetSitemaOperacional;
@@ -51,21 +51,31 @@ type
 
 implementation
 
+uses
+  Vcl.Dialogs;
+
 { TPC }
 
 procedure TPC.Desligar;
 begin
-
+  if Ligado = True then
+    ShowMessage('Desligando!')
+  else
+    ShowMessage('Já está desligado!');
 end;
 
 procedure TPC.Explodir;
 begin
+  ShowMessage('Desligando!')
 
 end;
 
 procedure TPC.Ligar;
 begin
-
+  if Ligado = False then
+    ShowMessage('Ligando!')
+  else
+    ShowMessage('Já está ligado!');
 end;
 
 procedure TPC.SetCor(const Value: String);
@@ -86,6 +96,11 @@ end;
 procedure TPC.SetLigado(const Value: Boolean);
 begin
   FLigado := Value;
+end;
+
+procedure TPC.SetMemoria(const Value: String);
+begin
+  FMemoria := Value;
 end;
 
 procedure TPC.SetMouse(const Value: String);
@@ -125,7 +140,16 @@ end;
 
 function TPC.Status: String;
 begin
-  ShowMessage('');
+  Result := 'PlacaMae         : #13#10' +
+            'Memoria          : #13#10' +
+            'Tamanho          : #13#10' +
+            'Processador      : #13#10' +
+            'SitemaOperacional: #13#10' +
+            'Tela             : #13#10' +
+            'Teclado          : #13#10' +
+            'Mouse            : #13#10' +
+            'RGB              : #13#10' +
+            'Cor              : #13#10';
 end;
 
 end.
