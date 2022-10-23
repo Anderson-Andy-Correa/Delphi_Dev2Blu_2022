@@ -3,13 +3,14 @@ unit UElevador;
 interface
 
 Type
+  TTotPessoas = Array of Integer;
   TElevador = class
   private
     FAndarAtual: Integer;
     FAndarTotal: Integer;
     FPessoa    : Integer;
     FCapacidade: Integer;
-    FTotPessoas: Array of Integer;
+    FTotPessoas: TTotPessoas;
 
     procedure SetAndarTotal(const Value: Integer);
     procedure SetCapacidade(const Value: Integer);
@@ -38,7 +39,7 @@ Type
 implementation
 
 uses
-  System.SysUtils;
+  System.SysUtils, Vcl.Dialogs;
 
 { TElevador }
 
@@ -71,10 +72,15 @@ procedure TElevador.SetTotPessoasCount(const Value: Integer);
   end;
 
 procedure TElevador.Entrar(aPessoas: Integer);
+  var
+    xAndar: Integer;
   begin
-    if TotPessoasCount > Capacidade then
+    if TotPessoasCount >= Capacidade then
       raise Exception.Create('Valor maior que a Capacidade!');
-    FPessoa := FPessoa + aPessoas;
+    if not TryStrToInt(inputbox('Informe', Format('Em qual andar a %dª pessoa vai sair: ',[TotPessoasCount + 1]) , ''), xAndar) then
+      raise Exception.Create('Erro na inserção de andar, pessoa não inserida. Tente novamente!');
+    SetLength(FTotPessoas, Length(FTotPessoas) + 1);
+    SetTotPessoas(TotPessoasCount - 1, xAndar);
   end;
 
 function TElevador.GetTotPessoas(Index: Integer): Integer;
@@ -91,7 +97,7 @@ procedure TElevador.Sair(aPessoas: Integer);
   begin
     if TotPessoasCount <= 0 then
       raise Exception.Create('Não há pessoas!');
-    FPessoa := FPessoa - aPessoas;
+    SetLength(FTotPessoas, Length(FTotPessoas) - 1);
   end;
 
 function TElevador.Subir(aAndares: Integer): Integer;

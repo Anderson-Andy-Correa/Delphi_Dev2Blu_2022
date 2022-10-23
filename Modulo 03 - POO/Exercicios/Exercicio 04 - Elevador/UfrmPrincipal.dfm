@@ -145,6 +145,21 @@ object frmPrincipal: TfrmPrincipal
     ParentColor = False
     ParentFont = False
   end
+  object Label1: TLabel
+    Left = 18
+    Top = 250
+    Width = 11
+    Height = 19
+    Caption = 'T'
+    Color = 16251901
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
   object rdgAndar: TRadioGroup
     Left = 160
     Top = 106
