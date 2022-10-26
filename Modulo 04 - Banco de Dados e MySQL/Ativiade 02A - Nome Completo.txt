@@ -1,0 +1,9 @@
+Exemplo
+Nome Completo - Nome_Completo = Char(100)
+
+Código de Cadastro - IDCadastro   = Int
+Nome Completo 	   - NomeCompleto = VarChar(100)
+Idade		   - Idade        = TinyInt Unsigned
+Data de Nascimento - DataNasc	  = Date
+CPF 		   - CPF 	  = Char(11)
+CNPJ		   - CNPJ	  = Char(14)

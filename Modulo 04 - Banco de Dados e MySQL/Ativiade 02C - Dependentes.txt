@@ -1,0 +1,28 @@
+Código de Cadastro (Dependente)  - ID_Depentente PRIMARY KEY NOT NULL AI = Int
+Código de Cadastro (Funcionario) - ID_Funcionario NOT NULL               = Int
+Grau de Parentesco		 - Grau_Parentesco NOT NULL		 = VarChar(10)
+Endereço			 - Endereco NOT NUll       		 = VarChar(150)
+Complemento 		         - Complemento NULL   		         = Text
+CEP 			         - CEP NOT NULL	    		         = Char(8)
+Cidade			         - Cidade NOT NULL  		         = VarChar(150)
+Estado 			         - Estado NOT NULL   		         = VarChar(150)
+Bairro				 - Bairro NOT NULL			 = VarChar(150)
+Data de Nascimento 	         - Data_Nasc NOT NULL   		 = Date
+Sexo 			         - Sexo NOT NULL 		    	 = VarChar(10)
+Tipo Sanguíneo 		         - Tipo_Sanguineo NULL	                 = VarChar(3)
+
+CREATE TABLE `devs2blu`.`dependentes` (
+  `ID_DEPENDENTE` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `ID_FUNCIONARIO` INT NOT NULL,
+  `GRAU_PARENTESCO` VARCHAR(10) NOT NULL,
+  `DATA_NASC` DATE NOT NULL,
+  `SEXO` VARCHAR(10) NULL,
+  `ENDERECO` VARCHAR(150) NOT NULL,
+  `COMPLEMENTO` TEXT NULL,
+  `BAIRRO` VARCHAR(50) NOT NULL,
+  `CIDADE` VARCHAR(100) NOT NULL,
+  `CEP` CHAR(8) NOT NULL,
+  `ESTADO` VARCHAR(50) NOT NULL,
+  `TIPO_SANGUINEO` VARCHAR(3) NULL,
+  UNIQUE INDEX `ID_DEPENDENTE_UNIQUE` (`ID_DEPENDENTE` ASC) VISIBLE,
+  PRIMARY KEY (`ID_DEPENDENTE`));

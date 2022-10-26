@@ -1,0 +1,41 @@
+Rua 			       - Rua NOT NUll       		    = VarChar(150)
+Número 			       - Numero NOT NULL    		    = SmallInt Unsigned
+Complemento 		       - Complemento NULL   		    = Text
+CEP 			       - CEP NOT NULL	    		    = Char(8)
+Cidade			       - Cidade NOT NULL  		    = VarChar(150)
+Estado 			       - Estado NOT NULL   		    = VarChar(150)
+Código de Cadastro 	       - IDCadastro PRIMARY KEY NOT NULL AI = Int
+Data de Cadastro 	       - DataCadas NOT NULL   		    = Date
+Última Atualização do Cadastro - Ultima_Atualizacao NOT NULL	    = Date
+Sexo 			       - Sexo NOT NULL 		    	    = Char(1)
+Religião 		       - Religiao NULL	                    = VarChar(50)
+Cor 			       - Cor NULL 		            = VarChar(10)
+Quantidade de Inteligência     - QI NULL		            = SmallInt Unsigned
+Tipo Sanguíneo 		       - Tipo_Sanguineo NULL	            = VarChar(3)
+Se é doador de orgãos	       - Doador_Orgaos  NULL                = Bool
+Se tem passagem pela polícia   - Passagem_Policia NULL              = Bool
+Qual seu grau de ensino	       - Grau_Ensino NULL                   = VarChar(10)
+Se o usuário está ou não ativo - Ativo NOT NULL                     = Bool
+
+CREATE TABLE `funcionario` (
+  `codigo` int unsigned NOT NULL AUTO_INCREMENT,
+  `Rua` varchar(150) NOT NULL,
+  `Numero` smallint unsigned NOT NULL,
+  `Complemento` mediumtext,
+  `Cep` char(8) NOT NULL,
+  `Cidade` varchar(150) NOT NULL,
+  `Estado` varchar(150) NOT NULL,
+  `DataCadastrado` date NOT NULL,
+  `UltimaAtualizacao` date NOT NULL,
+  `Sexo` char(10) NOT NULL,
+  `Religiao` varchar(50) DEFAULT NULL,
+  `Cor` varchar(10) DEFAULT NULL,
+  `QI` smallint DEFAULT NULL,
+  `TipoSaguineo` varchar(3) DEFAULT NULL,
+  `DoadorOrgaos` tinyint DEFAULT NULL,
+  `PassagemPolicia` tinyint DEFAULT NULL,
+  `GrauEnsino` varchar(20) DEFAULT NULL,
+  `Ativo` tinyint(1) unsigned zerofill NOT NULL,
+  PRIMARY KEY (`codigo`),
+  UNIQUE KEY `codigo_UNIQUE` (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
