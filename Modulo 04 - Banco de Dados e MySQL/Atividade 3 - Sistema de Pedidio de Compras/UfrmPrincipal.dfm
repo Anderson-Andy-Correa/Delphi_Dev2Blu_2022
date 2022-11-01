@@ -1943,6 +1943,7 @@ object frmPrincipal: TfrmPrincipal
         F5AD5A5B420000000049454E44AE426082}
       Proportional = True
       Stretch = True
+      OnClick = imCompradoresClick
     end
     object imFornecedores: TImage
       Left = 165

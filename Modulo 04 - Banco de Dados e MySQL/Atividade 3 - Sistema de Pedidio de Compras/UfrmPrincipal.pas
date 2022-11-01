@@ -21,6 +21,7 @@ type
     lblFornecedores: TLabel;
     lblUnMedida: TLabel;
     lblPedidos: TLabel;
+    procedure imCompradoresClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,6 +33,17 @@ var
 
 implementation
 
+uses
+  UfrmCompradores;
+
 {$R *.dfm}
+
+procedure TfrmPrincipal.imCompradoresClick(Sender: TObject);
+  begin
+    if not assigned(frmCompradores) then
+      frmCompradores := TfrmCompradores.create(self);
+
+    frmCompradores.Show;
+  end;
 
 end.
