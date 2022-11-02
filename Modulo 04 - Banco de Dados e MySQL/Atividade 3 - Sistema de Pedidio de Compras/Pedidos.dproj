@@ -109,8 +109,24 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
+        <DCCReference Include="UfrmFornecedores.pas">
+            <Form>frmFornecedores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UfrmPedidos.pas">
+            <Form>frmPedidos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UfrmUnMedida.pas">
+            <Form>frmUnMedida</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <DCCReference Include="UfrmCompradores.pas">
             <Form>frmCompradores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="UfrmProdutos.pas">
+            <Form>frmProdutos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

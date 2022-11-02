@@ -1980,6 +1980,7 @@ object frmPrincipal: TfrmPrincipal
         00000049454E44AE426082}
       Proportional = True
       Stretch = True
+      OnClick = imFornecedoresClick
     end
     object imPedidos: TImage
       Left = 315
@@ -2028,6 +2029,7 @@ object frmPrincipal: TfrmPrincipal
         426082}
       Proportional = True
       Stretch = True
+      OnClick = imPedidosClick
     end
     object imProdutos: TImage
       Left = 15
@@ -2068,6 +2070,7 @@ object frmPrincipal: TfrmPrincipal
         AE426082}
       Proportional = True
       Stretch = True
+      OnClick = imProdutosClick
     end
     object imUnMedida: TImage
       Left = 240
@@ -2106,11 +2109,12 @@ object frmPrincipal: TfrmPrincipal
         8A12A8A81810701D152FF00FCC9DC731A4253F6C0000000049454E44AE426082}
       Proportional = True
       Stretch = True
+      OnClick = imUnMedidaClick
     end
     object lblProdutos: TLabel
       Left = 15
-      Top = 61
-      Width = 65
+      Top = 60
+      Width = 43
       Height = 13
       Alignment = taCenter
       Caption = 'Produtos'
@@ -2118,7 +2122,7 @@ object frmPrincipal: TfrmPrincipal
     end
     object lblCompreadores: TLabel
       Left = 90
-      Top = 61
+      Top = 60
       Width = 64
       Height = 13
       Alignment = taCenter
@@ -2127,7 +2131,7 @@ object frmPrincipal: TfrmPrincipal
     end
     object lblFornecedores: TLabel
       Left = 165
-      Top = 61
+      Top = 60
       Width = 66
       Height = 13
       Alignment = taCenter
@@ -2136,8 +2140,8 @@ object frmPrincipal: TfrmPrincipal
     end
     object lblUnMedida: TLabel
       Left = 240
-      Top = 61
-      Width = 64
+      Top = 60
+      Width = 54
       Height = 13
       Alignment = taCenter
       Caption = 'Un. Medida'
@@ -2145,8 +2149,8 @@ object frmPrincipal: TfrmPrincipal
     end
     object lblPedidos: TLabel
       Left = 310
-      Top = 61
-      Width = 70
+      Top = 60
+      Width = 37
       Height = 13
       Alignment = taCenter
       Caption = 'Pedidos'

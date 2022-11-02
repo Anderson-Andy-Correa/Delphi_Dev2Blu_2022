@@ -1,10 +1,10 @@
-object frmCompradores: TfrmCompradores
+object frmFornecedores: TfrmFornecedores
   Left = 0
   Top = 0
   BorderStyle = bsSingle
-  Caption = 'Compreadores'
-  ClientHeight = 300
-  ClientWidth = 430
+  Caption = 'Fornecedores'
+  ClientHeight = 291
+  ClientWidth = 428
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -35,9 +35,9 @@ object frmCompradores: TfrmCompradores
   object Label3: TLabel
     Left = 260
     Top = 55
-    Width = 29
+    Width = 25
     Height = 13
-    Caption = 'Cargo'
+    Caption = 'CNPJ'
     FocusControl = DBEdit3
   end
   object DBNavigator: TDBNavigator
@@ -62,7 +62,6 @@ object frmCompradores: TfrmCompradores
     TitleFont.Style = []
     Columns = <
       item
-        Alignment = taCenter
         Expanded = False
         FieldName = 'Id'
         Width = 30
@@ -76,7 +75,7 @@ object frmCompradores: TfrmCompradores
       end
       item
         Expanded = False
-        FieldName = 'Cargo'
+        FieldName = 'CNPJ'
         Width = 125
         Visible = True
       end>
@@ -104,7 +103,7 @@ object frmCompradores: TfrmCompradores
     Top = 74
     Width = 150
     Height = 21
-    DataField = 'Cargo'
+    DataField = 'CNPJ'
     DataSource = DataSource
     TabOrder = 4
   end
@@ -116,26 +115,25 @@ object frmCompradores: TfrmCompradores
   object FDTable: TFDTable
     IndexFieldNames = 'Id'
     Connection = dnPedidos.FDConexao
-    TableName = 'devs2blu.comprador'
+    TableName = 'fornecedor'
     Left = 350
     Top = 10
     object FDTableId: TFDAutoIncField
       FieldName = 'Id'
       Origin = 'Id'
       ProviderFlags = [pfInWhere, pfInKey]
-      ReadOnly = True
+    end
+    object FDTableCNPJ: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'CNPJ'
+      Origin = 'CNPJ'
+      Size = 14
     end
     object FDTableNome: TStringField
       FieldName = 'Nome'
       Origin = 'Nome'
       Required = True
       Size = 250
-    end
-    object FDTableCargo: TStringField
-      FieldName = 'Cargo'
-      Origin = 'Cargo'
-      Required = True
-      Size = 50
     end
   end
 end

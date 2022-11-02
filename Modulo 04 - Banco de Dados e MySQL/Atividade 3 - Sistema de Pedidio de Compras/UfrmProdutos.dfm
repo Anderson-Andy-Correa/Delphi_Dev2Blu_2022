@@ -1,8 +1,8 @@
-object frmCompradores: TfrmCompradores
+object frmProdutos: TfrmProdutos
   Left = 0
   Top = 0
   BorderStyle = bsSingle
-  Caption = 'Compreadores'
+  Caption = 'Produtos'
   ClientHeight = 300
   ClientWidth = 430
   Color = clBtnFace
@@ -27,18 +27,17 @@ object frmCompradores: TfrmCompradores
   object Label2: TLabel
     Left = 90
     Top = 56
-    Width = 27
+    Width = 46
     Height = 13
-    Caption = 'Nome'
+    Caption = 'Descri'#231#227'o'
     FocusControl = DBEdit2
   end
   object Label3: TLabel
     Left = 260
     Top = 55
-    Width = 29
+    Width = 91
     Height = 13
-    Caption = 'Cargo'
-    FocusControl = DBEdit3
+    Caption = 'Unidade de Medida'
   end
   object DBNavigator: TDBNavigator
     Left = 20
@@ -62,7 +61,6 @@ object frmCompradores: TfrmCompradores
     TitleFont.Style = []
     Columns = <
       item
-        Alignment = taCenter
         Expanded = False
         FieldName = 'Id'
         Width = 30
@@ -70,14 +68,20 @@ object frmCompradores: TfrmCompradores
       end
       item
         Expanded = False
-        FieldName = 'Nome'
-        Width = 215
+        FieldName = 'Descricao'
+        Width = 230
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Cargo'
-        Width = 125
+        FieldName = 'idUnidadeMedida'
+        Width = 30
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Unidade Medida'
+        Width = 80
         Visible = True
       end>
   end
@@ -95,47 +99,83 @@ object frmCompradores: TfrmCompradores
     Top = 75
     Width = 150
     Height = 21
-    DataField = 'Nome'
+    DataField = 'Descricao'
     DataSource = DataSource
     TabOrder = 3
   end
-  object DBEdit3: TDBEdit
+  object DBLookupComboBox1: TDBLookupComboBox
     Left = 260
     Top = 74
-    Width = 150
+    Width = 145
     Height = 21
-    DataField = 'Cargo'
+    DataField = 'idUnidadeMedida'
     DataSource = DataSource
+    KeyField = 'Id'
+    ListField = 'Descricao'
+    ListSource = DataSource1
     TabOrder = 4
   end
   object DataSource: TDataSource
     DataSet = FDTable
-    Left = 290
-    Top = 10
+    Left = 60
+    Top = 170
   end
   object FDTable: TFDTable
     IndexFieldNames = 'Id'
     Connection = dnPedidos.FDConexao
-    TableName = 'devs2blu.comprador'
-    Left = 350
-    Top = 10
+    TableName = 'produto'
+    Left = 110
+    Top = 170
     object FDTableId: TFDAutoIncField
       FieldName = 'Id'
       Origin = 'Id'
       ProviderFlags = [pfInWhere, pfInKey]
       ReadOnly = True
     end
-    object FDTableNome: TStringField
-      FieldName = 'Nome'
-      Origin = 'Nome'
+    object FDTableDescricao: TStringField
+      FieldName = 'Descricao'
+      Origin = 'Descricao'
       Required = True
       Size = 250
     end
-    object FDTableCargo: TStringField
-      FieldName = 'Cargo'
-      Origin = 'Cargo'
+    object FDTableidUnidadeMedida: TLongWordField
+      FieldName = 'idUnidadeMedida'
+      Origin = 'idUnidadeMedida'
       Required = True
-      Size = 50
     end
+    object LookupUnidadeMedida: TStringField
+      FieldKind = fkLookup
+      FieldName = 'Unidade Medida'
+      LookupDataSet = FDTableLookup
+      LookupKeyFields = 'Id'
+      LookupResultField = 'Descricao'
+      KeyFields = 'idUnidadeMedida'
+      Size = 100
+      Lookup = True
+    end
+  end
+  object FDTableLookup: TFDTable
+    IndexFieldNames = 'Id'
+    Connection = dnPedidos.FDConexao
+    TableName = 'devs2blu.unidademedida'
+    Left = 370
+    Top = 10
+    object FDTableLookupId: TFDAutoIncField
+      FieldName = 'Id'
+      Origin = 'Id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object FDTableLookupDescricao: TStringField
+      FieldName = 'Descricao'
+      Origin = 'Descricao'
+      Required = True
+      Size = 100
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = FDTableLookup
+    Left = 300
+    Top = 10
   end
 end

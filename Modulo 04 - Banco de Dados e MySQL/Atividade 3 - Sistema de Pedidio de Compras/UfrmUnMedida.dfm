@@ -1,8 +1,8 @@
-object frmCompradores: TfrmCompradores
+object frmUnMedida: TfrmUnMedida
   Left = 0
   Top = 0
   BorderStyle = bsSingle
-  Caption = 'Compreadores'
+  Caption = 'Unidade de Medida'
   ClientHeight = 300
   ClientWidth = 430
   Color = clBtnFace
@@ -27,18 +27,10 @@ object frmCompradores: TfrmCompradores
   object Label2: TLabel
     Left = 90
     Top = 56
-    Width = 27
+    Width = 46
     Height = 13
-    Caption = 'Nome'
+    Caption = 'Descri'#231#227'o'
     FocusControl = DBEdit2
-  end
-  object Label3: TLabel
-    Left = 260
-    Top = 55
-    Width = 29
-    Height = 13
-    Caption = 'Cargo'
-    FocusControl = DBEdit3
   end
   object DBNavigator: TDBNavigator
     Left = 20
@@ -62,7 +54,6 @@ object frmCompradores: TfrmCompradores
     TitleFont.Style = []
     Columns = <
       item
-        Alignment = taCenter
         Expanded = False
         FieldName = 'Id'
         Width = 30
@@ -70,14 +61,8 @@ object frmCompradores: TfrmCompradores
       end
       item
         Expanded = False
-        FieldName = 'Nome'
-        Width = 215
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'Cargo'
-        Width = 125
+        FieldName = 'Descricao'
+        Width = 340
         Visible = True
       end>
   end
@@ -93,20 +78,11 @@ object frmCompradores: TfrmCompradores
   object DBEdit2: TDBEdit
     Left = 90
     Top = 75
-    Width = 150
+    Width = 320
     Height = 21
-    DataField = 'Nome'
+    DataField = 'Descricao'
     DataSource = DataSource
     TabOrder = 3
-  end
-  object DBEdit3: TDBEdit
-    Left = 260
-    Top = 74
-    Width = 150
-    Height = 21
-    DataField = 'Cargo'
-    DataSource = DataSource
-    TabOrder = 4
   end
   object DataSource: TDataSource
     DataSet = FDTable
@@ -116,7 +92,7 @@ object frmCompradores: TfrmCompradores
   object FDTable: TFDTable
     IndexFieldNames = 'Id'
     Connection = dnPedidos.FDConexao
-    TableName = 'devs2blu.comprador'
+    TableName = 'devs2blu.unidademedida'
     Left = 350
     Top = 10
     object FDTableId: TFDAutoIncField
@@ -125,17 +101,11 @@ object frmCompradores: TfrmCompradores
       ProviderFlags = [pfInWhere, pfInKey]
       ReadOnly = True
     end
-    object FDTableNome: TStringField
-      FieldName = 'Nome'
-      Origin = 'Nome'
+    object FDTableDescricao: TStringField
+      FieldName = 'Descricao'
+      Origin = 'Descricao'
       Required = True
-      Size = 250
-    end
-    object FDTableCargo: TStringField
-      FieldName = 'Cargo'
-      Origin = 'Cargo'
-      Required = True
-      Size = 50
+      Size = 100
     end
   end
 end
