@@ -1,0 +1,90 @@
+CREATE TABLE Orcamento 
+( 
+ ID_orcamento INT PRIMARY KEY,  
+ Data INT,  
+ Prisma INT,  
+ Valor_Servico INT,  
+ Valor_Peca INT,  
+ Total_Geral INT,  
+ Tot_Servicos INT,  
+ Tot_pecas INT,  
+ idCliente INT,  
+ idVeiculo INT,  
+); 
+
+CREATE TABLE Cliente 
+( 
+ RG INT,  
+ Nome INT,  
+ ID_Cliente INT PRIMARY KEY,  
+ CPF_CNPJ INT,  
+ idEndereço INT,  
+); 
+
+CREATE TABLE Veiculo 
+( 
+ ID_Veiculo INT PRIMARY KEY,  
+ Descricao INT,  
+ Placa INT,  
+ Km_Atual INT,  
+ idCliente INT,  
+); 
+
+CREATE TABLE Endereço 
+( 
+ ID_Endereco INT PRIMARY KEY,  
+ Descricao INT,  
+ Cidade INT,  
+ Bairro INT,  
+ UF INT,  
+ Complemento INT,  
+); 
+
+CREATE TABLE Pecas_Aplicadas 
+( 
+ Qtn INT,  
+ ID_Peca_Aplicada INT PRIMARY KEY,  
+ idOrcamento INT,  
+); 
+
+CREATE TABLE Servicos_Prestados 
+( 
+ ID_Servico_Prestado INT PRIMARY KEY,  
+ Qtd INT,  
+ idOrcamento INT,  
+); 
+
+CREATE TABLE Item_Peca 
+( 
+ ID_Item_Peca INT PRIMARY KEY,  
+ Valor_Unt INT,  
+ Descricao INT,  
+ idPecas_Aplicadas INT,  
+); 
+
+CREATE TABLE Item_Servico 
+( 
+ ID_Item_Servico INT PRIMARY KEY,  
+ Valor_Unt INT,  
+ Descricao INT,  
+ idServicos_Prestados INT,  
+); 
+
+CREATE TABLE Contato 
+( 
+ Telefone INT,  
+ ID_Contato INT PRIMARY KEY,  
+ Celular INT,  
+ Email INT,  
+ idCliente INT,  
+); 
+
+ALTER TABLE Orcamento ADD FOREIGN KEY(idCliente) REFERENCES Cliente (idCliente)
+ALTER TABLE Orcamento ADD FOREIGN KEY(idVeiculo) REFERENCES Veiculo (idVeiculo)
+ALTER TABLE Cliente ADD FOREIGN KEY(idEndereço) REFERENCES Endereço (idEndereço)
+ALTER TABLE Veiculo ADD FOREIGN KEY(idCliente) REFERENCES Cliente (idCliente)
+ALTER TABLE Pecas_Aplicadas ADD FOREIGN KEY(idOrcamento) REFERENCES Orcamento (idOrcamento)
+ALTER TABLE Servicos_Prestados ADD FOREIGN KEY(idOrcamento) REFERENCES Orcamento (idOrcamento)
+ALTER TABLE Item_Peca ADD FOREIGN KEY(idPecas_Aplicadas) REFERENCES Pecas_Aplicadas (idPecas_Aplicadas)
+ALTER TABLE Item_Servico ADD FOREIGN KEY(idServicos_Prestados) REFERENCES Servicos_Prestados (idServicos_Prestados)
+ALTER TABLE Contato ADD FOREIGN KEY(idCliente) REFERENCES Cliente (idCliente)

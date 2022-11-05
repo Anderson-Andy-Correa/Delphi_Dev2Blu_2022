@@ -2114,7 +2114,7 @@ object frmPrincipal: TfrmPrincipal
     object lblProdutos: TLabel
       Left = 15
       Top = 60
-      Width = 43
+      Width = 65
       Height = 13
       Alignment = taCenter
       Caption = 'Produtos'
@@ -2131,7 +2131,7 @@ object frmPrincipal: TfrmPrincipal
     end
     object lblFornecedores: TLabel
       Left = 165
-      Top = 60
+      Top = 61
       Width = 66
       Height = 13
       Alignment = taCenter
@@ -2141,7 +2141,7 @@ object frmPrincipal: TfrmPrincipal
     object lblUnMedida: TLabel
       Left = 240
       Top = 60
-      Width = 54
+      Width = 64
       Height = 13
       Alignment = taCenter
       Caption = 'Un. Medida'
@@ -2150,7 +2150,7 @@ object frmPrincipal: TfrmPrincipal
     object lblPedidos: TLabel
       Left = 310
       Top = 60
-      Width = 37
+      Width = 70
       Height = 13
       Alignment = taCenter
       Caption = 'Pedidos'

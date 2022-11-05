@@ -74,7 +74,7 @@ uses UdmPedidos;
 
 procedure TfrmPedidos.FDTItemPedidoBeforePost(DataSet: TDataSet);
   begin
-    FDTItemPedidoId.AsInteger := FDTPedidoId.AsInteger;
+    FDTItemPedidoidPedidoCompra.AsInteger := FDTPedidoId.AsInteger;
   end;
 
 procedure TfrmPedidos.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -82,7 +82,6 @@ procedure TfrmPedidos.FormClose(Sender: TObject; var Action: TCloseAction);
     Action := caFree;
 
     FDTItemPedido.Close;
-    FDTProduto.Close;
     FDTPedido.close;
     FDTProduto.close;
 
@@ -95,7 +94,6 @@ procedure TfrmPedidos.FormClose(Sender: TObject; var Action: TCloseAction);
 procedure TfrmPedidos.FormCreate(Sender: TObject);
   begin
     FDTItemPedido.Open;
-    FDTProduto.Open;
     FDTPedido.open;
     FDTProduto.open;
 

@@ -4,7 +4,7 @@ object frmPedidos: TfrmPedidos
   BorderStyle = bsSingle
   Caption = 'Pedidos'
   ClientHeight = 450
-  ClientWidth = 600
+  ClientWidth = 450
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -110,7 +110,7 @@ object frmPedidos: TfrmPedidos
   end
   object DBEdit1: TDBEdit
     Left = 20
-    Top = 75
+    Top = 74
     Width = 50
     Height = 21
     DataField = 'Id'
@@ -176,7 +176,7 @@ object frmPedidos: TfrmPedidos
   end
   object FDTItemPedido: TFDTable
     BeforePost = FDTItemPedidoBeforePost
-    IndexFieldNames = 'Id'
+    IndexFieldNames = 'idPedidoCompra'
     MasterSource = DTSPedido
     MasterFields = 'Id'
     Connection = dnPedidos.FDConexao
@@ -187,6 +187,7 @@ object frmPedidos: TfrmPedidos
       FieldName = 'Id'
       Origin = 'Id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object FDTItemPedidoQuantidade: TFloatField
       FieldName = 'Quantidade'
@@ -224,6 +225,7 @@ object frmPedidos: TfrmPedidos
       FieldName = 'Id'
       Origin = 'Id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object FDTLookUpFornecedorCNPJ: TStringField
       AutoGenerateValue = arDefault
@@ -253,6 +255,7 @@ object frmPedidos: TfrmPedidos
       FieldName = 'Id'
       Origin = 'Id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object FDTLookUpCompradorNome: TStringField
       FieldName = 'Nome'
@@ -287,6 +290,7 @@ object frmPedidos: TfrmPedidos
       FieldName = 'Id'
       Origin = 'Id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object FDTPedidoNumero: TLongWordField
       FieldName = 'Numero'
@@ -319,6 +323,7 @@ object frmPedidos: TfrmPedidos
       FieldName = 'Id'
       Origin = 'Id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object FDTProdutoDescricao: TStringField
       FieldName = 'Descricao'
