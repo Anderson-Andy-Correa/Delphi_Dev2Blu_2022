@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/26 19:24:20.000.960,=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/30 18:21:56.000.525,=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/07 21:31:29.000.623,=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/07 21:32:13.000.942,C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\nagoncalves\Documents\Delphi2Blu2022\Delphi Avançado\Consumindo DLLS\uFrmPrincipal.dfm</Transaction>
+    <Transaction>2022/12/07 21:32:13.000.942,C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\nagoncalves\Documents\Delphi2Blu2022\Delphi Avançado\Consumindo DLLS\uFrmPrincipal.pas</Transaction>
+    <Transaction>2022/12/07 21:32:21.000.659,C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\nagoncalves\Documents\Delphi2Blu2022\Delphi Avançado\Consumindo DLLS\ConsumindoDLL.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

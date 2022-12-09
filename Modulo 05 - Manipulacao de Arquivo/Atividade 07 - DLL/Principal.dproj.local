@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/26 19:24:20.000.960,=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/30 18:21:56.000.525,=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/07 20:24:35.000.930,=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/07 20:24:52.000.727,C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\nagoncalves\Documents\Delphi2Blu2022\Manipulação de Arquivo Texto\DLLS\uFrmPrincipal.dfm</Transaction>
+    <Transaction>2022/12/07 20:24:52.000.727,C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\nagoncalves\Documents\Delphi2Blu2022\Manipulação de Arquivo Texto\DLLS\uFrmPrincipal.pas</Transaction>
+    <Transaction>2022/12/07 20:24:54.000.839,C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\nagoncalves\Documents\Delphi2Blu2022\Manipulação de Arquivo Texto\DLLS\Principal.dproj</Transaction>
+    <Transaction>2022/12/07 20:32:04.000.417,=C:\Users\nagoncalves\Documents\Delphi2Blu2022\Manipulação de Arquivo Texto\DLLS\Unit1.pas</Transaction>
+    <Transaction>2022/12/07 20:32:12.000.964,C:\Users\nagoncalves\Documents\Delphi2Blu2022\Manipulação de Arquivo Texto\DLLS\Unit1.pas=C:\Users\nagoncalves\Documents\Delphi2Blu2022\Manipulação de Arquivo Texto\DLLS\uInfoPC.pas</Transaction>
+  </Transactions>
+</BorlandProject>
