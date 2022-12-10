@@ -55,7 +55,6 @@ object frmPrincipal: TfrmPrincipal
       end
       object btnAdicionar: TButton
         Align = Right
-        HitTest = False
         IconTintColor = claWhite
         Margins.Left = 5.000000000000000000
         Margins.Top = 5.000000000000000000
