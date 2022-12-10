@@ -1,0 +1,75 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnShow = FormShow
+  DesignerMasterStyle = 3
+  object lotPrincipal: TLayout
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 432.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lstTarefas: TListView
+      ItemAppearanceClassName = 'TListItemAppearance'
+      ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+      HeaderAppearanceClassName = 'TListHeaderObjects'
+      FooterAppearanceClassName = 'TListHeaderObjects'
+      Align = Client
+      Size.Width = 640.000000000000000000
+      Size.Height = 432.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      StyleLookup = 'listviewstyle'
+      OnDeleteItem = lstTarefasDeleteItem
+    end
+  end
+  object tbPrincipal: TToolBar
+    Size.Width = 640.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object RecTitulo: TRectangle
+      Align = Client
+      Fill.Color = xFFC9F5F5
+      Size.Width = 640.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      object edtNovaTarefa: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Left
+        TabOrder = 0
+        Position.X = 10.000000000000000000
+        Position.Y = 8.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Size.Width = 250.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TextPrompt = 'Nova Tarefa'
+      end
+      object btnAdicionar: TButton
+        Align = Right
+        HitTest = False
+        IconTintColor = claWhite
+        Margins.Left = 5.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 5.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 587.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 48.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'additembutton'
+        TabOrder = 1
+        OnClick = btnAdicionarClick
+      end
+    end
+  end
+end

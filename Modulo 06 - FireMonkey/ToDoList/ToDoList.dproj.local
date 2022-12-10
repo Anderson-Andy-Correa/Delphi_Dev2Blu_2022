@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2022/12/09 20:45:22.186,=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/09 20:46:34.664,=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/12/09 20:47:07.127,C:\Users\mysql\Documents\GitHub\Anderson-Andy-Correa\Delphi_Dev2Blu_2022\Modulo 06 - FireMonkey\ToDoList\USplash.pas=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/12/09 20:47:07.127,C:\Users\mysql\Documents\GitHub\Anderson-Andy-Correa\Delphi_Dev2Blu_2022\Modulo 06 - FireMonkey\ToDoList\USplash.fmx=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit2.fmx</Transaction>
+    <Transaction>2022/12/09 20:47:15.996,C:\Users\mysql\Documents\GitHub\Anderson-Andy-Correa\Delphi_Dev2Blu_2022\Modulo 06 - FireMonkey\ToDoList\UfrmPrincipal.fmx=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2022/12/09 20:47:15.996,C:\Users\mysql\Documents\GitHub\Anderson-Andy-Correa\Delphi_Dev2Blu_2022\Modulo 06 - FireMonkey\ToDoList\UfrmPrincipal.pas=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/09 20:47:23.484,C:\Users\mysql\Documents\GitHub\Anderson-Andy-Correa\Delphi_Dev2Blu_2022\Modulo 06 - FireMonkey\ToDoList\ToDoList.dproj=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/12/09 21:33:36.063,=C:\Users\mysql\Documents\GitHub\Anderson-Andy-Correa\Delphi_Dev2Blu_2022\Modulo 06 - FireMonkey\ToDoList\Utils\SharedPreference.pas</Transaction>
+    <Transaction>2022/12/09 21:34:24.108,C:\Users\mysql\Documents\GitHub\Anderson-Andy-Correa\Delphi_Dev2Blu_2022\Modulo 06 - FireMonkey\ToDoList\UfrmPrincipal.pas=</Transaction>
+    <Transaction>2022/12/09 21:34:46.262,=C:\Users\mysql\Documents\GitHub\Anderson-Andy-Correa\Delphi_Dev2Blu_2022\Modulo 06 - FireMonkey\ToDoList\Forms\UfrmPrincipal.pas</Transaction>
+    <Transaction>2022/12/09 21:34:53.498,=C:\Users\mysql\Documents\GitHub\Anderson-Andy-Correa\Delphi_Dev2Blu_2022\Modulo 06 - FireMonkey\ToDoList\Forms\USplash.pas</Transaction>
+  </Transactions>
+  <ActiveMobileDevice>   <NoProfile iOSSimulator="iPhone5"/>
+  </ActiveMobileDevice>
+</BorlandProject>

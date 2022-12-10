@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2022/12/09 19:56:12.419,=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/09 20:01:03.956,C:\Users\mysql\Documents\GitHub\Anderson-Andy-Correa\Delphi_Dev2Blu_2022\Modulo 06 - FireMonkey\Atividade 01\UfrmPrincipal.fmx=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2022/12/09 20:01:03.956,C:\Users\mysql\Documents\GitHub\Anderson-Andy-Correa\Delphi_Dev2Blu_2022\Modulo 06 - FireMonkey\Atividade 01\UfrmPrincipal.pas=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/09 20:02:09.282,C:\Users\mysql\Documents\GitHub\Anderson-Andy-Correa\Delphi_Dev2Blu_2022\Modulo 06 - FireMonkey\Atividade 01 - Hello World\HelloWorld.dproj=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+  <ActiveMobileDevice>   <NoProfile iOSSimulator="iPhone5"/>
+  </ActiveMobileDevice>
+  <BT_BuildType>AppStore</BT_BuildType>
+</BorlandProject>
