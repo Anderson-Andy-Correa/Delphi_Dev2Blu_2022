@@ -32,10 +32,19 @@ type
     imgFechar: TImage;
     lstbGeneros: TListBox;
     flaGeneros: TFloatAnimation;
+    {$IFDEF MSWINDOWS}
+    procedure MenuClick(Sender: TObject);
+    {$ELSE}
+    procedure MenuTap(Sender: TObject; const Point : TPointF);
+    {$ENDIF}
+    procedure FormCreate(Sender: TObject);
+    procedure flaGenerosFinish(Sender: TObject);
+    procedure imgFecharClick(Sender: TObject);
+    procedure lytGeneroClick(Sender: TObject);
   private
-  procedure LoadMenu;
-  procedure OpenMenu(ind: Boolean);
-  procedure SetupMenu(Item: TListBoxItem; texto: String);
+    procedure LoadMenu;
+    procedure OpenMenu(ind: Boolean);
+    procedure SetupMenu(Item: TListBoxItem; texto: String);
     { Private declarations }
   public
     { Public declarations }
@@ -49,6 +58,28 @@ implementation
 {$R *.fmx}
 
 { TfrmPrincipal }
+
+procedure TfrmPrincipal.flaGenerosFinish(Sender: TObject);
+  begin
+    if lytMenu.Tag = 0 then
+      lytMenu.Visible := False;
+  end;
+
+procedure TfrmPrincipal.FormCreate(Sender: TObject);
+  begin
+    imgCartaz.Position.X := 0;
+    imgCartaz.Position.Y := 0;
+    imgCartaz.Width      := 676;
+    imgCartaz.Height     := 450;
+
+    Self.LoadMenu;
+    Self.OpenMenu(False);
+  end;
+
+procedure TfrmPrincipal.imgFecharClick(Sender: TObject);
+  begin
+    Self.OpenMenu(False);
+  end;
 
 procedure TfrmPrincipal.LoadMenu;
   begin
@@ -73,9 +104,29 @@ procedure TfrmPrincipal.LoadMenu;
       end;
   end;
 
+procedure TfrmPrincipal.lytGeneroClick(Sender: TObject);
+  begin
+    Self.OpenMenu(True);
+  end;
+
+{$IFDEF MSWINDOWS}
+procedure TfrmPrincipal.MenuClick(Sender: TObject);
+  begin
+    lblFiltro.text := TListBoxItem(Sender).Text;
+    Self.OpenMenu(False);
+  end;
+
+{$ELSE}
+procedure TfrmPrincipal.MenuTap(Sender: TObject; const Point: TPointF);
+  begin
+    lblFiltro.text := TListBoxItem(Sender).Text;
+    Self.OpenMenu(False);
+  end;
+{$ENDIF}
+
 procedure TfrmPrincipal.OpenMenu(ind: Boolean);
   begin
-    // Esconde o imte selecionado...
+    // Esconde o item selecionado...
     lstbGeneros.ItemIndex := -1;
 
     // Volta a listagem para o início
@@ -100,7 +151,32 @@ procedure TfrmPrincipal.OpenMenu(ind: Boolean);
 
 procedure TfrmPrincipal.SetupMenu(Item: TListBoxItem; texto: String);
   begin
+    item.Text := Texto;
+    Item.StyledSettings := item.StyledSettings
+      - [TStyledSetting.Size, TStyledSetting.FontColor, TStyledSetting.Other];
+    Item.TextSettings.HorzAlign := TTextAlign.Center;
+    Item.HitTest := True;
 
+    {$IFDEF MSWINDOWS}
+    Item.OnClick := Self.MenuClick;
+    {$ELSE}
+    Item.OnTap := Self.MenuTap;
+    {$ENDIF}
+
+    if lstbGeneros.Items.Count > 0 then
+      begin
+        Item.FontColor := $FFC3C3C3;
+        Item.Font.Size := 20;
+        Item.Height    := 80;
+      end
+    else
+      begin
+        Item.FontColor := $FFFFFFFF;
+        Item.Font.Size := 25;
+        Item.Height    := 110;
+      end;
+
+    lstbGeneros.AddObject(item);
   end;
 
 end.
