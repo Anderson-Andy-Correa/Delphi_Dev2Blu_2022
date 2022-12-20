@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{9BD286D6-C21A-45FB-8ABD-82E0C0F91419}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="IMC.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\03 - Delphi Banco de Dados\Sistema de Pedido de Compras\SistemaPedidoCompras.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="IMC">
+        <MSBuild Projects="IMC.dproj"/>
+    </Target>
+    <Target Name="IMC:Clean">
+        <MSBuild Projects="IMC.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IMC:Make">
+        <MSBuild Projects="IMC.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SistemaPedidoCompras">
+        <MSBuild Projects="..\..\03 - Delphi Banco de Dados\Sistema de Pedido de Compras\SistemaPedidoCompras.dproj"/>
+    </Target>
+    <Target Name="SistemaPedidoCompras:Clean">
+        <MSBuild Projects="..\..\03 - Delphi Banco de Dados\Sistema de Pedido de Compras\SistemaPedidoCompras.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SistemaPedidoCompras:Make">
+        <MSBuild Projects="..\..\03 - Delphi Banco de Dados\Sistema de Pedido de Compras\SistemaPedidoCompras.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="IMC;SistemaPedidoCompras"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="IMC:Clean;SistemaPedidoCompras:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="IMC:Make;SistemaPedidoCompras:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

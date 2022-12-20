@@ -1,0 +1,205 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'C'#225'lcular IMC'
+  ClientHeight = 523
+  ClientWidth = 343
+  Fill.Color = xFFF3F1EB
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+  object lyt_fundo: TLayout
+    Align = Client
+    Size.Width = 343.000000000000000000
+    Size.Height = 523.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lyt_altura: TLayout
+      Align = Top
+      Margins.Left = 15.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Margins.Right = 15.000000000000000000
+      Position.X = 15.000000000000000000
+      Position.Y = 70.000000000000000000
+      Size.Width = 313.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object edtAltura: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Client
+        StyleLookup = 'transparentedit'
+        TabOrder = 0
+        TextSettings.Font.Size = 14.000000000000000000
+        Size.Width = 313.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Style, FontColor]
+      end
+      object lblAltura: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 313.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        Text = 'Altura (cm)'
+        TabOrder = 1
+      end
+      object LineAltura: TLine
+        Align = Bottom
+        LineType = Bottom
+        Position.Y = 49.000000000000000000
+        Size.Width = 313.000000000000000000
+        Size.Height = 1.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = xFF919191
+      end
+    end
+    object lyt_peso: TLayout
+      Align = Top
+      Margins.Left = 15.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Margins.Right = 15.000000000000000000
+      Position.X = 15.000000000000000000
+      Position.Y = 140.000000000000000000
+      Size.Width = 313.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object lblPeso: TLabel
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 313.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        Text = 'Peso (kg)'
+        TabOrder = 0
+      end
+      object edtPeso: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        StyleLookup = 'transparentedit'
+        TabOrder = 1
+        TextSettings.Font.Size = 14.000000000000000000
+        Position.Y = 25.000000000000000000
+        Size.Width = 313.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyledSettings = [Family, Style, FontColor]
+      end
+      object LinePeso: TLine
+        Align = Bottom
+        LineType = Top
+        Position.Y = 49.000000000000000000
+        Size.Width = 313.000000000000000000
+        Size.Height = 1.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = xFF919191
+      end
+    end
+    object lyt_titulo: TLayout
+      Align = Top
+      Size.Width = 343.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object Rectangle1: TRectangle
+        Align = Client
+        Fill.Color = xFF4C74ED
+        HitTest = False
+        Size.Width = 343.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+      object lblTitulo: TLabel
+        Align = Client
+        StyledSettings = [Family]
+        Margins.Left = 15.000000000000000000
+        Size.Width = 328.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 18.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        TextSettings.FontColor = claWhite
+        Text = 'C'#225'lculo de IMC'
+        TabOrder = 1
+      end
+      object ShadowEffect1: TShadowEffect
+        Distance = 1.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.300000011920929000
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+    end
+    object lyt_resultado: TLayout
+      Align = Top
+      Margins.Left = 15.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Margins.Right = 15.000000000000000000
+      Position.X = 15.000000000000000000
+      Position.Y = 210.000000000000000000
+      Size.Width = 313.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object lblResultado: TLabel
+        Align = Client
+        StyledSettings = [Family, Style, FontColor]
+        Size.Width = 313.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.HorzAlign = Center
+        Text = 'Resultado...'
+        TabOrder = 0
+      end
+    end
+    object lyt_calcular: TLayout
+      Align = Top
+      Margins.Left = 15.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Margins.Right = 15.000000000000000000
+      Position.X = 15.000000000000000000
+      Position.Y = 280.000000000000000000
+      Size.Width = 313.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      object Rectangle2: TRectangle
+        Align = Client
+        Fill.Color = xFF4C74ED
+        HitTest = False
+        Size.Width = 313.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+      object btn_calcular: TSpeedButton
+        Align = Client
+        Cursor = crHandPoint
+        StyledSettings = [Family]
+        Size.Width = 313.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Calcular'
+        TextSettings.Font.Size = 18.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        TextSettings.FontColor = claWhite
+        OnClick = btn_calcularClick
+      end
+      object ShadowEffect2: TShadowEffect
+        Distance = 1.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.300000011920929000
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+    end
+  end
+end
