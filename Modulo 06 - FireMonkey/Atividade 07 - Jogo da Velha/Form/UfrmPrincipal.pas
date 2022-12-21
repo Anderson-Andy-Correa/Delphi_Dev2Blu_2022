@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.TabControl,
-  FMX.Effects, FMX.Layouts, FMX.Objects;
+  FMX.Effects, FMX.Layouts, FMX.Objects, UJogoVelha;
 
 type
   TfrmPrincipal = class(TForm)
@@ -149,7 +149,7 @@ procedure TfrmPrincipal.MarcarJogadaComputador(const aCoordenadas: String);
 
     if Assigned(LRetangulo) then
       begin
-        LImagem            := TImage(FindComponent(('img_' + aCoordenadas));
+        LImagem            := TImage(FindComponent('img_' + aCoordenadas));
         LImagem.Bitmap     := img_computador.Bitmap;
         LImagem.Visible    := true;
 
