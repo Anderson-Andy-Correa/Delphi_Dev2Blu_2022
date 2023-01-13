@@ -21,6 +21,9 @@ type
     btnVisualizar: TButton;
     edtNome: TEdit;
     lblNome: TLabel;
+    FDQuery1ID: TFDAutoIncField;
+    FDQuery1NOME: TStringField;
+    FDQuery1CNPJ: TStringField;
     procedure btnVisualizarClick(Sender: TObject);
     procedure PrepararFiltro;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);

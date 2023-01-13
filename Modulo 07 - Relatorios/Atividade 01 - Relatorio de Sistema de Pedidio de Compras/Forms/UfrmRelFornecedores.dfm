@@ -1,7 +1,7 @@
-object frmRelCompradores: TfrmRelCompradores
+object frmRelFornecedores: TfrmRelFornecedores
   Left = 0
   Top = 0
-  Caption = 'Relat'#243'rio - Compradores'
+  Caption = 'Relat'#243'rio - Fornecedores'
   ClientHeight = 150
   ClientWidth = 400
   Color = clBtnFace
@@ -58,7 +58,7 @@ object frmRelCompradores: TfrmRelCompradores
     Connection = dnPedidos.FDConexao
     SQL.Strings = (
       
-        'SELECT ID, NOME, CARGO FROM COMPRADOR WHERE (NOME LIKE :NOME) OR' +
+        'SELECT ID, NOME, CNPJ FROM FORNECEDOR WHERE (NOME LIKE :NOME) OR' +
         ' (COALESCE(:NOME, '#39#39') ='#39#39');')
     Left = 168
     Top = 152
@@ -69,6 +69,25 @@ object frmRelCompradores: TfrmRelCompradores
         ParamType = ptInput
         Value = ''
       end>
+    object FDQuery1ID: TFDAutoIncField
+      FieldName = 'ID'
+      Origin = 'Id'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
+    end
+    object FDQuery1NOME: TStringField
+      FieldName = 'NOME'
+      Origin = 'Nome'
+      Required = True
+      Size = 250
+    end
+    object FDQuery1CNPJ: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'CNPJ'
+      Origin = 'CNPJ'
+      EditMask = '00.000.000/0000-00;0;_'
+      Size = 14
+    end
   end
   object frxPDFExport1: TfrxPDFExport
     UseFileCache = True
@@ -114,7 +133,7 @@ object frmRelCompradores: TfrmRelCompradores
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 44937.792076550900000000
-    ReportOptions.LastChange = 44937.829392615740000000
+    ReportOptions.LastChange = 44938.863047048610000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -161,7 +180,7 @@ object frmRelCompradores: TfrmRelCompradores
           Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
-            'Relat'#243'rio Informativo de Compradores')
+            'Relat'#243'rio Informativo de Fornecedores')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -206,9 +225,9 @@ object frmRelCompradores: TfrmRelCompradores
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo4: TfrxMemoView
+        object Memo5: TfrxMemoView
           AllowVectorExport = True
-          Left = 453.543600000000000000
+          Left = 472.441250000000000000
           Top = 7.559060000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
@@ -219,7 +238,7 @@ object frmRelCompradores: TfrmRelCompradores
           Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            'Cargo')
+            'CNPJ')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -259,7 +278,7 @@ object frmRelCompradores: TfrmRelCompradores
           AllowVectorExport = True
           Left = 124.724490000000000000
           Top = 7.559060000000000000
-          Width = 309.921460000000000000
+          Width = 332.598640000000000000
           Height = 18.897650000000000000
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
@@ -274,14 +293,14 @@ object frmRelCompradores: TfrmRelCompradores
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo5: TfrxMemoView
+        object Memo4: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 453.543600000000000000
+          Left = 472.441250000000000000
           Top = 7.559060000000000000
-          Width = 245.669450000000000000
+          Width = 200.315090000000000000
           Height = 18.897650000000000000
-          DataField = 'CARGO'
+          DataField = 'CNPJ'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
@@ -291,9 +310,14 @@ object frmRelCompradores: TfrmRelCompradores
           Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDataset1."CARGO"]')
+            '[frxDBDataset1."CNPJ"]')
           ParentFont = False
           VAlign = vaCenter
+          Formats = <
+            item
+            end
+            item
+            end>
         end
       end
     end

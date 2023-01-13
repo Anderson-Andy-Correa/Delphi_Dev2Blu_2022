@@ -28,6 +28,13 @@ object frmRelProdutos: TfrmRelProdutos
       Height = 13
       Caption = 'Descri'#231#227'o'
     end
+    object lblUnMedida: TLabel
+      Left = 275
+      Top = 30
+      Width = 54
+      Height = 13
+      Caption = 'Un. Medida'
+    end
     object btnExportar: TButton
       Left = 192
       Top = 84
@@ -49,22 +56,46 @@ object frmRelProdutos: TfrmRelProdutos
     object edtDescricao: TEdit
       Left = 25
       Top = 49
-      Width = 325
+      Width = 242
       Height = 21
       TabOrder = 2
     end
+    object edtUnMedida: TEdit
+      Left = 275
+      Top = 49
+      Width = 76
+      Height = 21
+      TabOrder = 3
+    end
   end
   object FDQuery1: TFDQuery
+    Active = True
     Connection = dnPedidos.FDConexao
     SQL.Strings = (
       
-        'SELECT ID, DESCRICAO FROM PRODUTO WHERE (DESCRICAO LIKE :DESCRIC' +
-        'AO) OR (COALESCE(:DESCRICAO, '#39#39') ='#39#39');')
+        'SELECT PRODUTO.ID, PRODUTO.DESCRICAO, UNIDADEMEDIDA.DESCRICAO UN' +
+        'DMEDIDA'
+      'FROM PRODUTO'
+      
+        'LEFT JOIN UNIDADEMEDIDA ON PRODUTO.IDUNIDADEMEDIDA = UNIDADEMEDI' +
+        'DA.ID'
+      
+        'WHERE ((PRODUTO.DESCRICAO LIKE :DESCRICAO) OR (COALESCE(:DESCRIC' +
+        'AO, '#39#39') ='#39#39'))'
+      
+        'AND ((UNIDADEMEDIDA.DESCRICAO LIKE :UNDMEDIDA) OR (COALESCE(:UND' +
+        'MEDIDA, '#39#39') ='#39#39'));')
     Left = 168
     Top = 152
     ParamData = <
       item
         Name = 'DESCRICAO'
+        DataType = ftString
+        ParamType = ptInput
+        Value = ''
+      end
+      item
+        Name = 'UNDMEDIDA'
         DataType = ftString
         ParamType = ptInput
         Value = ''
@@ -114,7 +145,7 @@ object frmRelProdutos: TfrmRelProdutos
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 44937.792076550900000000
-    ReportOptions.LastChange = 44937.829392615740000000
+    ReportOptions.LastChange = 44937.829392615700000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -151,7 +182,7 @@ object frmRelProdutos: TfrmRelProdutos
         Width = 718.110700000000000000
         object Memo1: TfrxMemoView
           AllowVectorExport = True
-          Width = 563.149970000000000000
+          Width = 718.110700000000000000
           Height = 56.692950000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -206,6 +237,23 @@ object frmRelProdutos: TfrmRelProdutos
           ParentFont = False
           VAlign = vaCenter
         end
+        object Memo4: TfrxMemoView
+          AllowVectorExport = True
+          Left = 582.047620000000000000
+          Top = 7.559060000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Un. Medida')
+          ParentFont = False
+          VAlign = vaCenter
+        end
       end
       object MasterData1: TfrxMasterData
         FillType = ftBrush
@@ -255,6 +303,27 @@ object frmRelProdutos: TfrmRelProdutos
           Frame.Typ = []
           Memo.UTF8W = (
             '[frxDBDataset1."DESCRICAO"]')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo5: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 582.047620000000000000
+          Top = 7.559060000000000000
+          Width = 120.944960000000000000
+          Height = 18.897650000000000000
+          DataField = 'UNDMEDIDA'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."UNDMEDIDA"]')
           ParentFont = False
           VAlign = vaCenter
         end

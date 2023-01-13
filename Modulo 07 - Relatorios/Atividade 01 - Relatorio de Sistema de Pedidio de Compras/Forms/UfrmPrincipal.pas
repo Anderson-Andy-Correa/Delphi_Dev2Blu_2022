@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage, Vcl.ExtCtrls,
   Vcl.StdCtrls, UfrmRelUnidadeMedida, Vcl.Menus, UfrmRelCompradores,
-  UfrmRelProdutos, UfrmRelFornecedores;
+  UfrmRelProdutos, UfrmRelFornecedores, UfrmRelPedidos;
 
 type
   TfrmPrincipal = class(TForm)
@@ -40,6 +40,7 @@ type
     procedure Fornecedores1Click(Sender: TObject);
     procedure Compradores1Click(Sender: TObject);
     procedure Produtos1Click(Sender: TObject);
+    procedure imRelatoriosClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -97,6 +98,12 @@ procedure TfrmPrincipal.imProdutosClick(Sender: TObject);
     frmProdutos.Show;
   end;
 
+procedure TfrmPrincipal.imRelatoriosClick(Sender: TObject);
+  begin
+    with TImage(Sender).ClientToScreen(point(0, TImage(Sender).Height)) do
+    PopupMenu1.Popup(X,Y);
+  end;
+
 procedure TfrmPrincipal.imUnMedidaClick(Sender: TObject);
   begin
     if not assigned(frmUnMedida) then
@@ -107,10 +114,10 @@ procedure TfrmPrincipal.imUnMedidaClick(Sender: TObject);
 
 procedure TfrmPrincipal.Pedidos1Click(Sender: TObject);
   begin
-//    if not assigned(frmRelPedidos) then
-//      frmRelPedidos := TfrmRelPedidos.create(self);
-//
-//    frmRelPedidos.Show;
+    if not assigned(frmRelPedidos) then
+      frmRelPedidos := TfrmRelPedidos.create(self);
+
+    frmRelPedidos.Show;
   end;
 
 procedure TfrmPrincipal.Produtos1Click(Sender: TObject);

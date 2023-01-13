@@ -18,8 +18,8 @@ object dnPedidos: TdnPedidos
   object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
     VendorLib = 
       'C:\Users\mysql\Documents\GitHub\Anderson-Andy-Correa\Delphi_Dev2' +
-      'Blu_2022\Modulo 04 - Banco de Dados e MySQL\Atividade 3 - Sistem' +
-      'a de Pedidio de Compras\libmysql.dll'
+      'Blu_2022\Modulo 07 - Relatorios\Atividade 1 - Relatorio de Siste' +
+      'ma de Pedidio de Compras\Utils\libmysql.dll'
     Left = 20
     Top = 80
   end

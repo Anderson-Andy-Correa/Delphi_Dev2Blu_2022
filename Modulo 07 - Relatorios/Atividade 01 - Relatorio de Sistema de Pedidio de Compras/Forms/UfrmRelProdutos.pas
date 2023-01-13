@@ -21,6 +21,8 @@ type
     btnVisualizar: TButton;
     edtDescricao: TEdit;
     lblDescricao: TLabel;
+    edtUnMedida: TEdit;
+    lblUnMedida: TLabel;
     procedure btnVisualizarClick(Sender: TObject);
     procedure PrepararFiltro;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -75,8 +77,14 @@ procedure TfrmRelProdutos.PrepararFiltro;
   begin
     FDQuery1.Close;
     FDQuery1.ParamByName('DESCRICAO').AsString := '';
+    FDQuery1.ParamByName('UNDMEDIDA').AsString := '';
+
     if Trim(edtDescricao.text) <> EmptyStr then
       FDQuery1.ParamByName('DESCRICAO').AsString := '%' + Trim(edtDescricao.text) + '%';
+
+    if Trim(edtUnMedida.text) <> EmptyStr then
+      FDQuery1.ParamByName('UNDMEDIDA').AsString := '%' + Trim(edtUnMedida.text) + '%';
+
     FDQuery1.Open;
   end;
 

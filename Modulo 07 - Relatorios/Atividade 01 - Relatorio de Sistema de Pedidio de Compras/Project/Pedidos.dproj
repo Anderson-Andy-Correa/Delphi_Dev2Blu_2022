@@ -100,49 +100,53 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="UfrmPrincipal.pas">
+        <DCCReference Include="..\Forms\UfrmCompradores.pas">
+            <Form>frmCompradores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\Forms\UfrmFornecedores.pas">
+            <Form>frmFornecedores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\Forms\UfrmPedidos.pas">
+            <Form>frmPedidos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\Forms\UfrmPrincipal.pas">
             <Form>frmPrincipal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="UdmPedidos.pas">
+        <DCCReference Include="..\Forms\UfrmRelCompradores.pas">
+            <Form>frmRelCompradores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\Forms\UfrmRelFornecedores.pas">
+            <Form>frmRelFornecedores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\Forms\UfrmRelUnidadeMedida.pas">
+            <Form>frmRelUnidadeMedida</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\Forms\UfrmUnMedida.pas">
+            <Form>frmUnMedida</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\DataModule\UdmPedidos.pas">
             <Form>dnPedidos</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="UfrmFornecedores.pas">
-            <Form>frmFornecedores</Form>
+        <DCCReference Include="..\Forms\UfrmRelPedidos.pas">
+            <Form>frmRelPedidos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="UfrmPedidos.pas">
-            <Form>frmPedidos</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="UfrmUnMedida.pas">
-            <Form>frmUnMedida</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="UfrmCompradores.pas">
-            <Form>frmCompradores</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="UfrmProdutos.pas">
+        <DCCReference Include="..\Forms\UfrmProdutos.pas">
             <Form>frmProdutos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="UfrmRelProdutos.pas">
+        <DCCReference Include="..\Forms\UfrmRelProdutos.pas">
             <Form>frmRelProdutos</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="UfrmRelFornecedores.pas">
-            <Form>frmRelFornecedores</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="UfrmRelCompradores.pas">
-            <Form>frmRelCompradores</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="UfrmRelUnidadeMedida.pas">
-            <Form>frmRelUnidadeMedida</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
@@ -170,6 +174,7 @@
                     <Excluded_Packages Name="$(BDSBIN)\bcbofficexp270.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dcloffice2k270.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
                     <Excluded_Packages Name="$(BDSBIN)\dclofficexp270.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Program Files (x86)\FastReports\LibD27\dclfrxtee27.bpl">FastReport 6.0 Tee Components</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">

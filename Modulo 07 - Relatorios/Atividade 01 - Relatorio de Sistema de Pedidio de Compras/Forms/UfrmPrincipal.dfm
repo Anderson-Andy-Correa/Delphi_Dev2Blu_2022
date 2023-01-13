@@ -1892,7 +1892,6 @@ object frmPrincipal: TfrmPrincipal
     Height = 80
     Align = alTop
     TabOrder = 0
-    ExplicitTop = 2
     object imCompradores: TImage
       Left = 90
       Top = 10
@@ -2449,6 +2448,7 @@ object frmPrincipal: TfrmPrincipal
       PopupMenu = PopupMenu1
       Proportional = True
       Stretch = True
+      OnClick = imRelatoriosClick
     end
     object lblRelatorios: TLabel
       Left = 395

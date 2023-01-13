@@ -1,7 +1,7 @@
-object frmRelFornecedores: TfrmRelFornecedores
+object frmRelCompradores: TfrmRelCompradores
   Left = 0
   Top = 0
-  Caption = 'Relat'#243'rio - Fornecedores'
+  Caption = 'Relat'#243'rio - Compradores'
   ClientHeight = 150
   ClientWidth = 400
   Color = clBtnFace
@@ -58,7 +58,7 @@ object frmRelFornecedores: TfrmRelFornecedores
     Connection = dnPedidos.FDConexao
     SQL.Strings = (
       
-        'SELECT ID, NOME, CNPJ FROM FORNECEDOR WHERE (NOME LIKE :NOME) OR' +
+        'SELECT ID, NOME, CARGO FROM COMPRADOR WHERE (NOME LIKE :NOME) OR' +
         ' (COALESCE(:NOME, '#39#39') ='#39#39');')
     Left = 168
     Top = 152
@@ -114,7 +114,7 @@ object frmRelFornecedores: TfrmRelFornecedores
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 44937.792076550900000000
-    ReportOptions.LastChange = 44937.829392615740000000
+    ReportOptions.LastChange = 44938.862671863430000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -161,7 +161,7 @@ object frmRelFornecedores: TfrmRelFornecedores
           Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
-            'Relat'#243'rio Informativo de Fornecedores')
+            'Relat'#243'rio Informativo de Compradores')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -206,9 +206,9 @@ object frmRelFornecedores: TfrmRelFornecedores
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo5: TfrxMemoView
+        object Memo4: TfrxMemoView
           AllowVectorExport = True
-          Left = 472.441250000000000000
+          Left = 453.543600000000000000
           Top = 7.559060000000000000
           Width = 94.488250000000000000
           Height = 18.897650000000000000
@@ -219,7 +219,7 @@ object frmRelFornecedores: TfrmRelFornecedores
           Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            'CNPJ')
+            'Cargo')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -259,7 +259,7 @@ object frmRelFornecedores: TfrmRelFornecedores
           AllowVectorExport = True
           Left = 124.724490000000000000
           Top = 7.559060000000000000
-          Width = 332.598640000000000000
+          Width = 309.921460000000000000
           Height = 18.897650000000000000
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
@@ -274,13 +274,14 @@ object frmRelFornecedores: TfrmRelFornecedores
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo4: TfrxMemoView
+        object Memo5: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 472.441250000000000000
+          Left = 453.543600000000000000
           Top = 7.559060000000000000
-          Width = 200.315090000000000000
+          Width = 245.669450000000000000
           Height = 18.897650000000000000
+          DataField = 'CARGO'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
@@ -290,16 +291,9 @@ object frmRelFornecedores: TfrmRelFornecedores
           Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            
-              '[Copy(<frxDBDataset1."CNPJ">,0,2)] + '#39'.'#39' + [Copy(<frxDBDataset1.' +
-              '"CNPJ">,3,5)]')
+            '[frxDBDataset1."CARGO"]')
           ParentFont = False
           VAlign = vaCenter
-          Formats = <
-            item
-            end
-            item
-            end>
         end
       end
     end
