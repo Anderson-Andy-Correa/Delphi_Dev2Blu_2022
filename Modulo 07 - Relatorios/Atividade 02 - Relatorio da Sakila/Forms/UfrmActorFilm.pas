@@ -1,4 +1,4 @@
-unit UfrmActorsLastName;
+unit UfrmActorFilm;
 
 interface
 
@@ -12,18 +12,18 @@ uses
   frxExportPDF;
 
 type
-  TfrmActorsLastName = class(TForm)
+  TfrmActorFilm = class(TForm)
     grbFiltro: TGroupBox;
-    DBLookupLastName: TDBLookupComboBox;
+    DBLookupActor: TDBLookupComboBox;
     btnVisualizar: TButton;
     btnExportar: TButton;
-    lblActorLastName: TLabel;
+    lblActor: TLabel;
     QryActor: TFDQuery;
     frxPDFExport1: TfrxPDFExport;
     frxDBDataset1: TfrxDBDataset;
     frxReport1: TfrxReport;
     dtsLookUpActor: TDataSource;
-    LookUpLastName: TFDTable;
+    LookUpActor: TFDTable;
     procedure btnVisualizarClick(Sender: TObject);
     procedure PrepararFiltro;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -36,13 +36,13 @@ type
   end;
 
 var
-  frmActorsLastName: TfrmActorsLastName;
+  frmActorFilm: TfrmActorFilm;
 
 implementation
 
 {$R *.dfm}
 
-procedure TfrmActorsLastName.btnExportarClick(Sender: TObject);
+procedure TfrmActorFilm.btnExportarClick(Sender: TObject);
   var
     xCaminho: String;
   begin
@@ -53,42 +53,42 @@ procedure TfrmActorsLastName.btnExportarClick(Sender: TObject);
     if not DirectoryExists(xcaminho) then
       ForceDirectories(xCaminho);
 
-    frxPDFExport1.FileName := Format('%s\Last_Name.pdf', [xCaminho]);
+    frxPDFExport1.FileName := Format('%s\Actor_Films.pdf', [xCaminho]);
     frxReport1.PrepareReport;
     frxReport1.Export(frxPDFExport1);
   end;
 
-procedure TfrmActorsLastName.btnVisualizarClick(Sender: TObject);
+procedure TfrmActorFilm.btnVisualizarClick(Sender: TObject);
   begin
     self.PrepararFiltro;
 
     frxReport1.ShowReport;
   end;
 
-procedure TfrmActorsLastName.FormClose(Sender: TObject;
+procedure TfrmActorFilm.FormClose(Sender: TObject;
   var Action: TCloseAction);
   begin
     Action := caFree;
     QryActor.Close;
 
-    LookUpLastName.Close;
+    LookUpActor.Close;
 
-    frmActorsLastName := nil;
+    frmActorFilm := nil;
   end;
 
-procedure TfrmActorsLastName.FormCreate(Sender: TObject);
+procedure TfrmActorFilm.FormCreate(Sender: TObject);
   begin
-    LookUpLastName.Open;
+    LookUpActor.Open;
   end;
 
-procedure TfrmActorsLastName.PrepararFiltro;
+procedure TfrmActorFilm.PrepararFiltro;
   begin
     QryActor.Close;
-    QryActor.ParamByName('LAST_NAME').AsString  := '';
+    QryActor.ParamByName('ID').AsInteger  := 0;
 
-    if DBLookupLastName.text <> EmptyStr then
-      QryActor.ParamByName('LAST_NAME').AsString :=
-        LookUpLastName.FieldByName('LAST_NAME').AsString;
+    if DBLookupActor.text <> EmptyStr then
+      QryActor.ParamByName('ID').AsInteger :=
+        LookUpActor.FieldByName('ACTOR_ID').AsInteger;
 
     QryActor.Open;
   end;

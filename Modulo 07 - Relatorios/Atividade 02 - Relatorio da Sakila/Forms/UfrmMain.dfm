@@ -42,12 +42,15 @@ object frmMain: TfrmMain
       Caption = 'Reports'
       object Excercise01LastNamesActor1: TMenuItem
         Caption = 'Excercise 01 - Actor'#39's Last Name'
+        OnClick = Excercise01LastNamesActor1Click
       end
       object Excercise02AddressesoftheCities1: TMenuItem
         Caption = 'Excercise 02 - Addresses of the Cities'
+        OnClick = Excercise02AddressesoftheCities1Click
       end
       object QuantitieofMovieperActor1: TMenuItem
         Caption = 'Excercise 03 - Quantitie of Movie per Actor'
+        OnClick = QuantitieofMovieperActor1Click
       end
     end
     object Reports2: TMenuItem

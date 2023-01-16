@@ -1,10 +1,10 @@
-object frmRelFornecedores: TfrmRelFornecedores
+object frmActorFilm: TfrmActorFilm
   Left = 0
   Top = 0
-  Caption = 'Relat'#243'rio - Fornecedores'
-  ClientHeight = 428
+  Caption = 'Ercercise 03 - Actor Fim'
+  ClientHeight = 370
   ClientWidth = 400
-  Color = clBtnFace
+  Color = 16315612
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -12,82 +12,78 @@ object frmRelFornecedores: TfrmRelFornecedores
   Font.Style = []
   OldCreateOrder = False
   OnClose = FormClose
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object grbFiltros: TGroupBox
-    Left = 10
-    Top = 10
-    Width = 375
-    Height = 127
-    Caption = 'Filtros'
+  object grbFiltro: TGroupBox
+    Left = 8
+    Top = 8
+    Width = 380
+    Height = 134
+    Caption = 'Filtro'
+    Color = 16315100
+    ParentBackground = False
+    ParentColor = False
     TabOrder = 0
-    object lblNome: TLabel
-      Left = 25
-      Top = 30
-      Width = 27
+    object lblActor: TLabel
+      Left = 16
+      Top = 21
+      Width = 26
       Height = 13
-      Caption = 'Nome'
+      Caption = 'Actor'
+      Color = 16315612
+      ParentColor = False
     end
-    object btnExportar: TButton
-      Left = 192
-      Top = 84
-      Width = 75
-      Height = 25
-      Caption = 'Exportar'
+    object DBLookupActor: TDBLookupComboBox
+      Left = 16
+      Top = 40
+      Width = 233
+      Height = 21
+      KeyField = 'actor_id'
+      ListField = 'first_name'
+      ListSource = dtsLookUpActor
       TabOrder = 0
-      OnClick = btnExportarClick
     end
     object btnVisualizar: TButton
-      Left = 275
-      Top = 84
-      Width = 75
-      Height = 25
+      Left = 273
+      Top = 40
+      Width = 89
+      Height = 21
       Caption = 'Visualizar'
       TabOrder = 1
       OnClick = btnVisualizarClick
     end
-    object edtNome: TEdit
-      Left = 25
-      Top = 49
-      Width = 325
-      Height = 21
-      TabOrder = 2
-    end
   end
-  object FDQuery1: TFDQuery
-    Connection = dnPedidos.FDConexao
+  object btnExportar: TButton
+    Left = 281
+    Top = 88
+    Width = 89
+    Height = 21
+    Caption = 'Exportar'
+    TabOrder = 1
+    OnClick = btnExportarClick
+  end
+  object QryActor: TFDQuery
+    Active = True
+    Connection = DmShowTime.FDConnection1
     SQL.Strings = (
       
-        'SELECT ID, NOME, CNPJ FROM FORNECEDOR WHERE (NOME LIKE :NOME) OR' +
-        ' (COALESCE(:NOME, '#39#39') ='#39#39');')
-    Left = 168
-    Top = 152
+        'SELECT ACTOR.ACTOR_ID ID, CONCAT(ACTOR.FIRST_NAME, '#39' '#39', ACTOR.LA' +
+        'ST_NAME) NOME, COUNT(*) QUANTIDADE FROM ACTOR'#10#9
+      
+        '  LEFT JOIN FILM_ACTOR ON ACTOR.ACTOR_ID = FILM_ACTOR.ACTOR_ID'#10' ' +
+        '   '
+      '  WHERE (ACTOR.ACTOR_ID = :ID OR COALESCE(:ID, 0) = 0)'
+      '  GROUP BY ACTOR.ACTOR_ID;')
+    Left = 16
+    Top = 168
     ParamData = <
       item
-        Name = 'NOME'
-        DataType = ftString
+        Name = 'ID'
+        DataType = ftInteger
         ParamType = ptInput
-        Value = ''
+        Value = Null
       end>
-    object FDQuery1ID: TFDAutoIncField
-      FieldName = 'ID'
-      Origin = 'Id'
-      ProviderFlags = [pfInWhere, pfInKey]
-      ReadOnly = True
-    end
-    object FDQuery1NOME: TStringField
-      FieldName = 'NOME'
-      Origin = 'Nome'
-      Required = True
-      Size = 250
-    end
-    object FDQuery1CNPJ: TStringField
-      AutoGenerateValue = arDefault
-      FieldName = 'CNPJ'
-      Origin = 'CNPJ'
-      EditMask = '00.000.000/0000-00;0;_'
-      Size = 14
-    end
   end
   object frxPDFExport1: TfrxPDFExport
     UseFileCache = True
@@ -113,16 +109,16 @@ object frmRelFornecedores: TfrmRelFornecedores
     PdfA = False
     PDFStandard = psNone
     PDFVersion = pv17
-    Left = 240
-    Top = 152
+    Left = 88
+    Top = 168
   end
   object frxDBDataset1: TfrxDBDataset
     UserName = 'frxDBDataset1'
     CloseDataSource = False
-    DataSet = FDQuery1
+    DataSet = QryActor
     BCDToCurrency = False
-    Left = 96
-    Top = 152
+    Left = 168
+    Top = 168
   end
   object frxReport1: TfrxReport
     Version = '6.7'
@@ -132,15 +128,15 @@ object frmRelFornecedores: TfrmRelFornecedores
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 44937.792076550900000000
-    ReportOptions.LastChange = 44938.863047048610000000
+    ReportOptions.CreateDate = 44939.773139652800000000
+    ReportOptions.LastChange = 44939.773139652800000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
       ''
       'end.')
-    Left = 24
-    Top = 152
+    Left = 248
+    Top = 168
     Datasets = <
       item
         DataSet = frxDBDataset1
@@ -174,13 +170,13 @@ object frmRelFornecedores: TfrmRelFornecedores
           Height = 56.692950000000000000
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
-          Font.Height = -27
+          Font.Height = -21
           Font.Name = 'Arial'
           Font.Style = [fsBold]
           Frame.Typ = []
           HAlign = haCenter
           Memo.UTF8W = (
-            'Relat'#243'rio Informativo de Fornecedores')
+            'Informative Actor Films Report')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -191,12 +187,15 @@ object frmRelFornecedores: TfrmRelFornecedores
         Height = 34.015770000000000000
         Top = 136.063080000000000000
         Width = 718.110700000000000000
-        object Memo2: TfrxMemoView
+        object frxDBDataset1ACTOR_ID: TfrxMemoView
+          IndexTag = 1
           AllowVectorExport = True
-          Left = 11.338590000000000000
+          Left = 18.897650000000000000
           Top = 7.559060000000000000
-          Width = 94.488250000000000000
+          Width = 98.267780000000000000
           Height = 18.897650000000000000
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -16
@@ -204,16 +203,18 @@ object frmRelFornecedores: TfrmRelFornecedores
           Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            'Id.')
+            'ACTOR ID')
           ParentFont = False
-          VAlign = vaCenter
         end
         object Memo3: TfrxMemoView
+          IndexTag = 1
           AllowVectorExport = True
-          Left = 124.724490000000000000
+          Left = 132.283550000000000000
           Top = 7.559060000000000000
-          Width = 94.488250000000000000
+          Width = 362.834880000000000000
           Height = 18.897650000000000000
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -16
@@ -221,16 +222,19 @@ object frmRelFornecedores: TfrmRelFornecedores
           Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            'Nome')
+            'ACTOR NAME')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo5: TfrxMemoView
+          IndexTag = 1
           AllowVectorExport = True
-          Left = 472.441250000000000000
+          Left = 529.134200000000000000
           Top = 7.559060000000000000
-          Width = 94.488250000000000000
+          Width = 245.669450000000000000
           Height = 18.897650000000000000
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -16
@@ -238,7 +242,7 @@ object frmRelFornecedores: TfrmRelFornecedores
           Font.Style = [fsBold]
           Frame.Typ = []
           Memo.UTF8W = (
-            'CNPJ')
+            'QUANTITY')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -246,18 +250,18 @@ object frmRelFornecedores: TfrmRelFornecedores
       object MasterData1: TfrxMasterData
         FillType = ftBrush
         Frame.Typ = []
-        Height = 30.236240000000000000
+        Height = 34.015770000000000000
         Top = 192.756030000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset1
         DataSetName = 'frxDBDataset1'
         RowCount = 0
-        object frxDBDataset1ID: TfrxMemoView
+        object Memo4: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 7.559060000000000000
+          Left = 18.897650000000000000
           Top = 7.559060000000000000
-          Width = 79.370130000000000000
+          Width = 98.267780000000000000
           Height = 18.897650000000000000
           DataField = 'ID'
           DataSet = frxDBDataset1
@@ -266,19 +270,18 @@ object frmRelFornecedores: TfrmRelFornecedores
           Font.Color = clBlack
           Font.Height = -16
           Font.Name = 'Arial'
-          Font.Style = [fsBold]
+          Font.Style = []
           Frame.Typ = []
           Memo.UTF8W = (
             '[frxDBDataset1."ID"]')
           ParentFont = False
-          VAlign = vaCenter
         end
-        object frxDBDataset1DESCRICAO: TfrxMemoView
+        object Memo6: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 124.724490000000000000
+          Left = 132.283550000000000000
           Top = 7.559060000000000000
-          Width = 332.598640000000000000
+          Width = 359.055350000000000000
           Height = 18.897650000000000000
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
@@ -286,40 +289,93 @@ object frmRelFornecedores: TfrmRelFornecedores
           Font.Color = clBlack
           Font.Height = -16
           Font.Name = 'Arial'
-          Font.Style = [fsBold]
+          Font.Style = []
           Frame.Typ = []
           Memo.UTF8W = (
             '[frxDBDataset1."NOME"]')
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo4: TfrxMemoView
+        object Memo7: TfrxMemoView
           IndexTag = 1
           AllowVectorExport = True
-          Left = 472.441250000000000000
+          Left = 529.134200000000000000
           Top = 7.559060000000000000
-          Width = 200.315090000000000000
+          Width = 132.283550000000000000
           Height = 18.897650000000000000
-          DataField = 'CNPJ'
           DataSet = frxDBDataset1
           DataSetName = 'frxDBDataset1'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -16
           Font.Name = 'Arial'
-          Font.Style = [fsBold]
+          Font.Style = []
           Frame.Typ = []
           Memo.UTF8W = (
-            '[frxDBDataset1."CNPJ"]')
+            '[frxDBDataset1."QUANTIDADE"]')
           ParentFont = False
           VAlign = vaCenter
-          Formats = <
-            item
-            end
-            item
-            end>
+        end
+      end
+      object ReportSummary1: TfrxReportSummary
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 34.015770000000000000
+        Top = 287.244280000000000000
+        Width = 718.110700000000000000
+        object Memo8: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 132.283550000000000000
+          Top = 7.559060000000000000
+          Width = 359.055350000000000000
+          Height = 18.897650000000000000
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'TOTAL')
+          ParentFont = False
+          VAlign = vaCenter
+        end
+        object Memo9: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 529.134200000000000000
+          Top = 7.559060000000000000
+          Width = 132.283550000000000000
+          Height = 18.897650000000000000
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[SUM(<frxDBDataset1."QUANTIDADE">,MasterData1)]')
+          ParentFont = False
+          VAlign = vaCenter
         end
       end
     end
+  end
+  object dtsLookUpActor: TDataSource
+    DataSet = LookUpActor
+    Left = 16
+    Top = 232
+  end
+  object LookUpActor: TFDTable
+    IndexFieldNames = 'actor_id'
+    Connection = DmShowTime.FDConnection1
+    TableName = 'sakila.actor'
+    Left = 88
+    Top = 232
   end
 end

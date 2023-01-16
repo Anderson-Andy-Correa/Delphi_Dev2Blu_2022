@@ -2,7 +2,7 @@ object frmRelPedidos: TfrmRelPedidos
   Left = 0
   Top = 0
   Caption = 'Relat'#243'rio - Pedidos'
-  ClientHeight = 150
+  ClientHeight = 346
   ClientWidth = 400
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -504,7 +504,6 @@ object frmRelPedidos: TfrmRelPedidos
     Top = 200
   end
   object QryPedido: TFDQuery
-    Active = True
     Connection = dnPedidos.FDConexao
     SQL.Strings = (
       'SELECT PEDIDOCOMPRA.ID,'
@@ -542,7 +541,6 @@ object frmRelPedidos: TfrmRelPedidos
       end>
   end
   object QryItemCompra: TFDQuery
-    Active = True
     IndexFieldNames = 'IDPEDIDOCOMPRA'
     MasterSource = dtsPedido
     MasterFields = 'ID'

@@ -1,4 +1,4 @@
-unit UfrmActorsLastName;
+unit UfrmAddressOfTheCities;
 
 interface
 
@@ -12,18 +12,18 @@ uses
   frxExportPDF;
 
 type
-  TfrmActorsLastName = class(TForm)
+  TfrmAddressesOfTheCities = class(TForm)
     grbFiltro: TGroupBox;
-    DBLookupLastName: TDBLookupComboBox;
+    DBLookupCity: TDBLookupComboBox;
     btnVisualizar: TButton;
     btnExportar: TButton;
-    lblActorLastName: TLabel;
-    QryActor: TFDQuery;
+    lblAddressesOfTheCities: TLabel;
+    QryAddress: TFDQuery;
     frxPDFExport1: TfrxPDFExport;
     frxDBDataset1: TfrxDBDataset;
     frxReport1: TfrxReport;
-    dtsLookUpActor: TDataSource;
-    LookUpLastName: TFDTable;
+    dtsLookUpCity: TDataSource;
+    LookUpCity: TFDTable;
     procedure btnVisualizarClick(Sender: TObject);
     procedure PrepararFiltro;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -36,13 +36,13 @@ type
   end;
 
 var
-  frmActorsLastName: TfrmActorsLastName;
+  frmAddressesOfTheCities: TfrmAddressesOfTheCities;
 
 implementation
 
 {$R *.dfm}
 
-procedure TfrmActorsLastName.btnExportarClick(Sender: TObject);
+procedure TfrmAddressesOfTheCities.btnExportarClick(Sender: TObject);
   var
     xCaminho: String;
   begin
@@ -53,44 +53,44 @@ procedure TfrmActorsLastName.btnExportarClick(Sender: TObject);
     if not DirectoryExists(xcaminho) then
       ForceDirectories(xCaminho);
 
-    frxPDFExport1.FileName := Format('%s\Last_Name.pdf', [xCaminho]);
+    frxPDFExport1.FileName := Format('%s\Addresses_Of_The_Cities.pdf', [xCaminho]);
     frxReport1.PrepareReport;
     frxReport1.Export(frxPDFExport1);
   end;
 
-procedure TfrmActorsLastName.btnVisualizarClick(Sender: TObject);
+procedure TfrmAddressesOfTheCities.btnVisualizarClick(Sender: TObject);
   begin
     self.PrepararFiltro;
 
     frxReport1.ShowReport;
   end;
 
-procedure TfrmActorsLastName.FormClose(Sender: TObject;
+procedure TfrmAddressesOfTheCities.FormClose(Sender: TObject;
   var Action: TCloseAction);
   begin
     Action := caFree;
-    QryActor.Close;
+    QryAddress.Close;
 
-    LookUpLastName.Close;
+    LookUpCity.Close;
 
-    frmActorsLastName := nil;
+    frmAddressesOfTheCities := nil;
   end;
 
-procedure TfrmActorsLastName.FormCreate(Sender: TObject);
+procedure TfrmAddressesOfTheCities.FormCreate(Sender: TObject);
   begin
-    LookUpLastName.Open;
+    LookUpCity.Open;
   end;
 
-procedure TfrmActorsLastName.PrepararFiltro;
+procedure TfrmAddressesOfTheCities.PrepararFiltro;
   begin
-    QryActor.Close;
-    QryActor.ParamByName('LAST_NAME').AsString  := '';
+    QryAddress.Close;
+    QryAddress.ParamByName('CITY_ID').AsInteger  := 0;
 
-    if DBLookupLastName.text <> EmptyStr then
-      QryActor.ParamByName('LAST_NAME').AsString :=
-        LookUpLastName.FieldByName('LAST_NAME').AsString;
+    if DBLookupCity.text <> EmptyStr then
+      QryAddress.ParamByName('CITY_ID').AsInteger :=
+        LookUpCity.FieldByName('CITY_ID').AsInteger;
 
-    QryActor.Open;
+    QryAddress.Open;
   end;
 
 end.

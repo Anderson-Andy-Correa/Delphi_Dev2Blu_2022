@@ -1,25 +1,17 @@
 object DmShowTime: TDmShowTime
-  Left = 0
-  Top = 0
-  Caption = 'Data Module'
-  ClientHeight = 150
-  ClientWidth = 400
-  Color = clBtnFace
-  Font.Charset = DEFAULT_CHARSET
-  Font.Color = clWindowText
-  Font.Height = -11
-  Font.Name = 'Tahoma'
-  Font.Style = []
   OldCreateOrder = False
-  PixelsPerInch = 96
-  TextHeight = 13
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  Height = 288
+  Width = 360
   object FDConnection1: TFDConnection
     Params.Strings = (
       'Database=sakila'
       'User_Name=root'
       'Password=root'
+      'Server=localhost'
       'DriverID=MySQL')
-    Connected = True
+    LoginPrompt = False
     Left = 40
     Top = 40
   end
