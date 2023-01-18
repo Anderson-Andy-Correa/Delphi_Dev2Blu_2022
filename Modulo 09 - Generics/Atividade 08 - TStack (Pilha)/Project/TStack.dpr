@@ -1,9 +1,8 @@
-program ValorTotal;
+program TStack;
 
 uses
   Vcl.Forms,
-  UfrmPrincipal in '..\Form\UfrmPrincipal.pas' {frmPrincipal},
-  UValorTotal in '..\Unit\UValorTotal.pas';
+  UfrmPrincipal in '..\Forms\UfrmPrincipal.pas' {frmPrincipal};
 
 {$R *.res}
 

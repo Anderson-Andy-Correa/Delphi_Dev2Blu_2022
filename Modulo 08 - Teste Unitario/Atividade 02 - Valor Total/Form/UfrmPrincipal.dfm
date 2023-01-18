@@ -1,7 +1,7 @@
-object Form1: TForm1
+object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'C'#225'lculo de desconto'
   ClientHeight = 200
   ClientWidth = 300
   Color = clBtnFace

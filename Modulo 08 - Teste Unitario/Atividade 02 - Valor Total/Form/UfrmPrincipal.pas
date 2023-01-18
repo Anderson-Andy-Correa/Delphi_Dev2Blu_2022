@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UValorTotal, Vcl.StdCtrls;
 
 type
-  TForm1 = class(TForm)
+  TfrmPrincipal = class(TForm)
     edtNome: TEdit;
     edtQuantidade: TEdit;
     edtPrecoUnitario: TEdit;
@@ -18,6 +18,7 @@ type
     lblPrecoUnitario: TLabel;
     lblValorTotal: TLabel;
     procedure btnCalcularClick(Sender: TObject);
+    procedure EscreverTexto(aQtd: integer; aNome: String; aPreco, aValorTotal: Double);
   private
     { Private declarations }
   public
@@ -25,13 +26,13 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmPrincipal: TfrmPrincipal;
 
 implementation
 
 {$R *.dfm}
 
-procedure TForm1.btnCalcularClick(Sender: TObject);
+procedure TfrmPrincipal.btnCalcularClick(Sender: TObject);
   var
     LValorTotal : TValorTotal;
   begin
@@ -44,28 +45,41 @@ procedure TForm1.btnCalcularClick(Sender: TObject);
             Quantidade := StrToInt(edtQuantidade.Text);
             PrecoUnitario := StrToFloat(edtPrecoUnitario.Text);
             edtValorTotal.Text := RetornarValorTotal.ToString;
+
+            EscreverTexto(Quantidade, NomeProduto, PrecoUnitario, ValorTotal);
           end;
 
-//        ShowMessage(Format('A compra de %d unidade(s) do produto %s com' +
-//          'o preço original de R$%s, passará para R$%s. Um desconto de R$%s.',
-//          [LValorTotal.Quantidade, LValorTotal.NomeProduto,
-//          FormatFloat('0,##',(LValorTotal.Quantidade * LValorTotal.PrecoUnitario)),
-//          LValorTotal.ValorTotal, FormatFloat('0,##',((LValorTotal.Quantidade * LValorTotal.PrecoUnitario *
-//          (100 - LValorTotal.Desconto)/100)))]));
-
-        ShowMessage(Format('A compra de %d unidade(s) do produto %s com' +
-          'o preço original de R$%s, passará para R$%s. Um desconto de R$%s.',
-          [LValorTotal.Quantidade, LValorTotal.NomeProduto,
-          FormatFloat('0.##',(LValorTotal.Quantidade * LValorTotal.PrecoUnitario)),
-          FormatFloat('0.##',LValorTotal.ValorTotal),
-          FormatFloat('0.##',((LValorTotal.Quantidade * LValorTotal.PrecoUnitario *
-          (100 - LValorTotal.Desconto)/100)))]));
       except
         ShowMessage('Erro de Conversão!');
       end;
     finally
       FreeAndNil(LValorTotal);
     end;
+  end;
+
+procedure TfrmPrincipal.EscreverTexto(aQtd: integer; aNome: String; aPreco,
+  aValorTotal: Double);
+  begin
+    case aQtd of
+      1:
+        ShowMessage(Format('A compra de %d unidade do produto %s ' +
+                  'o preço ficará R$%s. ',
+                  [aQtd, aNome, FormatFloat('0.##',(aQtd * aPreco))]));
+
+      2..10:
+       ShowMessage(Format('A compra de %d unidades do produto %s ' +
+                  'o preço ficará R$%s. ',
+                  [aQtd, aNome, FormatFloat('0.##',(aQtd * aPreco))]));
+      else
+       ShowMessage(Format('A compra de %d unidade(s) do produto %s com' +
+              'o preço original de R$%s, passará para R$%s. Um desconto de R$%s.',
+              [aQtd, aNome,
+              FormatFloat('0.##',(aQtd * aPreco)),
+              FormatFloat('0.##',aValorTotal),
+              FormatFloat('0.##',((aQtd * aPreco -
+              aValorTotal)))]));
+    end;
+
   end;
 
 end.
