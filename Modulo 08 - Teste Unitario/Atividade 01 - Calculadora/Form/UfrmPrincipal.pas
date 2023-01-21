@@ -22,6 +22,10 @@ type
   public
     { Public declarations }
     Calculadora: Tcalculadora;
+    function somar        (const aNum1, aNum2: String): String;
+    function Subtrair     (const aNum1, aNum2: String): String;
+    function Multiplicar  (const aNum1, aNum2: String): String;
+    function Dividir      (const aNum1, aNum2: String): String;
   end;
 
 var
@@ -42,19 +46,15 @@ procedure TfrmPrincipal.btnCalcularClick(Sender: TObject);
       else if Calculadora.TestarNumero(edtNum1.Text, edtNum2.Text) then
         case TOperacoa(cmbOperacao.ItemIndex) of
           opSomar:
-            lblResultado.Caption :=
-              Calculadora.somar(StrToFloat(edtNum1.Text),
-                StrToFloat(edtNum2.Text)).ToString;
+            Somar(edtNum1.Text, edtNum2.Text);
 
           opSubtrair:
             lblResultado.Caption :=
-              Calculadora.subtrair(StrToFloat(edtNum1.Text),
-                StrToFloat(edtNum2.Text)).ToString;
+              Subtrair(edtNum1.Text, edtNum2.Text);
 
           opMultiplicar:
             lblResultado.Caption :=
-              Calculadora.multiplicar(StrToFloat(edtNum1.Text),
-                StrToFloat(edtNum2.Text)).ToString;
+              Multiplicar(edtNum1.Text, edtNum2.Text);
 
           opDividir:
             begin
@@ -62,8 +62,7 @@ procedure TfrmPrincipal.btnCalcularClick(Sender: TObject);
                 lblResultado.Caption := 'Não pode dividir por 0!'
               else
                 lblResultado.Caption :=
-                  Calculadora.dividir(StrToFloat(edtNum1.Text),
-                    StrToFloat(edtNum2.Text)).ToString;
+                  Dividir(edtNum1.Text, edtNum2.Text);
             end;
 
         end
@@ -72,6 +71,30 @@ procedure TfrmPrincipal.btnCalcularClick(Sender: TObject);
     finally
       FreeAndNil(Calculadora);
     end;
+  end;
+
+function TfrmPrincipal.Dividir(const aNum1, aNum2: String): String;
+  begin
+    Result := Calculadora.Dividir(StrToFloat(aNum1),
+                  StrToFloat(aNum2)).ToString;
+  end;
+
+function TfrmPrincipal.Multiplicar(const aNum1, aNum2: String): String;
+  begin
+    Result := Calculadora.Multiplicar(StrToFloat(aNum1),
+                  StrToFloat(aNum2)).ToString;
+  end;
+
+function TfrmPrincipal.somar(const aNum1, aNum2: String): String;
+  begin
+    Result := Calculadora.somar(StrToFloat(aNum1),
+                  StrToFloat(aNum2)).ToString;
+  end;
+
+function TfrmPrincipal.Subtrair(const aNum1, aNum2: String): String;
+begin
+    Result := Calculadora.Subtrair(StrToFloat(aNum1),
+                  StrToFloat(aNum2)).ToString;
   end;
 
 end.

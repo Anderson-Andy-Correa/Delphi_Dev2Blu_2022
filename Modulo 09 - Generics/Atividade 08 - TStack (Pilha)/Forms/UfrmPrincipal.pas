@@ -39,7 +39,7 @@ type
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
-    FFila: TQueue<String>;
+    FPilha: TStack<String>;
   public
     { Public declarations }
   end;
@@ -53,50 +53,48 @@ implementation
 
 procedure TfrmPrincipal.btnCapacityClick(Sender: TObject);
   begin
-    mmResult.Lines.Add(FFila.Capacity.ToString);
+    mmResult.Lines.Add(FPilha.Capacity.ToString);
   end;
 
 procedure TfrmPrincipal.btnCountClick(Sender: TObject);
   begin
-    mmResult.Lines.Add(FFila.Count.ToString);
+    mmResult.Lines.Add(FPilha.Count.ToString);
   end;
 
 procedure TfrmPrincipal.btnPopClick(Sender: TObject);
   begin
-    mmResult.Lines.Add(FFila.Dequeue);
+    mmResult.Lines.Add(FPilha.Pop);
   end;
 
 procedure TfrmPrincipal.btnPushClick(Sender: TObject);
   begin
-    FFila.Enqueue(edtprincipal.Text);
+    FPilha.Push(edtprincipal.Text);
   end;
 
 procedure TfrmPrincipal.btnExtractClick(Sender: TObject);
   begin
-    // Mesmo comportamento do Dequeue, a diferença é que você pode
-    // capturar a ação no notify
-    mmResult.Lines.Add(FFila.Extract)
+    mmResult.Lines.Add(FPilha.Extract)
   end;
 
 procedure TfrmPrincipal.btnPeekClick(Sender: TObject);
   begin
-    mmResult.Lines.Add(FFila.Peek);
+    mmResult.Lines.Add(FPilha.Peek);
   end;
 
 procedure TfrmPrincipal.btnTrimExcessClick(Sender: TObject);
   begin
-    FFila.TrimExcess;
-    mmResult.Lines.Add(FFila.Count.ToString);
+    FPilha.TrimExcess;
+    mmResult.Lines.Add(FPilha.Capacity.ToString);
   end;
 
 procedure TfrmPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
   begin
-    FFila.Free;
+    FPilha.Free;
   end;
 
 procedure TfrmPrincipal.FormCreate(Sender: TObject);
   begin
-    FFila := TQueue<String>.Create;
+    FPilha := TStack<String>.Create;
   end;
 
 end.
