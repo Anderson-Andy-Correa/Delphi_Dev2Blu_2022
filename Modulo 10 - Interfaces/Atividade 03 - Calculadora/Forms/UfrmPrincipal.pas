@@ -33,11 +33,21 @@ uses
 procedure TfrmPrincipal.cmbOperacaoChange(Sender: TObject);
   var
     xCalculatorService : TCalculatorService;
+    xNum1, xNum2: Double;
   begin
-    xCalculatorService := TCalculatorService.Create(StrToFloatDef(edtNum1.text, 0),
-      StrToFloatDef(edtNum2.text, 0), TCalculadoraServiceDefault.Create);
+    if not TryStrToFloat(edtNum1.text, xNum1) then
+      raise Exception.Create('Número 1 inválido');
 
-    lblResultado.Caption := (xCalculatorService.processCalc(TTypeCalc(cmbOperacao.itemindex))).ToString;
+    if not TryStrToFloat(edtNum2.text, xNum2) then
+      raise Exception.Create('Número 2 inválido');
+
+    xCalculatorService := TCalculatorService.Create(xNum1, xNum2, TCalculadoraServiceDefault.Create);
+    Try
+      lblResultado.Caption := (xCalculatorService.processCalc(TTypeCalc(cmbOperacao.itemindex))).ToString;
+    Finally
+      FreeAndNil(xCalculatorService);
+    End;
+
   end;
 
 end.
