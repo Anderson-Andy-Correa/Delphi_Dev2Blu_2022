@@ -3,7 +3,7 @@ unit URentalService;
 interface
 
 uses
-  UBrazilTaxService, UCarRental;
+  UCarRental, UTaxService;
 
 type
   TRentalService = class
@@ -11,13 +11,13 @@ type
       FPricePerDay : Double;
       FPricePerHour: Double;
 
-      FTaxService: TBrazilTaxService;
+      FTaxService: ITaxService;
 
     protected
 
     public
       constructor Create(const aPriceperDay, aPricePerHour: Double;
-        aTaxService: TBrazilTaxService);
+        aTaxService: ITaxService);
       destructor Destroy; override;
 
       procedure processInvoice(aCarRental: TCarRental);
@@ -31,7 +31,7 @@ uses
 { TRentalService }
 
 constructor TRentalService.Create(const aPriceperDay, aPricePerHour: Double;
-  aTaxService: TBrazilTaxService);
+  aTaxService: ITaxService);
   begin
     FPricePerDay  := aPriceperDay;
     FPricePerHour := aPricePerHour;
@@ -40,7 +40,9 @@ constructor TRentalService.Create(const aPriceperDay, aPricePerHour: Double;
 
 destructor TRentalService.Destroy;
   begin
-    FreeAndNil(FTaxService);
+    // Variáveis/Atributos do Tipo interface não precisam liberar da memória
+    // O Delphi faz isso para a gente
+    //FreeAndNil(FTaxService);
     inherited;
   end;
 
