@@ -75,6 +75,7 @@ object frmPrincipal: TfrmPrincipal
     Height = 25
     Caption = 'Consultar Correios'
     TabOrder = 1
+    OnClick = btnConsultarCorreiosClick
   end
   object edtCEP: TEdit
     Left = 24

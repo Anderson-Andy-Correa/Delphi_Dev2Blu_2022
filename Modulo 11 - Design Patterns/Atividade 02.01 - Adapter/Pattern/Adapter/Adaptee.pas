@@ -6,7 +6,7 @@ uses
   UWebServiceCorreios, System.Classes;
 
 Type
-  TWebServicesCorreios = class
+  TWebServiceCorreios = class
     private
       FParametros: consultaCEP;
       FResposta  : enderecoERP;
@@ -27,7 +27,7 @@ uses
 
 { TWebServicesCorreios }
 
-procedure TWebServicesCorreios.BeforeExecute(const aMethodName: string;
+procedure TWebServiceCorreios.BeforeExecute(const aMethodName: string;
   aSOAPRequest: TStream);
   var
     xRequest : TStringList;
@@ -55,25 +55,42 @@ procedure TWebServicesCorreios.BeforeExecute(const aMethodName: string;
     end;
   end;
 
-procedure TWebServicesCorreios.ConsutarCep;
-begin
+procedure TWebServiceCorreios.ConsutarCep;
+  var
+    xCorreios: AtendeCliente;
+    xHTTPRIO: THTTPRIO;
+  begin
+    xHTTPRIO := THTTPRIO.Create(nil);
+    xHTTPRIO.OnBeforeExecute := Self.BeforeExecute;
 
-end;
+    xCorreios := GetAtendeCliente(True, '', xHTTPRIO);
+    FResposta := xCorreios.consultaCEP(FParametros).return;
+  end;
 
-procedure TWebServicesCorreios.DefinirParametrosConsulta(const aCep: String);
-begin
+procedure TWebServiceCorreios.DefinirParametrosConsulta(const aCep: String);
+  begin
+    FParametros := consultaCEP.Create;
+    FParametros.cep := aCep;
+  end;
 
-end;
+destructor TWebServiceCorreios.Destroy;
+  begin
+    FreeAndNil(FParametros);
+    FreeAndNil(FResposta);
+    inherited;
+  end;
 
-destructor TWebServicesCorreios.Destroy;
-begin
+function TWebServiceCorreios.ObterResposta(const aInformacao: String): String;
+  begin
+    Result := EmptyStr;
 
-  inherited;
-end;
+    if aInformacao = 'Logradouro' then
+      Result := FResposta.end_
+    else if aInformacao = 'Bairro' then
+      Result := FResposta.bairro
+    else if aInformacao = 'Cidade' then
+      Result := FResposta.cidade;
 
-function TWebServicesCorreios.ObterResposta(const aInformacao: String): String;
-begin
-
-end;
+  end;
 
 end.
