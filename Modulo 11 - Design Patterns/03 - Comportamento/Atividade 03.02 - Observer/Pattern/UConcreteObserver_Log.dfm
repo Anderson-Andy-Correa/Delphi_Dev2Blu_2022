@@ -1,4 +1,4 @@
-object frmLog: TfrmLog
+object fraLog: TfraLog
   Left = 0
   Top = 0
   Width = 350
@@ -39,8 +39,5 @@ object frmLog: TfrmLog
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 0
-    ExplicitTop = 28
-    ExplicitWidth = 310
-    ExplicitHeight = 207
   end
 end

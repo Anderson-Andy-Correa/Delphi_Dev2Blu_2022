@@ -99,14 +99,14 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="..\Form\UfrmPrincipal.pas">
-            <Form>Form1</Form>
+            <Form>frmPrincipal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\Pattern\USubject.pas"/>
         <DCCReference Include="..\Pattern\UObserver.pas"/>
         <DCCReference Include="..\Pattern\UNotificacao.pas"/>
         <DCCReference Include="..\Pattern\UConcreteObserver_Log.pas">
-            <Form>frmLog</Form>
+            <Form>fraLog</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
@@ -116,12 +116,12 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="..\Pattern\UConcreteObserver_Historico.pas">
-            <Form>Frame1</Form>
+            <Form>fraHistorico</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="..\Pattern\UConcreteSubject.pas">
-            <Form>Frame2</Form>
+            <Form>fraCadastro</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>

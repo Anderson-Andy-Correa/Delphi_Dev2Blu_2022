@@ -1,4 +1,4 @@
-﻿object Frame2: TFrame2
+﻿object fraCadastro: TfraCadastro
   Left = 0
   Top = 0
   Width = 350
@@ -58,6 +58,7 @@
     Width = 120
     Height = 21
     TabOrder = 0
+    OnChange = cmbOperacaoChange
     Items.Strings = (
       'Cr'#233'dito'
       'D'#233'bito')
@@ -83,6 +84,7 @@
     Height = 73
     Caption = 'Gravar'
     TabOrder = 3
+    OnClick = btnGravarClick
   end
   object dbgGravar: TDBGrid
     Left = 15
@@ -115,7 +117,7 @@
         Visible = True
       end>
   end
-  object cdtGravar: TClientDataSet
+  object cdsGravar: TClientDataSet
     PersistDataPacket.Data = {
       790000009619E0BD01000000180000000300000000000300000079000A4F7065
       7261C3A7C3A36F01004900000001000557494454480200020064000943617465
@@ -126,20 +128,20 @@
     Params = <>
     Left = 48
     Top = 168
-    object cdtGravarOperação: TStringField
+    object cdsGravarOperação: TStringField
       FieldName = 'Opera'#231#227'o'
       Size = 100
     end
-    object cdtGravarCategoria: TStringField
+    object cdsGravarCategoria: TStringField
       FieldName = 'Categoria'
       Size = 100
     end
-    object cdtGravarValor: TCurrencyField
+    object cdsGravarValor: TCurrencyField
       FieldName = 'Valor'
     end
   end
   object dtsGravar: TDataSource
-    DataSet = cdtGravar
+    DataSet = cdsGravar
     Left = 128
     Top = 168
   end

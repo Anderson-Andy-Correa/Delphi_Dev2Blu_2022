@@ -8,7 +8,7 @@ uses
   UNotificacao;
 
 type
-  TfrmLog = class(TFrame, IObserver)
+  TfraLog = class(TFrame, IObserver)
     lblLog: TLabel;
     mmLog: TMemo;
   private
@@ -24,7 +24,7 @@ implementation
 
 { TfrmLog }
 
-procedure TfrmLog.Atualizar(aNotificacao: TNotificacao);
+procedure TfraLog.Atualizar(aNotificacao: TNotificacao);
   var
     xTextoLog: string;
   begin

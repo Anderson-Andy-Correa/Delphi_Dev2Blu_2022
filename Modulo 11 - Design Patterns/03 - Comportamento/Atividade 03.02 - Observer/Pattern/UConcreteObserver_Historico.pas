@@ -3,12 +3,29 @@ unit UConcreteObserver_Historico;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
-  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids,
-  Vcl.DBGrids, Datasnap.DBClient, Vcl.StdCtrls, UNotificacao, UObserver;
+  Winapi.Windows,
+  Winapi.Messages,
+
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  Vcl.Grids,
+  Vcl.DBGrids,
+  Vcl.StdCtrls,
+
+  Data.DB,
+  Datasnap.DBClient,
+
+  UNotificacao,
+  UObserver;
 
 type
-  TFrame1 = class(TFrame, IObserver)
+  TfraHistorico = class(TFrame, IObserver)
     lblDebitos: TLabel;
     cdsDebitos: TClientDataSet;
     dbgDebitos: TDBGrid;
@@ -28,7 +45,7 @@ implementation
 
 { TFrame1 }
 
-procedure TFrame1.Atualizar(aNotificacao: TNotificacao);
+procedure TfraHistorico.Atualizar(aNotificacao: TNotificacao);
   begin
     if aNotificacao.Operacao = 'Crédito' then
       exit;

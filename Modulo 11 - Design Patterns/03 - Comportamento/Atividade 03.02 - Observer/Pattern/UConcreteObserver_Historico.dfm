@@ -1,4 +1,4 @@
-object Frame1: TFrame1
+object fraHistorico: TfraHistorico
   Left = 0
   Top = 0
   Width = 350
