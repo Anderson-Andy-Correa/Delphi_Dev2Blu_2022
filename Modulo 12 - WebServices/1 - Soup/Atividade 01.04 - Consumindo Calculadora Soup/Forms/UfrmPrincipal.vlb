@@ -1,0 +1,13 @@
+﻿[edtValor1]
+Coordinates=121,10,70,58
+
+[]
+Coordinates=101,143,91,36
+
+[edtValor2]
+Coordinates=201,10,44,58
+Visible=True
+
+[cmbOperacao]
+Coordinates=10,10,101,124
+
