@@ -8,7 +8,7 @@ uses
   Data.Bind.Components, Data.Bind.ObjectScope;
 
 type
-  TOperacoes = (tpSomar, tpSubtrair, tpMultiplicar, tpDividir);
+  TOperacoes = (somar, subtrair, multiplicar, dividir);
   TfrmPrincipal = class(TForm)
     lblResultado: TLabel;
     edtValor1: TEdit;
@@ -20,6 +20,7 @@ type
     RESTResponse1: TRESTResponse;
     procedure cmbOperacaoChange(Sender: TObject);
     procedure btnCalcularClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,6 +33,9 @@ var
   frmPrincipal: TfrmPrincipal;
 
 implementation
+
+uses
+  System.TypInfo;
 
 {$R *.dfm}
 
@@ -48,32 +52,39 @@ procedure TfrmPrincipal.cmbOperacaoChange(Sender: TObject);
 
 procedure TfrmPrincipal.EscolherOpercacao;
   var
+    xNumerador, xDenominador: double;
     xResposta: String;
   begin
+    if not TryStrToFloat(edtValor1.Text, xNumerador) then
+      raise Exception.Create('Erro de Conversão no valor de Numerador!');
 
-    case TOperacoes(cmbOperacao.ItemIndex) of
-      tpSomar:
-        xResposta := 'somar';
+    if not TryStrToFloat(edtValor2.Text, xDenominador) then
+      raise Exception.Create('Erro de Conversão no valor de Denominador!');
 
-      tpSubtrair:
-        xResposta := 'subtrair';
+    xResposta := GetEnumName(TypeInfo(TOperacoes), cmbOperacao.ItemIndex);
 
-      tpMultiplicar:
-        xResposta := 'multiplicar';
-
-      tpDividir:
-        xResposta := 'dividir';
-
-    end;
-    RESTClient1.BaseURL := Format('http://localhost:9090/%s/%s/%s',
-      [xResposta, edtValor1.Text, edtValor2.Text]);
+    RESTClient1.BaseURL := Format('http://localhost:9090/%s/%f/%f',
+      [xResposta, xNumerador, xDenominador]);
     RESTRequest1.Execute;
 
     if RESTResponse1.StatusCode = SUCESSO then
-      lblResultado.Caption := 'Resultado: ' + RESTResponse1.Content
+      lblResultado.Caption := RESTResponse1.Content
     else
       lblResultado.Caption := Format('Erro na Requisição: Status(%d)' ,
         [RESTResponse1.StatusCode]);
+  end;
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
+var
+    I: TOperacoes;
+    pos: Integer;
+  begin
+    pos := 0;
+    for I := low(TOperacoes) to high(TOperacoes) do
+      begin
+        cmbOperacao.Items.Add(GetEnumName(TypeInfo(TOperacoes), pos));
+        inc(pos);
+      end;
   end;
 
 end.

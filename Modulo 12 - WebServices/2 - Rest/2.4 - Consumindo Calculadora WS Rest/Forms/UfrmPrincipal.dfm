@@ -11,6 +11,7 @@ object frmPrincipal: TfrmPrincipal
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnShow = FormShow
   DesignSize = (
     300
     150)
@@ -53,11 +54,6 @@ object frmPrincipal: TfrmPrincipal
     TabOrder = 2
     TextHint = 'Selecione uma opera'#231#227'o...'
     OnChange = cmbOperacaoChange
-    Items.Strings = (
-      'Somar'
-      'Subtrair'
-      'Multiplicar'
-      'Dividir')
   end
   object btnCalcular: TButton
     Left = 153
