@@ -1,0 +1,467 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "API Horse",
+        "version": "v1.1.0",
+        "title": "Minha Primeira API Documentada",
+        "termsOfService": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0.txt",
+        "contact": {
+            "name": "Anderson Corrêa",
+            "email": "email@gmail.com",
+            "url": "http:\/\/www.mypage.com.br"
+        },
+        "license": {
+            "name": "Apache License - Version 2.0, January 2004",
+            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+        }
+    },
+    "basePath": "\/v1",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application\/json"
+    ],
+    "produces": [
+        "application\/json"
+    ],
+    "paths": {
+        "\/cargo": {
+            "get": {
+                "tags": [
+                    "Cargos"
+                ],
+                "summary": "Listar Cargos",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "description": "id do cargo",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Informações do Cargo",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#\/definitions\/Cargo"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Cargos"
+                ],
+                "summary": "Adicionar Novo Cargo",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "Informações do Cargo",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#\/definitions\/Cargo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#\/definitions\/Cargo"
+                        }
+                    }
+                },
+                "security": [
+                ]
+            }
+        },
+        "\/cargo\/{id}": {
+            "get": {
+                "tags": [
+                    "Cargos"
+                ],
+                "summary": "Procurar um cargo",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "id do cargo",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Informações do Cargo",
+                        "schema": {
+                            "$ref": "#\/definitions\/Cargo"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#\/definitions\/APIError"
+                        }
+                    }
+                },
+                "security": [
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Cargos"
+                ],
+                "summary": "Atualizar um cargo",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "id do cargo",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "Informações do Cargo",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#\/definitions\/Cargo"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#\/definitions\/APIError"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#\/definitions\/APIError"
+                        }
+                    }
+                },
+                "security": [
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Cargos"
+                ],
+                "summary": "Deletar um cargo",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "id do cargo",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#\/definitions\/APIError"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#\/definitions\/APIError"
+                        }
+                    }
+                },
+                "security": [
+                ]
+            }
+        },
+        "\/pessoa": {
+            "get": {
+                "tags": [
+                    "Pessoas"
+                ],
+                "summary": "Listar Pessoas",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "description": "id da pessoa",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Informações da Pessoa",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#\/definitions\/Pessoa"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Pessoas"
+                ],
+                "summary": "Adicionar Nova Pessoa",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "Informações da Pessoa",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#\/definitions\/Pessoa"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#\/definitions\/Pessoa"
+                        }
+                    }
+                },
+                "security": [
+                ]
+            }
+        },
+        "\/pessoa\/{id}": {
+            "get": {
+                "tags": [
+                    "Pessoas"
+                ],
+                "summary": "Procurar uma pessoa",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "id da pessoa",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Informações da Pessoa",
+                        "schema": {
+                            "$ref": "#\/definitions\/Pessoa"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#\/definitions\/APIError"
+                        }
+                    }
+                },
+                "security": [
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Pessoas"
+                ],
+                "summary": "Atualizar uma pessoa",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "id da pessoa",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "Informações da Pessoa",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#\/definitions\/Pessoa"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#\/definitions\/APIError"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#\/definitions\/APIError"
+                        }
+                    }
+                },
+                "security": [
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Pessoas"
+                ],
+                "summary": "Deletar uma pessoa",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "id da pessoa",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "schema": {
+                            "$ref": "#\/definitions\/APIError"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "schema": {
+                            "$ref": "#\/definitions\/APIError"
+                        }
+                    }
+                },
+                "security": [
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "APIError": {
+            "type": "object",
+            "description": "APIError",
+            "properties": {
+                "Error": {
+                    "type": "string"
+                }
+            }
+        },
+        "Cargo": {
+            "type": "object",
+            "description": "Cargo",
+            "required": [
+                "Id",
+                "Descricao"
+            ],
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "description": "Cargo Id"
+                },
+                "Descricao": {
+                    "type": "string",
+                    "description": "Cargo Descrição"
+                }
+            }
+        },
+        "Pessoa": {
+            "type": "object",
+            "description": "Pessoa",
+            "required": [
+                "Id",
+                "Nome"
+            ],
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "description": "Pessoa Id"
+                },
+                "Nome": {
+                    "type": "string",
+                    "description": "Pessoa Nome"
+                }
+            }
+        }
+    }
+}
