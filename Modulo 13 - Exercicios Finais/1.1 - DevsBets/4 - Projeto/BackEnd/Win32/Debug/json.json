@@ -1,0 +1,740 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "DevsBets - Lance seu Palpite",
+        "version": "1.0.0",
+        "title": "Documentação API DevsBets",
+        "termsOfService": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0.txt",
+        "contact": {
+            "name": "Anderson Corrêa",
+            "email": "anderson_correa_10@hotmail.com",
+            "url": "http:\/\/www.mypage.com.br"
+        },
+        "license": {
+            "name": "Apache License - Version 2.0, January 2004",
+            "url": "http:\/\/www.apache.org\/licenses\/LICENSE-2.0"
+        }
+    },
+    "basePath": "\/v1",
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application\/json"
+    ],
+    "produces": [
+        "application\/json"
+    ],
+    "paths": {
+        "\/bets": {
+            "get": {
+                "tags": [
+                    "Apostas"
+                ],
+                "summary": "Listar Apostas",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Informações da Aposta",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#\/definitions\/Bet"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "security": [
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Apostas"
+                ],
+                "summary": "Adicionar Nova Aposta",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "Informações da Aposta",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#\/definitions\/Bet"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                },
+                "security": [
+                ]
+            }
+        },
+        "\/bets\/{id}": {
+            "get": {
+                "tags": [
+                    "Apostas"
+                ],
+                "summary": "Procurar uma Aposta",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "id da Aposta",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Informações da Aposta",
+                        "schema": {
+                            "$ref": "#\/definitions\/Bet"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "security": [
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Apostas"
+                ],
+                "summary": "Deletar uma Aposta",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "id da Aposta",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                },
+                "security": [
+                ]
+            }
+        },
+        "\/matchs": {
+            "get": {
+                "tags": [
+                    "Partidas"
+                ],
+                "summary": "Listar Partidas",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Informações da Partida",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#\/definitions\/Match"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "security": [
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Partidas"
+                ],
+                "summary": "Adicionar Nova Partida",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "Informações da Partida",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#\/definitions\/Match"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                },
+                "security": [
+                ]
+            }
+        },
+        "\/matchs\/{id}": {
+            "get": {
+                "tags": [
+                    "Partidas"
+                ],
+                "summary": "Procurar uma Partida",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "id da Partidas",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Informações da Partida",
+                        "schema": {
+                            "$ref": "#\/definitions\/Match"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "security": [
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Partidas"
+                ],
+                "summary": "Deletar uma Partida",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "id da Partida",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                },
+                "security": [
+                ]
+            }
+        },
+        "\/teams\/{id}": {
+            "get": {
+                "tags": [
+                    "Times"
+                ],
+                "summary": "Procurar um Time",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "id do Time",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Informações do Time",
+                        "schema": {
+                            "$ref": "#\/definitions\/Team"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "security": [
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Times"
+                ],
+                "summary": "Deletar um Time",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "id do Time",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                },
+                "security": [
+                ]
+            }
+        },
+        "\/teams": {
+            "get": {
+                "tags": [
+                    "Times"
+                ],
+                "summary": "Listar Times",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Informações do Time",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#\/definitions\/Team"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "security": [
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Times"
+                ],
+                "summary": "Adicionar Novo Time",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "Informações do Time",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#\/definitions\/Team"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                },
+                "security": [
+                ]
+            }
+        },
+        "\/users\/{id}": {
+            "get": {
+                "tags": [
+                    "Usuários"
+                ],
+                "summary": "Procurar um Usuário",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "id do Usuário",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Informações do Usuário",
+                        "schema": {
+                            "$ref": "#\/definitions\/User"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "security": [
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Usuários"
+                ],
+                "summary": "Deletar um Usuário",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "id do Usuário",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                },
+                "security": [
+                ]
+            }
+        },
+        "\/users": {
+            "get": {
+                "tags": [
+                    "Usuários"
+                ],
+                "summary": "Listar Usuários",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Informações do Usuário",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#\/definitions\/User"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                },
+                "security": [
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Usuários"
+                ],
+                "summary": "Adicionar Novo Usuário",
+                "consumes": [
+                    "application\/json"
+                ],
+                "produces": [
+                    "application\/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "Informações do Usuário",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#\/definitions\/User"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                },
+                "security": [
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "Bet": {
+            "type": "object",
+            "description": "Bet",
+            "required": [
+                "Id",
+                "User",
+                "Match",
+                "ResultTeamA",
+                "ResultTeamB",
+                "Status"
+            ],
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "description": "Palpite Id"
+                },
+                "User": {
+                    "description": "Palpite Usuário",
+                    "allOf": [
+                        {
+                            "$ref": "#\/definitions\/User"
+                        }
+                    ]
+                },
+                "Match": {
+                    "description": "Palpite Partida",
+                    "allOf": [
+                        {
+                            "$ref": "#\/definitions\/Match"
+                        }
+                    ]
+                },
+                "ResultTeamA": {
+                    "type": "integer",
+                    "description": "Palpite Resultado Time A"
+                },
+                "ResultTeamB": {
+                    "type": "integer",
+                    "description": "Palpite Resultado Time B"
+                },
+                "Status": {
+                    "type": "integer",
+                    "description": "Palpite Status"
+                }
+            }
+        },
+        "JSONObject": {
+            "type": "object",
+            "description": "JSONObject",
+            "properties": {
+                "Count": {
+                    "type": "integer"
+                },
+                "Null": {
+                    "type": "boolean"
+                },
+                "Owned": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "Match": {
+            "type": "object",
+            "description": "Match",
+            "required": [
+                "Id",
+                "Date",
+                "Hour",
+                "TeamA",
+                "TeamB",
+                "ResultTeamA",
+                "ResultTeamb",
+                "Status"
+            ],
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "description": "Partida Id"
+                },
+                "Date": {
+                    "type": "string",
+                    "description": "Partida Data",
+                    "format": "date"
+                },
+                "Hour": {
+                    "type": "string",
+                    "description": "Partida Hora",
+                    "format": "time"
+                },
+                "TeamA": {
+                    "description": "Partida Time A",
+                    "allOf": [
+                        {
+                            "$ref": "#\/definitions\/Team"
+                        }
+                    ]
+                },
+                "TeamB": {
+                    "description": "Partida Time B",
+                    "allOf": [
+                        {
+                            "$ref": "#\/definitions\/Team"
+                        }
+                    ]
+                },
+                "ResultTeamA": {
+                    "type": "integer",
+                    "description": "Partida Resultado Time A"
+                },
+                "ResultTeamb": {
+                    "type": "integer",
+                    "description": "Partida Resultado Time b"
+                },
+                "Status": {
+                    "type": "integer",
+                    "description": "Partida Status"
+                }
+            }
+        },
+        "Team": {
+            "type": "object",
+            "description": "Team",
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "description": "Time Id"
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Time Nome"
+                },
+                "JSON": {
+                    "allOf": [
+                        {
+                            "$ref": "#\/definitions\/JSONObject"
+                        }
+                    ]
+                }
+            }
+        },
+        "User": {
+            "type": "object",
+            "description": "User",
+            "required": [
+                "Id",
+                "Name",
+                "Status",
+                "Login",
+                "Password"
+            ],
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "description": "Usuário Id"
+                },
+                "Name": {
+                    "type": "string",
+                    "description": "Usuário Nome"
+                },
+                "Status": {
+                    "type": "integer",
+                    "description": "Usuário Status"
+                },
+                "Login": {
+                    "type": "string",
+                    "description": "Usuário Login"
+                },
+                "Password": {
+                    "type": "string",
+                    "description": "Usuário Senha"
+                },
+                "JSON": {
+                    "allOf": [
+                        {
+                            "$ref": "#\/definitions\/JSONObject"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

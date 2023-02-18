@@ -131,6 +131,7 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
+        <DCCReference Include="model\utils\UUtil.Banco.pas"/>
         <DCCReference Include="model\entities\UEntity.Users.pas"/>
         <DCCReference Include="model\entities\UEntity.Logins.pas"/>
         <DCCReference Include="model\entities\UEntity.Teams.pas"/>
@@ -138,7 +139,6 @@
         <DCCReference Include="model\entities\UEntity.Bets.pas"/>
         <DCCReference Include="model\dao\UDAO.Intf.pas"/>
         <DCCReference Include="model\dao\UDAO.Base.pas"/>
-        <DCCReference Include="model\utils\UUtil.Banco.pas"/>
         <DCCReference Include="model\dao\UDAO.Users.pas"/>
         <DCCReference Include="model\dao\UDAO.Bets.pas"/>
         <DCCReference Include="model\dao\UDAO.Matchs.pas"/>
