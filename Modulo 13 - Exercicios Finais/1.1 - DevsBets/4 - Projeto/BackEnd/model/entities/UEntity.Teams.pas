@@ -3,7 +3,8 @@ unit UEntity.Teams;
 interface
 
 uses
-  GBSwagger.Model.Attributes, System.JSON;
+  GBSwagger.Model.Attributes,
+  System.JSON;
 
 type
   TTeam = class
@@ -12,16 +13,22 @@ type
       FName: String;
       FJSON: TJSONObject;
 
-    function GetId: Integer;
-    function GetJSON: TJSONObject;
-    function GetName: String;
+      function GetId: Integer;
+      function GetName: String;
+      function GetJSON: TJSONObject;
 
-    procedure SetId(const Value: Integer);
-    procedure SetName(const Value: String);
-
+      procedure SetId(const Value: Integer);
+      procedure SetName(const Value: String);
     public
-      constructor Create(const aName: String; const aId: Integer = 0);
-      destructor Destroy; override;
+      constructor Create; overload;
+      constructor Create(const aId: Integer); overload;
+      constructor Create(const aName: String); overload;
+      constructor Create(const aId: Integer; aName: String); overload;
+
+      destructor  Destroy; override;
+
+      //Padrão de Projeto - Prototype
+      function Clone: TTeam;
 
       [SwagProp('Time Id', True)]
       property Id: Integer read GetId write SetId;
@@ -39,11 +46,39 @@ uses
 
 { TTeam }
 
-constructor TTeam.Create(const aName: String; const aId: Integer);
+constructor TTeam.Create;
 begin
-  FJSON := TJSONOBject.Create;
+  FJSON := TJSONObject.Create;
+end;
+
+constructor TTeam.Create(const aId: Integer);
+begin
   FId := aId;
+
+  Self.Create;
+end;
+
+function TTeam.Clone: TTeam;
+begin
+  Result := TTeam.Create;
+
+  Result.FId   := Self.FId;
+  Result.FName := Self.FName
+end;
+
+constructor TTeam.Create(const aName: String);
+begin
   FName := aName;
+
+  Self.Create;
+end;
+
+constructor TTeam.Create(const aId: Integer; aName: String);
+begin
+  FId   := aId;
+  FName := aName;
+
+  Self.Create;
 end;
 
 destructor TTeam.Destroy;

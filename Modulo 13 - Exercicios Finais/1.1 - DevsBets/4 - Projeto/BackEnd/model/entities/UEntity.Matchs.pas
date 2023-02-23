@@ -3,7 +3,9 @@ unit UEntity.Matchs;
 interface
 
 uses
-  GBSwagger.Model.Attributes, UEntity.Teams;
+  UEntity.Teams,
+  System.JSON,
+  GBSwagger.Model.Attributes;
 
 type
   TMatch = class
@@ -16,26 +18,34 @@ type
       FResultTeamA: Byte;
       FResultTeamB: Byte;
       FStatus: Byte;
+      FJSON: TJSONObject;
 
-    function GetDate: TDate;
-    function GetHour: TTime;
-    function GetId: Integer;
-    function GetResultTeamA: Byte;
-    function GetResultTeamB: Byte;
-    function GetStatus: Byte;
-    function GetTeamA: TTeam;
-    function GetTeamB: TTeam;
+      function GetDate: TDate;
+      function GetHour: TTime;
+      function GetId: Integer;
+      function GetResultTeamA: Byte;
+      function GetResultTeamB: Byte;
+      function GetStatus: Byte;
+      function GetTeamA: TTeam;
+      function GetTeamB: TTeam;
+      function GetJSON: TJSONObject;
 
-    procedure SetDate(const Value: TDate);
-    procedure SetHour(const Value: TTime);
-    procedure SetId(const Value: Integer);
-    procedure SetResultTeamA(const Value: Byte);
-    procedure SetResultTeamB(const Value: Byte);
-    procedure SetStatus(const Value: Byte);
-    procedure SetTeamA(const Value: TTeam);
-    procedure SetTeamB(const Value: TTeam);
-
+      procedure SetDate(const Value: TDate);
+      procedure SetHour(const Value: TTime);
+      procedure SetId(const Value: Integer);
+      procedure SetResultTeamA(const Value: Byte);
+      procedure SetResultTeamB(const Value: Byte);
+      procedure SetStatus(const Value: Byte);
+      procedure SetTeamA(const Value: TTeam);
+      procedure SetTeamB(const Value: TTeam);
     public
+      constructor Create; overload;
+      constructor Create(aId: Integer); overload;
+      constructor Create(aDate: TDate; aHour: TTime; aTeamA, aTeamB: TTeam); overload;
+      constructor Create(aId: Integer; aDate: TDate; aHour: TTime; aTeamA, aTeamB: TTeam; aResultTeamA, aResultTeamB, aStatus: Byte); overload;
+
+      destructor  Destroy; override;
+
       [SwagProp('Partida Id', True)]
       property Id: Integer read GetId write SetId;
 
@@ -54,16 +64,67 @@ type
       [SwagProp('Partida Resultado Time A', True)]
       property ResultTeamA: Byte read GetResultTeamA write SetResultTeamA;
 
-      [SwagProp('Partida Resultado Time b', True)]
-      property ResultTeamb: Byte read GetResultTeamB write SetResultTeamB;
+      [SwagProp('Partida Resultado Time B', True)]
+      property ResultTeamB: Byte read GetResultTeamB write SetResultTeamB;
 
       [SwagProp('Partida Status', True)]
       property Status: Byte read GetStatus write SetStatus;
+
+      property JSON: TJSONObject read GetJSON;
   end;
 
 implementation
 
+uses
+  System.SysUtils;
+
 { TMatch }
+
+constructor TMatch.Create;
+begin
+  FJSON := TJSONObject.Create;
+end;
+
+constructor TMatch.Create(aDate: TDate; aHour: TTime; aTeamA, aTeamB: TTeam);
+begin
+  FDate  := aDate;
+  FHour  := aHour;
+  FTeamA := aTeamA;
+  FTeamB := aTeamB;
+
+  Self.Create;
+end;
+
+constructor TMatch.Create(aId: Integer);
+begin
+  FId := aId;
+
+  Self.Create;
+end;
+
+constructor TMatch.Create(aId: Integer; aDate: TDate; aHour: TTime; aTeamA,
+  aTeamB: TTeam; aResultTeamA, aResultTeamB, aStatus: Byte);
+begin
+  FId          := aId;
+  FDate        := aDate;
+  FHour        := aHour;
+  FTeamA       := aTeamA;
+  FTeamB       := aTeamB;
+  FResultTeamA := aResultTeamA;
+  FResultTeamB := aResultTeamB;
+  FStatus      := aStatus;
+
+  Self.Create;
+end;
+
+destructor TMatch.Destroy;
+begin
+  FreeAndNil(FTeamA);
+  FreeAndNil(FTeamB);
+  FreeAndNil(FJSON);
+
+  inherited;
+end;
 
 function TMatch.GetDate: TDate;
 begin
@@ -78,6 +139,19 @@ end;
 function TMatch.GetId: Integer;
 begin
   Result := FId;
+end;
+
+function TMatch.GetJSON: TJSONObject;
+begin
+  FJSON.AddPair('date',        FormatDateTime('yyyy-mm-dd', FDate));
+  FJSON.AddPair('hour',        TimeToStr(FHour));
+  FJSON.AddPair('idTeamA',     FTeamA.Id.ToString);
+  FJSON.AddPair('idTeamB',     FTeamB.Id.ToString);
+  FJSON.AddPair('resultTeamA', FResultTeamA.ToString);
+  FJSON.AddPair('resultTeamB', FResultTeamB.ToString);
+  FJSON.AddPair('status',      FStatus.ToString);
+
+  Result := FJSON;
 end;
 
 function TMatch.GetResultTeamA: Byte;
@@ -102,7 +176,7 @@ end;
 
 function TMatch.GetTeamB: TTeam;
 begin
-  Result := FTeamB
+  Result := FTeamB;
 end;
 
 procedure TMatch.SetDate(const Value: TDate);

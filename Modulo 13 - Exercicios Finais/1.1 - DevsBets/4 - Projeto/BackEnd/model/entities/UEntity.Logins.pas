@@ -12,14 +12,13 @@ type
       FPassword: String;
       FToken: String;
 
-    function GetLogin: String;
-    function GetPassword: String;
-    function GetToken: String;
+      function GetLogin: String;
+      function GetPassword: String;
+      function GetToken: String;
 
-    procedure SetLogin(const Value: String);
-    procedure SetPassword(const Value: String);
-    procedure SetToken(const Value: String);
-
+      procedure SetLogin(const Value: String);
+      procedure SetPassword(const Value: String);
+      procedure SetToken(const Value: String);
     public
       constructor Create(const aLogin, aPassword: String);
 
@@ -39,7 +38,7 @@ implementation
 
 constructor TLogin.Create(const aLogin, aPassword: String);
 begin
-  FLogin := aLogin;
+  FLogin    := aLogin;
   FPassword := aPassword;
 end;
 
