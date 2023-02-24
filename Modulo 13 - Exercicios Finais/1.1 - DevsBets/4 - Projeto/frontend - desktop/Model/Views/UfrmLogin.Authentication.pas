@@ -54,14 +54,15 @@ implementation
 {$R *.fmx}
 
 uses
-  UfrmLogin;
+  UfrmLogin,
 //  UfrmHome,
-//  UEntity.Login,
-//  UService.Intf,
-//  UServiceLogin;
+  UEntity.Logins,
+  UService.Intf,
+  UService.Login;
 
 procedure TfrmLoginAuthentication.AbrirHome;
   begin
+    ShowMessage('Usuário Autenticado');
 //    if not Assigned(frmHome) then
 //      frmHome := TfrmHome.Create;
 //
@@ -78,8 +79,8 @@ procedure TfrmLoginAuthentication.FormClose(Sender: TObject;
   end;
 
 procedure TfrmLoginAuthentication.Logar;
-//  var
-//    xServiceLogin: IServece;
+  var
+    xServiceLogin: IService;
   begin
     if Trim(edtLogin.Text) = EmptyStr then
       raise Exception.Create('Informe o Login.');
@@ -87,12 +88,12 @@ procedure TfrmLoginAuthentication.Logar;
     if Trim(edtSenha.Text) = EmptyStr then
       raise Exception.Create('Informe a Senha.');
 
-//    xServiceLogin := TServiceLogin.Create(
-//      TLogin(Trim(edtLogin.Text,
-//             Trim(edtSenha.Text)));
+    xServiceLogin := TServiceLogin.Create(
+      TLogin.Create(Trim(edtLogin.Text),
+             Trim(edtSenha.Text)));
 
     try
-//      TServiceLogin(xServiceLogin).Autenticar;
+      TServiceLogin(xServiceLogin).Autenticar;
       Self.AbrirHome;
     except on E: Exception do
       raise Exception.Create('Erro: ' + E.Message);

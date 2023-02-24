@@ -55,9 +55,10 @@ implementation
 {$R *.fmx}
 
 uses
-  UfrmLogin;
-//  UEntity.Users;
-//  UService;
+  UfrmLogin,
+  UEntity.Users,
+  UService.intf,
+  UService.User;
 
 procedure TfrmLoginRegistry.FormClose(Sender: TObject;
   var Action: TCloseAction);
@@ -77,8 +78,8 @@ procedure TfrmLoginRegistry.rectVoltarClick(Sender: TObject);
   end;
 
 procedure TfrmLoginRegistry.Registrar;
-//  var
-//    xServiceUser: IService;
+  var
+    xServiceUser: IService;
   begin
     if Trim(edtNome.Text) = EmptyStr then
       raise Exception.Create('Informe o Nome.');
@@ -89,13 +90,13 @@ procedure TfrmLoginRegistry.Registrar;
     if Trim(edtSenha.Text) = EmptyStr then
       raise Exception.Create('Informe o Senha.');
 
-//    xServiceUser := TServiceUser.Create(
-//      TUser.Create(Trim(edtNome.Text),
-//                   Trim(edtLogin.Text),
-//                   Trim(edtSenha.Text)));
+    xServiceUser := TServiceUser.Create(
+      TUser.Create(Trim(edtNome.Text),
+                   Trim(edtLogin.Text),
+                   Trim(edtSenha.Text)));
 
     try
-//      xServiceUser.Registrar;
+      xServiceUser.Registrar;
       ShowMessage('Usuário registrado com Sucesso.');
       Self.VoltarTela;
     except on E: Exception do

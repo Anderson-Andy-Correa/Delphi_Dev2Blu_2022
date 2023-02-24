@@ -273,6 +273,12 @@
         <DCCReference Include="..\..\BackEnd\model\entities\UEntity.Matchs.pas"/>
         <DCCReference Include="..\..\BackEnd\model\entities\UEntity.Teams.pas"/>
         <DCCReference Include="..\..\BackEnd\model\entities\UEntity.Users.pas"/>
+        <DCCReference Include="..\Model\Services\UService.intf.pas"/>
+        <DCCReference Include="..\Model\Services\UService.Base.pas"/>
+        <DCCReference Include="..\Model\Services\UService.User.pas"/>
+        <DCCReference Include="..\Model\Utils\UUtils.Constants.pas"/>
+        <DCCReference Include="..\Model\Services\UService.Login.pas"/>
+        <DCCReference Include="..\Model\Services\UService.User.Authenticated.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
