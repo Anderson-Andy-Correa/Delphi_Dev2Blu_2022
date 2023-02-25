@@ -60,6 +60,7 @@ procedure TfrmLogin.AbrirLoginAuthentication;
 
       frmLoginAuthentication.Show;
       Application.MainForm := frmLoginAuthentication;
+      Self.Close;
   end;
 
 procedure TfrmLogin.AbrirLoginRegistry;
@@ -69,6 +70,7 @@ procedure TfrmLogin.AbrirLoginRegistry;
 
       frmLoginRegistry.Show;
       Application.MainForm := frmLoginRegistry;
+      Self.Close;
   end;
 
 procedure TfrmLogin.FormClose(Sender: TObject; var Action: TCloseAction);

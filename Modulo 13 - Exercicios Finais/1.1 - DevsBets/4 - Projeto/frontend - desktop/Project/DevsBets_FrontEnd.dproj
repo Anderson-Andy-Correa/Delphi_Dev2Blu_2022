@@ -260,8 +260,8 @@
             <Form>frmLoginAuthentication</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="..\Model\Views\UfrmLogin.pas">
-            <Form>frmLogin</Form>
+        <DCCReference Include="..\Model\Views\UfrmHome.pas">
+            <Form>frmHome</Form>
             <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="..\Model\Views\UfrmLogin.Registry.pas">
@@ -279,6 +279,13 @@
         <DCCReference Include="..\Model\Utils\UUtils.Constants.pas"/>
         <DCCReference Include="..\Model\Services\UService.Login.pas"/>
         <DCCReference Include="..\Model\Services\UService.User.Authenticated.pas"/>
+        <DCCReference Include="..\Model\Views\UfrmLogin.pas">
+            <Form>frmLogin</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="..\Model\Utils\UUtils.Enums.pas"/>
+        <DCCReference Include="..\Model\Services\UService.Match.pas"/>
+        <DCCReference Include="..\Model\Services\UService.Team.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

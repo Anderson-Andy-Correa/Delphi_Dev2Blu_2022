@@ -4,7 +4,7 @@ uses
   System.StartUpCopy,
   FMX.Forms,
   UfrmLogin.Authentication in '..\Model\Views\UfrmLogin.Authentication.pas' {frmLoginAuthentication},
-  UfrmLogin in '..\Model\Views\UfrmLogin.pas' {frmLogin},
+  UfrmHome in '..\Model\Views\UfrmHome.pas' {frmHome},
   UfrmLogin.Registry in '..\Model\Views\UfrmLogin.Registry.pas' {frmLoginRegistry},
   UEntity.Bets in '..\..\BackEnd\model\entities\UEntity.Bets.pas',
   UEntity.Logins in '..\..\BackEnd\model\entities\UEntity.Logins.pas',
@@ -16,11 +16,17 @@ uses
   UService.User in '..\Model\Services\UService.User.pas',
   UUtils.Constants in '..\Model\Utils\UUtils.Constants.pas',
   UService.Login in '..\Model\Services\UService.Login.pas',
-  UService.User.Authenticated in '..\Model\Services\UService.User.Authenticated.pas';
+  UService.User.Authenticated in '..\Model\Services\UService.User.Authenticated.pas',
+  UfrmLogin in '..\Model\Views\UfrmLogin.pas' {frmLogin},
+  UUtils.Enums in '..\Model\Utils\UUtils.Enums.pas',
+  UService.Match in '..\Model\Services\UService.Match.pas',
+  UService.Team in '..\Model\Services\UService.Team.pas';
 
 {$R *.res}
 
 begin
+  ReportMemoryLeaksOnShutdown := True;
+
   Application.Initialize;
   Application.CreateForm(TfrmLogin, frmLogin);
   Application.Run;
