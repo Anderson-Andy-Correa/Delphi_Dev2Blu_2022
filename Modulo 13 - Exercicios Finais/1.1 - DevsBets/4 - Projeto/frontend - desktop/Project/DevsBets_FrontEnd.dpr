@@ -20,7 +20,9 @@ uses
   UfrmLogin in '..\Model\Views\UfrmLogin.pas' {frmLogin},
   UUtils.Enums in '..\Model\Utils\UUtils.Enums.pas',
   UService.Match in '..\Model\Services\UService.Match.pas',
-  UService.Team in '..\Model\Services\UService.Team.pas';
+  UService.Team in '..\Model\Services\UService.Team.pas',
+  UService.Bet in '..\Model\Services\UService.Bet.pas',
+  UUtils.Functions in '..\Model\Utils\UUtils.Functions.pas';
 
 {$R *.res}
 
