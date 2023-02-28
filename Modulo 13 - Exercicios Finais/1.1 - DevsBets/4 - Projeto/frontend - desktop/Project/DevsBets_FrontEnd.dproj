@@ -288,6 +288,36 @@
         <DCCReference Include="..\Model\Services\UService.Team.pas"/>
         <DCCReference Include="..\Model\Services\UService.Bet.pas"/>
         <DCCReference Include="..\Model\Utils\UUtils.Functions.pas"/>
+        <DCCReference Include="..\Model\Views\UfraBet.Registry.pas">
+            <Form>fraBetRegistry</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Model\Views\UfraBet.pas">
+            <Form>fraBet</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Model\Views\UfraTeam.pas">
+            <Form>fraTeam</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Model\Views\UfraTeam.Registry.pas">
+            <Form>fraTeamRegistry</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Model\Views\UfraMatch.pas">
+            <Form>fraMatch</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Model\Views\UfraMatch.Registry.pas">
+            <Form>fraMatchRegistry</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

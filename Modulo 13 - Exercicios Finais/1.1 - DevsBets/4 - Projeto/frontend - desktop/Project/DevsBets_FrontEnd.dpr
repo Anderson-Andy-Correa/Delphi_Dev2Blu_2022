@@ -22,7 +22,13 @@ uses
   UService.Match in '..\Model\Services\UService.Match.pas',
   UService.Team in '..\Model\Services\UService.Team.pas',
   UService.Bet in '..\Model\Services\UService.Bet.pas',
-  UUtils.Functions in '..\Model\Utils\UUtils.Functions.pas';
+  UUtils.Functions in '..\Model\Utils\UUtils.Functions.pas',
+  UfraBet.Registry in '..\Model\Views\UfraBet.Registry.pas' {fraBetRegistry: TFrame},
+  UfraBet in '..\Model\Views\UfraBet.pas' {fraBet: TFrame},
+  UfraTeam in '..\Model\Views\UfraTeam.pas' {fraTeam: TFrame},
+  UfraTeam.Registry in '..\Model\Views\UfraTeam.Registry.pas' {fraTeamRegistry: TFrame},
+  UfraMatch in '..\Model\Views\UfraMatch.pas' {fraMatch: TFrame},
+  UfraMatch.Registry in '..\Model\Views\UfraMatch.Registry.pas' {fraMatchRegistry: TFrame};
 
 {$R *.res}
 

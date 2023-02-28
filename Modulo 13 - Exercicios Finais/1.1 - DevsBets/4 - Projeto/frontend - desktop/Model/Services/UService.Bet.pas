@@ -102,7 +102,7 @@ begin
       API_NAO_AUTORIZADO:
         raise Exception.Create('Usuário não autorizado.');
       else
-        raise Exception.Create('Erro ao carregar a lista de Times. Código do Erro: ' + FRESTResponse.StatusCode.ToString);
+        raise Exception.Create('Erro ao carregar a lista de Palpites. Código do Erro: ' + FRESTResponse.StatusCode.ToString);
     end;
   except
     on e: exception do
