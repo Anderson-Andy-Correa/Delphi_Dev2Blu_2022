@@ -66,7 +66,7 @@ uses
 procedure TfraMatch.AbrirMatchRegistry;
   begin
     if not Assigned(fraMatchRegistry)then
-      fraMatchRegistry := TfraMatchRegistry(Application);
+      fraMatchRegistry := TfraMatchRegistry.Create(Application);
 
     fraMatchRegistry.Align := TAlignLayout.Center;
 

@@ -135,7 +135,7 @@ procedure TfraMatchRegistry.Registrar;
       raise Exception.Create('Informe Times diferentes para a Partida.');
 
     xHora := StrToTime(Trim(edtHora.Text));
-    xData := StrToTime(Trim(edtData.Text));
+    xData := StrToDate(Trim(edtData.Text));
 
     xTimeAux := TTeam(cmbTimeA.Items.Objects[cmbTimeA.ItemIndex]);
     xTimeA   := xTimeAux.Clone;
