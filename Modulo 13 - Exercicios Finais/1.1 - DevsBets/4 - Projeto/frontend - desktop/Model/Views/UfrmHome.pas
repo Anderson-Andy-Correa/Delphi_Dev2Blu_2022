@@ -59,36 +59,36 @@ implementation
 {$R *.fmx}
 
 uses
-//  UfraTeam,
-//  UfraMatch,
-//  UfraBet,
+  UfraTeam,
+  UfraMatch,
+  UfraBet,
   UUtils.Enums;
 
 procedure TfrmHome.AbrirBet;
   begin
-//    if not Assigned(fraBet) then
-//      fraBet := TfraBet.Create(Application);
-//
-//    fraBet.Align := TfraBetLayout.Center;
-//    lytContainer.AddObject(fraBet);
+    if not Assigned(fraBet) then
+      fraBet := TfraBet.Create(Application);
+
+    fraBet.Align := TAlignLayout.Center;
+    lytContainer.AddObject(fraBet);
   end;
 
 procedure TfrmHome.AbrirMatch;
   begin
-//    if not Assigned(fraMatch) then
-//      fraMatch := TfraMatch.Create(Application);
-//
-//    fraMatch.Align := TfraMatchLayout.Center;
-//    lytContainer.AddObject(fraMatch);
+    if not Assigned(fraMatch) then
+      fraMatch := TfraMatch.Create(Application);
+
+    fraMatch.Align := TAlignLayout.Center;
+    lytContainer.AddObject(fraMatch);
   end;
 
 procedure TfrmHome.AbrirTeam;
   begin
-//    if not Assigned(fraTeam) then
-//      fraTeam := TfraTeam.Create(Application);
-//
-//    fraTeam.Align := TfraTeamLayout.Center;
-//    lytContainer.AddObject(fraTeam);
+    if not Assigned(fraTeam) then
+      fraTeam := TfraTeam.Create(Application);
+
+    fraTeam.Align := TAlignLayout.Center;
+    lytContainer.AddObject(fraTeam);
   end;
 
 procedure TfrmHome.FormClose(Sender: TObject; var Action: TCloseAction);

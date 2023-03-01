@@ -36,6 +36,8 @@ type
     lytPrincipal: TLayout;
     imgLogo: TImage;
     lstTimes: TListView;
+    procedure rectExcluirClick(Sender: TObject);
+    procedure rectNovoClick(Sender: TObject);
   private
     { Private declarations }
     procedure AbrirTeamRegistry;
@@ -73,24 +75,64 @@ procedure TfraTeam.AbrirTeamRegistry;
   end;
 
 procedure TfraTeam.CarregarRegistros;
-begin
+  var
+    xServiceTeam: IService;
+    xTeam: TTeam;
+  begin
+    lstTimes.Items.Clear;
 
-end;
+    xServiceTeam := TServiceTeam.Create;
+    xServiceTeam.Listar;
+
+    for xTeam in TServiceTeam(xServiceTeam).Teams do
+      Self.PreencherTeams(xTeam);
+  end;
 
 constructor TfraTeam.Create(aOwner: TComponent);
-begin
-  inherited;
-
-end;
+  begin
+    inherited Create(aOwner);
+    Self.CarregarRegistros;
+  end;
 
 procedure TfraTeam.ExcluirRegistro;
-begin
+  var
+    xServiceTeam: IService;
+    xTeam: TTeam;
+    xItem: TListViewItem;
+  begin
+    if lstTimes.ItemIndex = -1 then
+      Exit;
 
-end;
+    xItem := lstTimes.Items[lstTimes.ItemIndex];
+    xTeam := TTeam.Create(xItem.Tag);
+
+    xServiceTeam := TServiceTeam.Create(xTeam);
+    try
+      xServiceTeam.Excluir;
+      ShowMessage('Registro excluído.');
+    finally
+      Self.CarregarRegistros;
+    end;
+  end;
 
 procedure TfraTeam.PreencherTeams(aTeam: TTeam);
-begin
+  var
+    xItem: TListViewItem;
+  begin
+    xItem     := lstTimes.Items.Add;
+    xItem.Tag := aTeam.Id;
 
-end;
+    TListItemText(xItem.Objects.FindDrawable('txtTime')).Text := aTeam.Name;
+  end;
+
+procedure TfraTeam.rectExcluirClick(Sender: TObject);
+  begin
+    Self.ExcluirRegistro;
+  end;
+
+procedure TfraTeam.rectNovoClick(Sender: TObject);
+  begin
+    Self.AbrirTeamRegistry;
+  end;
 
 end.
